@@ -1,0 +1,461 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pool Form - (7'x13'x5')</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+	 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+  <!-- model-viewer -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    /* ---------- Vars & Reset ---------- */
+    :root{
+      --accent:#00aaff;
+      --bg:#1a1a1a;
+      --panel:#111;
+      --muted:#aaa;
+      --text:#e0e0e0;
+      --max-width:1200px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;scroll-behavior:smooth; -webkit-font-smoothing:antialiased;}
+    a{color:inherit}
+
+    /* ---------- Layout ---------- */
+    .sidebar { position: fixed;  top: 0; left: 0; width: 220px; height: 100%; background: #111; padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center;
+      transition: transform 0.3s ease; z-index: 100;}
+    .sidebar h2 {   color: var(--accent); margin-bottom: 1.5rem;padding-bottom: 0.8rem; border-bottom: 1px solid #333; /* Adjust color if needed */ width: 100%; text-align: center;}
+    .sidebar ul { list-style: none; width: 100%; flex-grow: 1;}
+    .sidebar ul li { margin: 1.5rem 0; text-align: center;}
+    .sidebar ul li a { color: #e0e0e0; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: color 0.3s;}
+    .sidebar ul li a:hover { color: var(--accent); }
+    .back-button { margin-top: auto;  background: #e63946;  color: white;  text-decoration: none;  font-weight: bold;  font-size: 1.1rem;  padding: 0.6rem 1rem;
+      border-radius: 8px;  display: flex;  align-items: center;  gap: 8px;  transition: background 0.3s, transform 0.2s;}
+    .back-button:hover { background: #ff4d5a;  transform: translateX(-3px);}
+
+    /* ---------- Mobile Toggle & Overlay ---------- */
+    .menu-toggle{
+      position:fixed;top:12px;left:12px;z-index:1600;
+      display:none;background:var(--panel);color:var(--text);border-radius:8px;padding:.45rem .6rem;font-size:1.1rem;cursor:pointer;
+      align-items:center;gap:.5rem;  outline: 2px solid var(--accent); outline-offset: 2px;}
+    .menu-toggle:focus{outline:2px solid var(--accent)}
+    /* Visual overlay on mobile only. IMPORTANT: pointer-events:none so page remains scrollable behind the menu (per your 'allow scroll' decision). */
+	.mobile-overlay { position: fixed; top: 0; right: 0; width: calc(100% - 220px); height: 100%; background: rgba(0,0,0,.45); z-index: 1500; opacity: 0; pointer-events: none; transition: opacity .25s ease;}
+	.sidebar.active + .mobile-overlay.active { pointer-events: auto;}
+
+    /* ---------- Main content ---------- */
+    .content {  margin-left: 220px;  padding: 2rem;  text-align: center; transition: margin-left 0.3s ease, transform 0.3s ease;}
+    .project-title { font-size: 2.2rem; color: var(--accent); margin-bottom: 2rem;}
+
+    /* ---------- Sections ---------- */
+    .section { padding: 2rem 1.5rem; margin-bottom: 3rem; border-bottom: 1px solid #333; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease;}
+    .section.visible { opacity: 1; transform: translateY(0); }
+    .section h1 { margin-bottom: 1.5rem; color: #fff; }
+
+    /* ---------- Masonry/Images ---------- */
+    .masonry{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem;max-width:1100px;margin:0 auto}
+    .img-wrapper{position:relative;cursor:pointer;overflow:hidden;border-radius:8px}
+    .img-wrapper img{width:100%;height:100%;display:block;object-fit:cover;border-radius:8px;transition:transform .28s ease,box-shadow .28s ease}
+    .img-wrapper img:hover{transform:scale(1.03)}
+    .img-wrapper span.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:700;background:rgba(0,0,0,.45);color:#fff;border-radius:8px;opacity:0;transition:opacity .2s}
+    .img-wrapper:hover span.overlay{opacity:1}
+
+    /* ---------- Case Study ---------- */
+    .case-study{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:2rem;text-align:left}
+    .case-block h2{color:#8ab4f8;font-size:1.2rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.45rem}
+    .case-block p,.case-block ul{font-size:1.05rem;line-height:1.6;padding-left: 1.2rem;}
+
+    /* ---------- Lightbox ---------- */
+    #lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:2000;justify-content:center;align-items:center;padding:1rem}
+    #lightbox.open{display:flex}
+    #lightbox img{max-width:95%;max-height:85%;object-fit:contain;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.8)}
+    #lightbox .close-btn{position:absolute;top:18px;right:28px;font-size:2rem;color:#fff;cursor:pointer}
+    #lightbox .close-btn:focus{outline:2px solid var(--accent)}
+	#lightbox .nav-btn {  position: absolute;  top: 50%;  transform: translateY(-50%);  font-size: 2.5rem;  color: white; background: rgba(0,0,0,0.5);  border: none;  cursor: pointer;  padding: 0.6rem 1rem;  border-radius: 6px; user-select: none;  transition: background 0.3s;}
+	#lightbox .nav-btn:hover {  background: rgba(0,0,0,0.75);}
+	#lbPrevBtn { left: 20px; }
+	#lbNextBtn { right: 20px; }
+
+	/* ----- Footer styling ----- */
+	footer { background: var(--panel); color: var(--muted); text-align: center; padding: 1.5rem 1rem; font-size: 0.9rem; border-top: 1px solid #333; margin-top: 3rem;}
+	footer p { margin: 0; letter-spacing: 0.5px;}
+	footer a { color: var(--accent); text-decoration: none; font-weight: 600;}
+	footer a:hover { text-decoration: underline;}
+	/* Keep footer at bottom when content is short */
+	html, body { height: 100%; display: flex; flex-direction: column;}
+	main.content { flex: 1;}
+
+    /* ---------- Responsive rules ---------- */
+    /* Mobile first adjustments */
+    @media (max-width:767px){
+      .sidebar{transform:translateX(-105%);width:85vw;max-width:320px;padding:3rem;align-items:center}
+      .sidebar.active{transform:translateX(0)}
+      .menu-toggle{display:flex}
+      .content{margin-left:0;padding:1rem}
+      .project-title{font-size:1.4rem}
+      model-viewer{height:40vh}
+      .mobile-overlay.active{opacity:1}
+        .mobile-overlay {
+    width: 0vw;         /* Covers only the right 15% behind content */
+    left: auto;          /* Reset left positioning */
+    right: 0;
+    transform: none;     /* No sliding needed */
+  }
+      .masonry{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.6rem}
+      .back-button{align-self:flex-start;margin-top:.75rem}
+    }
+
+    /* Tablet: fixed sidebar (per your 'fixed' choice) */
+    @media (min-width:768px) and (max-width:1024px){
+      .sidebar{transform:none;left:0;width:220px;padding:1.8rem;align-items:center}
+      .menu-toggle{display:none}
+      .content{margin-left:220px;padding:1.5rem}
+      model-viewer{height:55vh}
+    }
+
+    /* Desktop */
+    @media (min-width:1025px){
+      .sidebar{transform:none;left:0;width:260px}
+      .content{margin-left:260px;padding:2rem}
+    }
+
+    /* Small accessibility improvements */
+    button, .menu-toggle{border:0;background:none;color:inherit}
+  </style>
+</head>
+<body>
+
+  <!-- Mobile Menu Toggle (hamburger) -->
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+    <i class="fas fa-bars" aria-hidden="true"></i>
+  </button>
+
+  <!-- Visual overlay (mobile only visual) -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+
+  <!-- Sidebar -->
+  <nav id="sidebar" class="sidebar" aria-label="Main navigation">
+    <h2>Portfolio</h2>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#3d_model">3D Model</a></li>
+      <li><a href="#drawings">Drawings</a></li>
+      <li><a href="#photos">Photos</a></li>
+    </ul>
+    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="content" id="mainContent" tabindex="-1">
+    <h1 class="project-title">Pool Form - (7'x13'x5')</h1>
+
+    <!-- Overview -->
+    <section id="overview" class="section" aria-labelledby="overview-heading">
+      <h1 id="overview-heading">Project Overview</h1>
+
+      <div class="case-study">
+        <div class="case-block">
+          <h2>Objective</h2>
+      <p>Design and fabricate a <strong>7' x 13' x 5' pool form</strong> engineered for <strong>structural accuracy, modular assembly, and high-quality concrete finishes</strong>, while improving efficiency and minimizing material waste.</p>
+    </div>
+
+    <div class="case-block">
+      <h2>Role & Responsibilities</h2>
+      <ul>
+        <li>Lead CAD designer — developed detailed 3D models and fabrication drawings</li>
+        <li>Generated BOM and cut list for steel and panel components</li>
+        <li>Collaborated with shop team to oversee fabrication and assembly</li>
+      </ul>
+    </div>
+
+    <div class="case-block">
+      <h2>Engineering Features</h2>
+      <ul>
+        <li>Segmented panel system for easier handling and transport</li>
+        <li>Reinforced frame to resist deformation during repeated pours</li>
+        <li>Integrated bracing system for stability and dimensional accuracy</li>
+        <li>Smooth interior surfaces ensuring consistent concrete finish</li>
+      </ul>
+    </div>
+
+    <div class="case-block">
+      <h2>Tools & Software</h2>
+      <p>Autodesk Inventor (CAD Modeling), MIG Welding, Plasma Cutting, and Assembly Jigs</p>
+    </div>
+
+    <div class="case-block">
+      <h2>Outcome</h2>
+      <p>Delivered a <strong>durable pool form</strong> capable of <strong>repeated casting</strong> with <strong>consistent precision</strong>, reducing labor time and material rework while achieving high-quality surface finishes.</p>
+    </div>
+      </div>
+    </section>
+
+    <!-- 3D Model -->
+    <section id="3d_model" class="section" aria-labelledby="model-heading">
+      <h1 id="model-heading">3D Model</h1>
+<model-viewer src="Project_4/7 - Form Assembly.glb" 
+	ar ar-modes="webxr scene-viewer quick-look" 
+	camera-controls tone-mapping="Neutral" 
+	poster="poster.webp" 
+	shadow-intensity="1.77" 
+	alt="Box Form 3D Model" 
+	loading="eager" 
+	style="width: 100%; margin: 0 auto; max-width: 800px; height: 60vh; border-radius: 12px; background-color:#222;" auto-rotate exposure="0.59" shadow-softness="0.53" environment-image="legacy"> 
+</model-viewer>
+    </section>
+
+    <!-- Drawings -->
+    <section id="drawings" class="section" aria-labelledby="drawings-heading">
+      <h1 id="drawings-heading">Drawings</h1>
+      <div class="masonry" id="drawingsMasonry">
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Drawings/1 - Base Assembly (No DIM)_page-0001.jpg" alt="Base Assembly"><span class="overlay">Click to expand</span></div>
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Drawings/2 - Core Assembly (Middle) (No DIM)_page-0001.jpg" alt="Middle Assembly"><span class="overlay">Click to expand</span></div>
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Drawings/2 - Core Assembly NEW (No DIM)_page-0001.jpg" alt="Middle 2 Assembly"><span class="overlay">Click to expand</span></div>
+		<div class="img-wrapper"><img loading="lazy" src="Project_4/Drawings/3_Jacket_1.jpg" alt="jacket Assembly"><span class="overlay">Click to expand</span></div>
+		<div class="img-wrapper"><img loading="lazy" src="Project_4/Drawings/3_Jacket_2.jpg" alt="Jacket 2 Assembly"><span class="overlay">Click to expand</span></div> 
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Drawings/4 - Header Assembly (No DIM)_page-0001.jpg" alt=" Header Assembly"><span class="overlay">Click to expand</span></div>
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Drawings/7 - Form (No DIM)_page-0001.jpg" alt=" Form Assembly"><span class="overlay">Click to expand</span></div>
+      </div>
+    </section>
+
+    <!-- Photos -->
+    <section id="photos" class="section" aria-labelledby="photos-heading">
+      <h1 id="photos-heading">Photos</h1>
+      <div class="masonry" id="photosMasonry">
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Form_Fabrication_Base.jpg" alt="Base"><span class="overlay">Click to expand</span></div>
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Form_Fabrication_Core.jpg" alt="Core"><span class="overlay">Click to expand</span></div>
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Form_Fabrication_Long_Jacket_1.jpg" alt="Jacket assembly"><span class="overlay">Click to expand</span></div>		  
+		<div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Form_Fabrication_Long_Jacket_2.jpg" alt="Jacket 2 Assembly"><span class="overlay">Click to expand</span></div>
+		<div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Form_Fabrication_Short_Jacket.jpg" alt="Short jacket Assebmly"><span class="overlay">Click to expand</span></div>        
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Form_Fabrication_Form.jpg" alt="Form"><span class="overlay">Click to expand</span></div>
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Form_Fabrication_Top.jpg" alt="Form Top "><span class="overlay">Click to expand</span></div>
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Form_Fabrication_Top_1.jpg" alt="Form Top "><span class="overlay">Click to expand</span></div>
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Form_Fabrication_Knockout.jpg" alt="Knnock out assembly"><span class="overlay">Click to expand</span></div>   
+        <div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Form_Fabrication_Form_2.jpg" alt="Form Painted 2"><span class="overlay">Click to expand</span></div>
+	    <div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Form_Fabrication_Form_3.jpg" alt="Form Pained"><span class="overlay">Click to expand</span></div>
+	    <div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Front Side Pool.jpeg" alt="front "><span class="overlay">Click to expand</span></div>
+	    <div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Back Side Pool.jpeg" alt="Back"><span class="overlay">Click to expand</span></div>
+	    <div class="img-wrapper"><img loading="lazy" src="Project_4/Pictures/Inside Pool.jpeg" alt="inside"><span class="overlay">Click to expand</span></div>
+		  
+      </div>
+    </section>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Expanded view">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+</div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Nathaniel Karau — Engineering Portfolio v1.0</p>
+    </footer>
+  </main>
+
+  <!-- Scripts -->
+  <script>
+    // Elements
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const content = document.querySelector('.content');
+    const sections = document.querySelectorAll('.section');
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lbCloseBtn = document.getElementById('lbCloseBtn');
+
+    // ---------- Sidebar toggle (mobile) ----------
+    function openSidebar() {
+      sidebar.classList.add('active');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      mobileOverlay.classList.add('active');
+      // NOTE: overlay is visual-only (pointer-events: none). We keep page scrollable behind.
+      // Focus the first link for accessibility
+      const firstLink = sidebar.querySelector('a');
+      if (firstLink) firstLink.focus();
+    }
+    function closeSidebar() {
+      sidebar.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mobileOverlay.classList.remove('active');
+      menuToggle.focus();
+    }
+
+    menuToggle.addEventListener('click', () => {
+      if (sidebar.classList.contains('active')) closeSidebar();
+      else openSidebar();
+    });
+
+    // Close sidebar if a nav link is clicked (mobile)
+    sidebar.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (window.innerWidth <= 767) closeSidebar();
+      });
+    });
+
+    // If user taps outside when sidebar is active, we DO NOT auto-close (to honor "allow scroll").
+    // You can close with the hamburger again.
+
+    // ---------- Section fade-in (IntersectionObserver) ----------
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    sections.forEach(s => observer.observe(s));
+
+    // ---------- Lightbox behavior ----------
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || 'Expanded image';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden','false');
+      lbCloseBtn.focus();
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
+      lightboxImg.src = '';
+    }
+
+    // Click images to open
+    document.querySelectorAll('.img-wrapper').forEach(wrapper => {
+      wrapper.addEventListener('click', () => {
+        const img = wrapper.querySelector('img');
+        openLightbox(img.src, img.alt);
+      });
+      // keyboard access
+      wrapper.setAttribute('tabindex','0');
+      wrapper.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const img = wrapper.querySelector('img');
+          openLightbox(img.src, img.alt);
+        }
+      });
+    });
+
+// Collect all lightbox images (drawings + photos)
+const imgWrappers = document.querySelectorAll('.img-wrapper');
+let currentIndex = -1; // track which image is open
+
+function openLightbox(src, alt, index) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || 'Expanded image';
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden','false');
+  currentIndex = index;
+  lbCloseBtn.focus();
+}
+
+function showImage(index) {
+  if (index < 0) index = imgWrappers.length - 1;
+  if (index >= imgWrappers.length) index = 0;
+  const img = imgWrappers[index].querySelector('img');
+  openLightbox(img.src, img.alt, index);
+}
+
+// Click to open
+imgWrappers.forEach((wrapper, i) => {
+  wrapper.addEventListener('click', () => {
+    const img = wrapper.querySelector('img');
+    openLightbox(img.src, img.alt, i);
+  });
+  wrapper.setAttribute('tabindex','0');
+  wrapper.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const img = wrapper.querySelector('img');
+      openLightbox(img.src, img.alt, i);
+    }
+  });
+});
+
+// Nav buttons
+document.getElementById('lbPrevBtn').addEventListener('click', () => showImage(currentIndex - 1));
+document.getElementById('lbNextBtn').addEventListener('click', () => showImage(currentIndex + 1));
+
+// Keyboard support
+window.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+  if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+});
+	  
+    // Close controls
+    lbCloseBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      // If user clicked the backdrop (not the img or close button), close
+      if (e.target === lightbox) closeLightbox();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (lightbox.classList.contains('open')) closeLightbox();
+        if (sidebar.classList.contains('active') && window.innerWidth <= 767) closeSidebar();
+      }
+    });
+
+    // Lightbox swipe-to-close (vertical swipe)
+    (function addSwipeClose(el) {
+      let startY = null;
+      let moved = false;
+      el.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length === 1) {
+          startY = e.touches[0].clientY;
+          moved = false;
+        }
+      }, {passive:true});
+      el.addEventListener('touchmove', (e) => {
+        if (!startY) return;
+        const currentY = e.touches[0].clientY;
+        const diff = currentY - startY;
+        if (Math.abs(diff) > 20) moved = true;
+      }, {passive:true});
+      el.addEventListener('touchend', (e) => {
+        if (!moved) { startY = null; return; }
+        const endY = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientY : null;
+        if (startY && endY) {
+          const delta = endY - startY;
+          // swipe up or down to close
+          if (Math.abs(delta) > 80) closeLightbox();
+        }
+        startY = null; moved = false;
+      });
+    })(lightbox);
+
+    // ---------- Ensure model-viewer scales nicely on resize ----------
+    function adjustModelViewerHeight() {
+      const mv = document.querySelector('model-viewer');
+      if (!mv) return;
+      if (window.innerWidth < 480) mv.style.height = '40vh';
+      else if (window.innerWidth < 768) mv.style.height = '45vh';
+      else if (window.innerWidth < 1024) mv.style.height = '55vh';
+      else mv.style.height = '60vh';
+    }
+    window.addEventListener('resize', adjustModelViewerHeight);
+    adjustModelViewerHeight();
+
+    // ---------- Small UX improvements ----------
+    // Trap focus inside sidebar when it's open on mobile? We keep allow-scroll so focus-trap is not necessary.
+    // But we ensure keyboard users can toggle menu with Escape (handled above) and the toggle button is labeled.
+
+    // If user reloads while sidebar active on small screens, ensure state is consistent
+    window.addEventListener('load', () => {
+      if (window.innerWidth <= 767) {
+        sidebar.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded','false');
+      }
+    });
+  </script>
+</body>
+</html>

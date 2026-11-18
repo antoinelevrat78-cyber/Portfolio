@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Other Projects</title>
+
+ <!-- ✅ Preload model-viewer -->
+  <link rel="preload" href="Project_6/Project_1/Project 1 - (Box Form 54x42x47).glb" as="fetch" crossorigin>
+	
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+  <!-- model-viewer -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <style>
+    :root{
+      --accent:#00aaff;
+      --bg:#1a1a1a;
+      --panel:#111;
+      --muted:#aaa;
+      --text:#e0e0e0;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+
+	  /* Arrow navigation under model-viewer */
+	.model-nav { display: flex; justify-content: center; align-items: center; margin-top: 1rem; gap: 1.5rem;}
+	.model-nav button { background: var(--panel); color: var(--accent); border: none; padding: 0.75rem 1rem; border-radius: 50%; font-size: 1.2rem; cursor: pointer; transition: background 0.3s, transform 0.2s;}
+	.model-nav button:hover { background: #222; transform: scale(1.1);}
+
+    /* Sidebar */
+    .sidebar { position: fixed;  top: 0; left: 0; width: 220px; height: 100%; background: #111; padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center;
+      transition: transform 0.3s ease; z-index: 100;}
+    .sidebar h2 {   color: var(--accent); margin-bottom: 1.5rem;padding-bottom: 0.8rem; border-bottom: 1px solid #333; /* Adjust color if needed */ width: 100%; text-align: center;}
+    .sidebar ul { list-style: none; width: 100%; flex-grow: 1;}
+    .sidebar ul li { margin: 1.5rem 0; text-align: center;}
+    .sidebar ul li a { color: #e0e0e0; text-decoration: none; font-weight: bold; font-size: 1.2rem; transition: color 0.3s;}
+    .sidebar ul li a:hover { color: var(--accent); }
+    .back-button { margin-top: auto;  background: #e63946;  color: white;  text-decoration: none;  font-weight: bold;  font-size: 1.1rem;  padding: 0.6rem 1rem;
+      border-radius: 8px;  display: flex;  align-items: center;  gap: 8px;  transition: background 0.3s, transform 0.2s;}
+    .back-button:hover { background: #ff4d5a;  transform: translateX(-3px);}
+
+    /* Main */
+    .content{margin-left:220px;padding:2rem;text-align:center;}
+    .project-title{font-size:2.2rem;color:var(--accent);margin-bottom:2rem;}
+
+
+	/* Smooth fade animation for model changes */
+	#modelViewer.fade {  animation: fadeIn 0.6s ease;}
+	@keyframes fadeIn {
+ 	 from {opacity: 0; transform: scale(0.98);}
+  	to {opacity: 1;transform: scale(1);}}  
+
+    /* Sections */
+    .section{padding:2rem 1.5rem;margin-bottom:3rem;border-bottom:1px solid #333;opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+    .section.visible{opacity:1;transform:translateY(0);}
+    .section h1{margin-bottom:1.5rem;color:#fff;}
+
+	/* Masonry grid */
+	.masonry {  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1600px; margin: 0 auto;}
+	.img-wrapper { position: relative; cursor: pointer; overflow: hidden; border-radius: 12px; background: #222; padding: 0.75rem; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;}
+	.img-wrapper img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; transition: transform .28s ease;}
+	.img-wrapper:hover img { transform: scale(1.03);}
+	.img-wrapper:hover {  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); transform: translateY(-4px);  transition: box-shadow 0.3s ease, transform 0.3s ease;}
+	.img-wrapper span.overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 700;  background: rgba(0, 0, 0, .45); color: #fff; border-radius: 8px; opacity: 0; transition: opacity .2s;}
+	.img-wrapper:hover span.overlay {  opacity: 1;}
+	.caption { margin-top: 0.6rem; color: var(--muted); font-size: 0.95rem; font-weight: 600; text-align: center; width: 100%;}
+
+
+	/* ----- Footer styling ----- */
+	footer { background: var(--panel); color: var(--muted); text-align: center; padding: 1.5rem 1rem; font-size: 0.9rem; border-top: 1px solid #333; margin-top: 3rem;}
+	footer p { margin: 0; letter-spacing: 0.5px;}
+	footer a { color: var(--accent); text-decoration: none; font-weight: 600;}
+	footer a:hover { text-decoration: underline;}
+	/* Keep footer at bottom when content is short */
+	html, body { height: 100%; display: flex; flex-direction: column;}
+	main.content { flex: 1;}
+
+/* Mobile overlay for sidebar background */
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 50;
+}
+
+.mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Sidebar slide animation */
+.sidebar {
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+    .menu-toggle{
+      position:fixed;top:12px;left:12px;z-index:1600;
+      display:none;background:var(--panel);color:var(--text);border-radius:8px;padding:.45rem .6rem;font-size:1.1rem;cursor:pointer;
+      align-items:center;gap:.5rem;  outline: 2px solid var(--accent); outline-offset: 2px;}
+    .menu-toggle:focus{outline:2px solid var(--accent)}
+    /* Visual overlay on mobile only. IMPORTANT: pointer-events:none so page remains scrollable behind the menu (per your 'allow scroll' decision). */
+	.mobile-overlay { position: fixed; top: 0; right: 0; width: calc(100% - 220px); height: 100%; background: rgba(0,0,0,.45); z-index: 1500; opacity: 0; pointer-events: none; transition: opacity .25s ease;}
+	.sidebar.active + .mobile-overlay.active { pointer-events: auto;}	  
+	  
+  /* ---------- Responsive rules ---------- */
+    /* Mobile first adjustments */
+    @media (max-width:767px){
+      .sidebar{transform:translateX(-105%);width:85vw;max-width:320px;padding:3rem;align-items:center}
+      .sidebar.active{transform:translateX(0)}
+      .menu-toggle{display:flex}
+      .content{margin-left:0;padding:1rem}
+      .project-title{font-size:1.4rem}
+      model-viewer{height:40vh}
+      .mobile-overlay.active{opacity:1}
+        .mobile-overlay {
+    width: 0vw;         /* Covers only the right 15% behind content */
+    left: auto;          /* Reset left positioning */
+    right: 0;
+    transform: none;     /* No sliding needed */
+  }
+      .masonry{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.6rem}
+      .back-button{align-self:flex-start;margin-top:.75rem}
+    }
+
+    /* Tablet: fixed sidebar (per your 'fixed' choice) */
+    @media (min-width:768px) and (max-width:1024px){
+      .sidebar{transform:none;left:0;width:220px;padding:1.8rem;align-items:center}
+      .menu-toggle{display:none}
+      .content{margin-left:220px;padding:1.5rem}
+      model-viewer{height:55vh}
+    }
+
+    /* Desktop */
+    @media (min-width:1025px){
+      .sidebar{transform:none;left:0;width:260px}
+      .content{margin-left:260px;padding:2rem}
+    }
+
+    /* Small accessibility improvements */
+    button, .menu-toggle{border:0;background:none;color:inherit}
+  </style>
+</head>
+<body>
+
+  <!-- Mobile Menu Toggle (hamburger) -->
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+    <i class="fas fa-bars" aria-hidden="true"></i>
+  </button>
+
+  <!-- Visual overlay (mobile only visual) -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+
+
+  <!-- Sidebar -->
+  <nav id="sidebar" class="sidebar">
+    <h2>Portfolio</h2>
+    <ul>
+      <li><a href="#3d_model">3D Model</a></li>
+      <li><a href="#photos">Photos</a></li>
+    </ul>
+    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="content">
+    <h1 class="project-title">Other Projects</h1>
+
+
+
+    <!-- 3D Model -->
+    <section id="3d_model" class="section">
+      <h1>3D Model</h1>
+<model-viewer 
+	id="modelViewer"
+	src="Project_6/Project_1/Project 1 - Grade Ring Form (Diameter 36).glb"
+	ar ar-modes="webxr scene-viewer quick-look" 
+	camera-controls tone-mapping="Neutral" 
+	poster="poster.webp" 
+	shadow-intensity="1.77" 
+	alt="3D Model" 
+	loading="eager" 
+	style="width: 100%; margin: 0 auto; max-width: 800px; height: 60vh; border-radius: 12px; background-color:#222;" auto-rotate exposure="0.59" shadow-softness="0.53" environment-image="legacy"> 
+</model-viewer>
+
+
+  <!-- 👇 Add this new title -->
+  <h2 id="modelTitle" style="margin-top: 1rem; color: var(--accent); font-size: 1.3rem;">
+    Grade Ring Form (Diameter 36)
+  </h2>
+		
+		<!-- Model navigation arrows -->
+<div class="model-nav">
+	<button id="prevModel" aria-label="Previous model"><i class="fas fa-chevron-left"></i></button>
+	<button id="nextModel" aria-label="Next model"><i class="fas fa-chevron-right"></i></button>
+</div>
+    </section>
+
+    <!-- Photos -->
+    <section id="photos" class="section">
+      <h1>Photos</h1>
+		<h3>(Click to Load 3D Model)</h3>
+      <div class="masonry">
+        <div class="img-wrapper" data-model="Project_6/Project_1/Project 1 - Grade Ring Form (Diameter 36).glb">
+          <img loading="lazy" src="Project_6/Project_1/Project 1 - Grade Ring Form (Diameter 36).jpg" alt="Project 1">
+          <span class="overlay">Load Model 1</span>
+		  <p class="caption">Grade Ring Form (Diameter 36)</p>
+        </div>
+        <div class="img-wrapper" data-model="Project_6/Project_2/Project 2 - Blast Module Form (17' x 11' x 9'-6).glb">
+          <img loading="lazy" src="Project_6/Project_2/Project 2 - Blast Module Form (17' x 11' x 9'-6).jpg" alt="Project 2">
+          <span class="overlay">Load Model 2</span>
+		  <p class="caption">Blast Module Form (17' x 11' x 9'-6)</p>
+        </div>
+        <div class="img-wrapper" data-model="Project_6/Project_3/Project 3 - Box Form (10' x 10' x 5').glb">
+          <img loading="lazy" src="Project_6/Project_3/Project 3 - Box Form (10' x 10' x 5').jpg" alt="Project 3">
+          <span class="overlay">Load Model 3</span>
+		  <p class="caption">Box Form (10' x 10' x 5')</p>
+        </div>
+        <div class="img-wrapper" data-model="Project_6/Project_4/Project 4 - Barrier Form (25 x 43 x 20').glb">
+          <img loading="lazy" src="Project_6/Project_4/Project 4 - Barrier Form (25 x 43 x 20').jpg" alt="Project 4">
+          <span class="overlay">Load Model 4</span>
+	      <p class="caption">Barrier Form (25 x 43 x 20')</p>
+        </div>
+        <div class="img-wrapper" data-model="Project_6/Project_5/Project 5 - EV Form (65 x 68 x 18).glb">
+          <img loading="lazy" src="Project_6/Project_5/Project 5 - EV Form (65 x 68 x 18).jpg" alt="Project 5">
+          <span class="overlay">Load Model 5</span>
+	      <p class="caption">EV Form (65 x 68 x 18)</p>			
+        </div>
+        <div class="img-wrapper" data-model="Project_6/Project_6/Project 6 - Box Form (6' x 12' x 7').glb">
+          <img loading="lazy" src="Project_6/Project_6/Project 6 - Box Form (6' x 12' x 7').jpg" alt="Project 6">
+          <span class="overlay">Load Model 6</span>
+	      <p class="caption">Box Form (6' x 12' x 7')</p>			
+        </div>
+        <div class="img-wrapper" data-model="Project_6/Project_7/Project 7 - Box Form (4' x 4' x 2').glb">
+          <img loading="lazy" src="Project_6/Project_7/Project 7 - Box Form (4' x 4' x 2').jpg" alt="Project 7">
+          <span class="overlay">Load Model 7</span>
+	      <p class="caption">Box Form (4' x 4' x 2')</p>			
+        </div>
+        <div class="img-wrapper" data-model="Project_6/Project_8/Project 8 - Box Form (3' x 5' x 6').glb">
+          <img loading="lazy" src="Project_6/Project_8/Project 8 - Box Form (3' x 5' x 6').jpg" alt="Project 8">
+          <span class="overlay">Load Model 8</span>
+	      <p class="caption">Box Form (3' x 5' x 6')</p>			
+        </div>
+        <div class="img-wrapper" data-model="Project_6/Project_9/Project 9 - Box Form (6' x 12' x 8').glb">
+          <img loading="lazy" src="Project_6/Project_9/Project 9 - Box Form (6' x 12' x 8').jpg" alt="Project 9">
+          <span class="overlay">Load Model 9</span>
+	      <p class="caption">Box Form (6' x 12' x 8')</p>			
+        </div>
+        <div class="img-wrapper" data-model="Project_6/Project_10/Project 10 - Wing Wall Form (4' x 2'-6 x 62).glb">
+          <img loading="lazy" src="Project_6/Project_10/Project 10 - Wing Wall Form (4' x 2'-6 x 62).jpg" alt="Project 10">
+          <span class="overlay">Load Model 10</span>
+	      <p class="caption">Wing Wall Form (4' x 2'-6 x 62)</p>			
+        </div>		  
+      </div>
+    </section>
+
+  </main>
+
+	   <footer>
+      <p>© 2025 Nathaniel Karau — Engineering Portfolio v1.0</p>
+    </footer>
+
+<script>
+
+// --- Mobile sidebar toggle ---
+const menuToggle = document.getElementById('menuToggle');
+const sidebar = document.getElementById('sidebar');
+const overlay = document.getElementById('mobileOverlay');
+
+menuToggle.addEventListener('click', () => {
+  const isActive = sidebar.classList.toggle('active');
+  overlay.classList.toggle('active', isActive);
+
+  // Update ARIA attributes for accessibility
+  menuToggle.setAttribute('aria-expanded', isActive);
+  overlay.setAttribute('aria-hidden', !isActive);
+});
+
+// Close sidebar when overlay is clicked
+overlay.addEventListener('click', () => {
+  sidebar.classList.remove('active');
+  overlay.classList.remove('active');
+  menuToggle.setAttribute('aria-expanded', false);
+  overlay.setAttribute('aria-hidden', true);
+});
+
+  // --- Fade-in effect for sections ---
+  const sections = document.querySelectorAll('.section');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { 
+      if (entry.isIntersecting) entry.target.classList.add('visible'); 
+    });
+  }, { threshold: 0.12 });
+  sections.forEach(s => observer.observe(s));
+
+  // --- Model viewer setup ---
+  const modelViewer = document.getElementById('modelViewer');
+  const wrappers = Array.from(document.querySelectorAll('.img-wrapper'));
+  const nextBtn = document.getElementById('nextModel');
+  const prevBtn = document.getElementById('prevModel');
+
+  // --- Update currentIndex based on modelViewer.src ---
+currentIndex = wrappers.findIndex(w => w.getAttribute('data-model') === modelViewer.src);
+if (currentIndex === -1) currentIndex = 0;
+
+  // Fade in when model finishes loading
+  modelViewer.addEventListener('load', () => {
+    modelViewer.classList.add('fade');
+  });
+
+
+const modelTitle = document.getElementById('modelTitle');
+
+// --- Helper function to load model by index ---
+function loadModel(index) {
+  const selected = wrappers[index];
+  if (!selected) return;
+
+  const newModel = selected.getAttribute('data-model');
+  const caption = selected.querySelector('.caption')?.innerText || "Unnamed Project";
+
+  if (newModel) {
+    // Smooth fade transition
+    modelViewer.classList.remove('fade');
+    void modelViewer.offsetWidth; // restart animation
+    modelViewer.src = newModel;
+
+    // Update title text
+    modelTitle.textContent = caption;
+
+    // Update index
+    currentIndex = wrappers.findIndex(w => w.getAttribute('data-model') === newModel) || 0;
+  }
+}	
+
+  // --- Arrow button navigation ---
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % wrappers.length; // loop forward
+    loadModel(currentIndex);
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + wrappers.length) % wrappers.length; // loop backward
+    loadModel(currentIndex);
+  });
+
+  // --- Click on photo to load model ---
+  wrappers.forEach((wrapper, idx) => {
+    wrapper.addEventListener('click', () => {
+      currentIndex = idx;
+      loadModel(currentIndex);
+      document.getElementById('3d_model').scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+</script>
+
+
+</body>
+</html>
