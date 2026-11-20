@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Light Pole Base Form - (30" Diameter)</title>
+  <title>High-Performance Parallel PDE & FEM Solver | Antoine Levrat</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -59,11 +59,13 @@
 
     /* ---------- Masonry/Images ---------- */
     .masonry{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem;max-width:1100px;margin:0 auto}
-    .img-wrapper{position:relative;cursor:pointer;overflow:hidden;border-radius:8px}
-    .img-wrapper img{width:100%;height:100%;display:block;object-fit:cover;border-radius:8px;transition:transform .28s ease,box-shadow .28s ease}
+    .img-wrapper{position:relative;cursor:pointer;overflow:hidden;border-radius:8px;background:#111}
+    .img-wrapper img{width:100%;height:auto;display:block;object-fit:cover;border-radius:8px 8px 0 0;transition:transform .28s ease,box-shadow .28s ease}
     .img-wrapper img:hover{transform:scale(1.03)}
     .img-wrapper span.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:700;background:rgba(0,0,0,.45);color:#fff;border-radius:8px;opacity:0;transition:opacity .2s}
     .img-wrapper:hover span.overlay{opacity:1}
+    .img-wrapper .image-title{padding:.75rem .5rem;color:#fff;font-size:.95rem;font-weight:700;line-height:1.35;text-align:center}
+
 
     /* ---------- Case Study ---------- */
     .case-study{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:2rem;text-align:left}
@@ -143,16 +145,14 @@
     <h2>Portfolio</h2>
     <ul>
       <li><a href="#overview">Overview</a></li>
-      <li><a href="#3d_model">3D Model</a></li>
-      <li><a href="#drawings">Drawings</a></li>
-      <li><a href="#photos">Photos</a></li>
+      <li><a href="#illustrations">Illustrations</a></li>
     </ul>
     <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back</a>
   </nav>
 
   <!-- Main Content -->
   <main class="content" id="mainContent" tabindex="-1">
-    <h1 class="project-title">Light Pole Base Form - (30" Diameter)</h1>
+    <h1 class="project-title">High-Performance Parallel PDE & FEM Solver</h1>
 
     <!-- Overview -->
     <section id="overview" class="section" aria-labelledby="overview-heading">
@@ -160,81 +160,70 @@
 
       <div class="case-study">
         <div class="case-block">
+          <h2>Project</h2>
+          <p><strong>Academic Team Project</strong><br>2025</p>
+        </div>
+
+        <div class="case-block">
           <h2>Objective</h2>
-          <p>Design and fabricate a <strong>30" diameter light pole base form</strong> optimized for <strong>repeated casting, dimensional precision, and simplified assembly</strong>, while reducing labor time and material waste.</p>
+          <p>Accelerate 2D and 3D PDE simulations by distributing computation and memory across processors and HPC clusters.</p>
         </div>
 
         <div class="case-block">
-          <h2>Role & Responsibilities</h2>
+          <h2>Method</h2>
           <ul>
-        <li>Lead CAD designer — developed all 3D models and technical drawings</li>
-        <li>Created detailed BOM and cut list</li>
-        <li>Coordinated fabrication and assembly process</li>
+            <li>Implemented parallel finite-difference solvers with Jacobi and Red-Black Gauss-Seidel methods.</li><li>Used non-blocking MPI communication and contiguous grid representations to overlap exchange and computation.</li><li>Built parallel 2D/3D FEM meshing and domain decomposition tools.</li><li>Benchmarking strong and weak scaling on local hardware and the Cholesky HPC cluster.</li>
           </ul>
         </div>
 
         <div class="case-block">
-          <h2>Engineering Features</h2>
+          <h2>Tools &amp; Software</h2>
+          <p>C++, MPI (OpenMPI/MPICH), HPC Cluster (Cholesky), FDM/FEM</p>
+        </div>
+
+        <div class="case-block">
+          <h2>Results</h2>
           <ul>
-        <li>Two-piece cylindrical design for fast setup and removal</li>
-        <li>Precision bolt patterns ensuring accurate alignment</li>
-        <li>Durable construction for multiple reuse cycles without dimensional loss</li>
+            <li>Reached over 70% weak-scaling efficiency at 8 cores on Cholesky.</li><li>Exceeded local weak-scaling efficiency by more than 20%.</li><li>Red-Black Gauss-Seidel reached 10⁻⁵ tolerance in 37% fewer iterations than Jacobi.</li>
           </ul>
         </div>
-
         <div class="case-block">
-          <h2>Tools & Software</h2>
-        <p>Autodesk Inventor (CAD Modeling), MIG Welding, and Plasma Cutting</p>
+          <h2>Project Report</h2>
+          <p><a href="Project_3/Report_Parallel_Calculus.pdf" target="_blank" rel="noopener">Read the project report (PDF)</a></p>
         </div>
 
-        <div class="case-block">
-          <h2>Outcome</h2>
-          <p>Successfully produced a light pole base form with <strong>consistent casting accuracy</strong>, <strong>reduced setup time</strong>, and <strong>extended lifecycle durability</strong> across repeated use.</p>
-        </div>
       </div>
     </section>
 
-    <!-- 3D Model -->
-    <section id="3d_model" class="section" aria-labelledby="model-heading">
-      <h1 id="model-heading">3D Model</h1>
-<model-viewer src="Project_3/4 - Form Assembly (30 inch Light Pole).glb" 
-	ar ar-modes="webxr scene-viewer quick-look" 
-	camera-controls tone-mapping="Neutral" 
-	poster="poster.webp" 
-	shadow-intensity="1.77" 
-	alt="Box Form 3D Model" 
-	loading="eager" 
-	style="width: 100%; margin: 0 auto; max-width: 800px; height: 60vh; border-radius: 12px; background-color:#222;" auto-rotate exposure="0.59" shadow-softness="0.53" environment-image="legacy"> 
-</model-viewer>
-    </section>
-
-    <!-- Drawings -->
-    <section id="drawings" class="section" aria-labelledby="drawings-heading">
-      <h1 id="drawings-heading">Drawings</h1>
-      <div class="masonry" id="drawingsMasonry">
-        <div class="img-wrapper"><img loading="lazy" src="Project_3/Drawings/1 - Base (30 inch Light Pole) (No DIM)_page-0001.jpg" alt="Base Assembly"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_3/Drawings/2 - 74 inch Side Assembly (30 inch Light Pole) (No DIM)_page-0001.jpg" alt="74 inch side Assembly"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_3/Drawings/2-1 - 24 inch Side Assembly (30 inch Light Pole) (No DIM)_page-0001.jpg" alt="24 inch side Assembly"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_3/Drawings/2-2 - 12 inch Side Assembly (30 inch Light Pole) (No DIM)_page-0001.jpg" alt="12 inch side Assembly"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_3/Drawings/3 - Knockout Assembly (30 inch Light Pole) (No DIM)_page-0001.jpg" alt=" Knockout Assembly"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_3/Drawings/4 - Form Assembly (30 inch Light Pole) (No DIM)_page-0001.jpg" alt=" Form Assembly"><span class="overlay">Click to expand</span></div>
-      </div>
-    </section>
-
-    <!-- Photos -->
-    <section id="photos" class="section" aria-labelledby="photos-heading">
-      <h1 id="photos-heading">Photos</h1>
-      <div class="masonry" id="photosMasonry">
-        <div class="img-wrapper"><img loading="lazy" src="Project_3/Pictures/Form_Fabrication_Base.jpg" alt="Base"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_3/Pictures/Form_Fabrication_Form 1.jpg" alt="24 inch side"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_3/Pictures/Form_Fabrication_Form 2.jpg" alt="12 inch side"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_3/Pictures/Form_Fabrication_Form 3.jpg" alt="12 inch side 2"><span class="overlay">Click to expand</span></div>
-		<div class="img-wrapper"><img loading="lazy" src="Project_3/Pictures/Form_Fabrication_Form.jpg" alt="12 inch side 3"><span class="overlay">Click to expand</span></div>
-		<div class="img-wrapper"><img loading="lazy" src="Project_3/Pictures/Form_Fabrication_Knockout 1.jpg" alt="KNnock out assembly"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_3/Pictures/Form_Fabrication_Knockouts.jpg" alt="Knock out assembly 2"><span class="overlay">Click to expand</span></div>		  
-		<div class="img-wrapper"><img loading="lazy" src="Project_3/Pictures/Form_Fabrication_Form_Close.jpg" alt="Form Assembly"><span class="overlay">Click to expand</span></div>
-		<div class="img-wrapper"><img loading="lazy" src="Project_3/Pictures/Form_Fabrication_Form_Closed.jpg" alt="Form Assebmly 2"><span class="overlay">Click to expand</span></div>
-		<div class="img-wrapper"><img loading="lazy" src="Project_3/Pictures/Form_Fabrication_Form_Open.jpg" alt="Form Open "><span class="overlay">Click to expand</span></div>
+    <!-- Illustrations -->
+    <section id="illustrations" class="section" aria-labelledby="illustrations-heading">
+      <h1 id="illustrations-heading">Illustrations</h1>
+      <div class="masonry" id="illustrationsMasonry">
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_3/Pictures/fig_1_laplace_2d_3d_surface_solution.png" alt="Laplace equation 2D/3D numerical solution">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">Laplace 2D/3D Solution</div>
+        </div>
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_3/Pictures/fig_2_jacobi_vs_gauss_seidel_convergence.png" alt="Jacobi and Gauss-Seidel convergence">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">Jacobi vs Gauss-Seidel</div>
+        </div>
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_3/Pictures/fig_3_hpc_cholesky_strong_weak_scaling.png" alt="Cholesky strong and weak scaling">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">HPC Scaling Benchmarks</div>
+        </div>
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_3/Pictures/fig_4_3d_jacobi_execution_time_vs_mesh_size.png" alt="3D Jacobi execution time by mesh size">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">3D Solver Scaling</div>
+        </div>
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_3/Pictures/fig_5_fem_2d_mesh_domain_decomposition.png" alt="FEM mesh decomposed into subdomains">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">Domain Decomposition</div>
+        </div>
       </div>
     </section>
 
@@ -248,7 +237,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2025 Nathaniel Karau — Engineering Portfolio v1.0</p>
+      <p>© 2026 Antoine Levrat — Engineering Portfolio</p>
     </footer>
   </main>
 

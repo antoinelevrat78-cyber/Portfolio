@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tilt Table - Prototype</title>
+  <title>Coupled Media Concentration Transport & Solver Acceleration | Antoine Levrat</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+	 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 
   <!-- model-viewer -->
   <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
@@ -58,20 +59,13 @@
 
     /* ---------- Masonry/Images ---------- */
     .masonry{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem;max-width:1100px;margin:0 auto}
-    .img-wrapper{position:relative;cursor:pointer;overflow:hidden;border-radius:8px}
-    .img-wrapper img{width:100%;height:100%;display:block;object-fit:cover;border-radius:8px;transition:transform .28s ease,box-shadow .28s ease}
+    .img-wrapper{position:relative;cursor:pointer;overflow:hidden;border-radius:8px;background:#111}
+    .img-wrapper img{width:100%;height:auto;display:block;object-fit:cover;border-radius:8px 8px 0 0;transition:transform .28s ease,box-shadow .28s ease}
     .img-wrapper img:hover{transform:scale(1.03)}
-    .img-wrapper span.overlay{pointer-events: none; position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:700;background:rgba(0,0,0,.45);color:#fff;border-radius:8px;opacity:0;transition:opacity .2s}
+    .img-wrapper span.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:700;background:rgba(0,0,0,.45);color:#fff;border-radius:8px;opacity:0;transition:opacity .2s}
     .img-wrapper:hover span.overlay{opacity:1}
+    .img-wrapper .image-title{padding:.75rem .5rem;color:#fff;font-size:.95rem;font-weight:700;line-height:1.35;text-align:center}
 
-   /* Presentation styles */
-.pdf-wrapper{max-width:900px;margin:0 auto;cursor:pointer;outline:none}
-.pdf-container{background:#111;border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,0.7);overflow:hidden;border:1px solid #222}
-.pdf-frame{width:100%;height:70vh;border:0;display:block;background:#111; -webkit-overflow-scrolling: touch;}
-.pdf-hint{text-align:center;color:var(--muted);font-size:0.95rem;margin-top:.6rem}
-
-/* When the inline iframe is focused, give a subtle ring for accessibility */
-.pdf-wrapper:focus{box-shadow:0 0 0 3px rgba(0,170,255,0.12), 0 8px 25px rgba(0,0,0,0.6);border-radius:12px}
 
     /* ---------- Case Study ---------- */
     .case-study{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:2rem;text-align:left}
@@ -79,49 +73,15 @@
     .case-block p,.case-block ul{font-size:1.05rem;line-height:1.6;padding-left: 1.2rem;}
 
     /* ---------- Lightbox ---------- */
-  #lightbox {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    overflow: auto;
-    justify-content: center;
-    align-items: center;
-  }
-  #lightbox.open { display: flex; }
-  #lightbox img, #lightbox iframe {
-    display: none;
-    max-width: 90%;
-    max-height: 80vh;
-    margin: auto;
-  }
-  #lightbox iframe {
-    width: 90%;
-    height: 80vh;
-  }
-
-  #lbCloseBtn, #lbPrevBtn, #lbNextBtn {
-    position: absolute;
-    top: 50%;
-    font-size: 2em;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-  }
-  #lbCloseBtn {
-    top: 15px;
-    right: 25px;
-    transform: none;
-    font-size: 2.5em;
-    outline:2px solid var(--accent)
-  }
-  #lbPrevBtn { left: 15px; }
-  #lbNextBtn { right: 15px; }
+    #lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:2000;justify-content:center;align-items:center;padding:1rem}
+    #lightbox.open{display:flex}
+    #lightbox img{max-width:95%;max-height:85%;object-fit:contain;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.8)}
+    #lightbox .close-btn{position:absolute;top:18px;right:28px;font-size:2rem;color:#fff;cursor:pointer}
+    #lightbox .close-btn:focus{outline:2px solid var(--accent)}
+	#lightbox .nav-btn {  position: absolute;  top: 50%;  transform: translateY(-50%);  font-size: 2.5rem;  color: white; background: rgba(0,0,0,0.5);  border: none;  cursor: pointer;  padding: 0.6rem 1rem;  border-radius: 6px; user-select: none;  transition: background 0.3s;}
+	#lightbox .nav-btn:hover {  background: rgba(0,0,0,0.75);}
+	#lbPrevBtn { left: 20px; }
+	#lbNextBtn { right: 20px; }
 
 	/* ----- Footer styling ----- */
 	footer { background: var(--panel); color: var(--muted); text-align: center; padding: 1.5rem 1rem; font-size: 0.9rem; border-top: 1px solid #333; margin-top: 3rem;}
@@ -185,17 +145,14 @@
     <h2>Portfolio</h2>
     <ul>
       <li><a href="#overview">Overview</a></li>
-      <li><a href="#presentation">Presentation</a></li>
-      <li><a href="#drawings">Drawings</a></li>
-      <li><a href="#photos">Photos</a></li>
-	  <li><a href="#video">Video</a></li>
+      <li><a href="#illustrations">Illustrations</a></li>
     </ul>
     <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back</a>
   </nav>
 
   <!-- Main Content -->
   <main class="content" id="mainContent" tabindex="-1">
-    <h1 class="project-title">Tilt Table - Prototype</h1>
+    <h1 class="project-title">Coupled Media Concentration Transport & Solver Acceleration</h1>
 
     <!-- Overview -->
     <section id="overview" class="section" aria-labelledby="overview-heading">
@@ -203,226 +160,265 @@
 
       <div class="case-study">
         <div class="case-block">
+          <h2>Project</h2>
+          <p>Due to the confidential nature of this project, all figures and visualizations are AI-generated.</p><p><strong>R&D Numerical Simulation Intern at Framatome | Multiphysics & Scientific Computing</strong><br>April 2026 – September 2026</p>
+        </div>
+
+        <div class="case-block">
           <h2>Objective</h2>
-          <p>To build a prototype of a <strong>1/3 scale Tilt Table</strong> that serves as a proof of concept for loading boxes onto the cart with an automated system.</p>
+          <p>Accurately simulate transient species concentration across coupled multiphysics media while overcoming solver convergence bottlenecks and high computational costs.</p>
         </div>
 
         <div class="case-block">
-          <h2>Role & Responsibilities</h2>
+          <h2>Method</h2>
           <ul>
-            <li>Team Lead</li>
-            <li>CAD designer — full 3D modeling and mechanical planning</li>
-            <li>BOM and Cut list</li>
-            <li>Assembly ordering</li>
+            <li>Developed a hybrid FEM/FVM framework for species transport and continuity across heterogeneous media interfaces.</li><li>Accelerated simulations with high-order integration, localized mesh refinement, adaptive time-stepping, stabilization, and preconditioning.</li><li>Benchmarked outputs against experimental datasets for physical fidelity, mass conservation, and predictive accuracy.</li>
           </ul>
         </div>
 
         <div class="case-block">
-          <h2>Engineering Features</h2>
+          <h2>Tools &amp; Software</h2>
+          <p>Python, Finite Element Method (FEM), Finite Volume Method (FVM), ParaView, Salomé</p>
+        </div>
+
+        <div class="case-block">
+          <h2>Results</h2>
           <ul>
-            <li>Adjustable Tilt Mechanism</li>
-            <li>Locking/Braking System</li>
-            <li>Control Interface</li>
-            <li>Pneumatic Actuation System</li>
+            <li>Reduced wall-clock execution time while preserving spatial and temporal accuracy in complex coupled geometries.</li><li>Eliminated solver divergence on stiff coupled test cases.</li><li>Reached close agreement with experimental measurements.</li>
           </ul>
         </div>
 
-        <div class="case-block">
-          <h2>Tools & Software</h2>
-          <p>SolidWorks (CAD Modeling), Simulation & Analysis, lathe/Milling, CNC Plamsa, Controls & Automation, and Testing & Mesurements</p>
+      </div>
+    </section>
+
+    <!-- Illustrations -->
+    <section id="illustrations" class="section" aria-labelledby="illustrations-heading">
+      <h1 id="illustrations-heading">Illustrations</h1>
+      <div class="masonry" id="illustrationsMasonry">
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_0/Pictures/fig_1_ai_generated_solid_solid_radionuclide_diffusion_simulation.jpg" alt="AI-generated radionuclide diffusion simulation">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">Radionuclide Diffusion Simulation</div>
         </div>
-
-        <div class="case-block">
-          <h2>Outcome</h2>
-          <p>Successfully operated through muiltple tests while <strong>maintaining ±1° angular accuracy</strong> and <strong>reduced manual effort for single-user operation.</strong></p>
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_0/Pictures/fig_2_ai_generated_adaptative_mesh_visualisation.jpg" alt="AI-generated adaptive mesh visualization">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">Adaptive Mesh Visualization</div>
         </div>
       </div>
     </section>
 
-<!-- Presentation (vertical PDF) -->
-<section id="presentation" class="section" aria-labelledby="presentation-heading">
-  <h1 id="presentation-heading">Project Presentation</h1>
-
-  <div class="pdf-wrapper" tabindex="0" role="button" aria-pressed="false" aria-label="Open presentation fullscreen">
-    <div class="pdf-container" id="pdfContainer">
-      <!-- Embedded PDF. Use fragment to fit width and allow native scroll. -->
-      <iframe
-        id="pdfFrameInline"
-        src="Project_0/Presentation/Tilt_Table_Presentation.pdf#view=FitW"
-        title="Tilt Table Presentation"
-        class="pdf-frame"
-        loading="lazy"
-        aria-label="Presentation PDF"
-      ></iframe>
-    </div>
-
-    <div class="pdf-hint" aria-hidden="true">Click Here to open fullscreen • Scroll to browse</div>
-  </div>
-</section>
-
-    <!-- Drawings -->
-    <section id="drawings" class="section" aria-labelledby="drawings-heading">
-      <h1 id="drawings-heading">Drawings</h1>
-      <div class="masonry" id="drawingsMasonry">
-        <div class="img-wrapper"><img loading="lazy" src="Project_0/Drawings/2_Table_Top_Full_Assembly.jpg" alt="Roller Assembly"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_0/Drawings/3_Box_Shelf_Full_Assembly.jpg" alt="Core Assembly"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_0/Drawings/4_1_Push_Pistion_Full_Assembly.jpg" alt="Long Jacket Assembly"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_0/Drawings/4_2_Push_Pistion_Full_Assembly.jpg" alt="Short Jacket Assembly"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_0/Drawings/4_3_Push_Pistion_Full_Assembly.jpg" alt="Core Base Assembly"><span class="overlay">Click to expand</span></div>
-		<div class="img-wrapper"><img loading="lazy" src="Project_0/Drawings/4_4_Push_Pistion_Full_Assembly.jpg" alt="Core Base Assembly"><span class="overlay">Click to expand</span></div>
-		<div class="img-wrapper"><img loading="lazy" src="Project_0/Drawings/4_5_Push_Pistion_Full_Assembly.jpg" alt="Core Base Assembly"><span class="overlay">Click to expand</span></div>
-		<div class="img-wrapper"><img loading="lazy" src="Project_0/Drawings/4_Push_Pistion_Full_Assembly.jpg" alt="Core Base Assembly"><span class="overlay">Click to expand</span></div>
-		<div class="img-wrapper"><img loading="lazy" src="Project_0/Drawings/5_Bottom_Frame_Full_Assembly.jpg" alt="Core Base Assembly"><span class="overlay">Click to expand</span></div>
-		<div class="img-wrapper"><img loading="lazy" src="Project_0/Drawings/6_A_Frame_Cart_Full_Assembly.jpg" alt="Core Base Assembly"><span class="overlay">Click to expand</span></div>  
-        <div class="img-wrapper"><img loading="lazy" src="Project_0/Drawings/1_Tilt_Table_Full_Assembly.jpg" alt="Form Assembly"><span class="overlay">Click to expand</span></div>
-      </div>
-    </section>
-
-    <!-- Photos -->
-    <section id="photos" class="section" aria-labelledby="photos-heading">
-      <h1 id="photos-heading">Photos</h1>
-      <div class="masonry" id="photosMasonry">
-        <div class="img-wrapper"><img loading="lazy" src="Project_0/Pictures/Front_Cart_Control.jpeg" alt="Jacket"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_0/Pictures/Electrical_Wires.jpeg" alt="Form"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_0/Pictures/HDMI_Output.jpeg" alt="Form 1"><span class="overlay">Click to expand</span></div>
-        <div class="img-wrapper"><img loading="lazy" src="Project_0/Pictures/Cover_Picture_Tilt_Table.png" alt="Core"><span class="overlay">Click to expand</span></div>
-      </div>
-    </section>
-
-
-<!-- Video Section -->
-<section id="video" class="section" aria-labelledby="video-heading">
-  <h1 id="video-heading">Video</h1>
-
-  <div class="pdf-container">
-    <iframe
-      src="https://www.youtube.com/embed/Y_yHQ1yjqLk?rel=0&modestbranding=1"
-      class="pdf-frame"
-      title="Tilt Table Prototype Demo Video"
-      loading="lazy"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-  </div>
-
-  <div class="pdf-hint" aria-hidden="true">Tap to watch • Rotate phone for full view</div>
-</section>
-
-
-<!-- Lightbox (Unified for Images + PDFs) -->
-<!-- 🔹 Single Lightbox (for Images + PDFs) -->
-<div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Expanded view">
-  <span id="lbCloseBtn" aria-label="Close lightbox">&times;</span>
-  <button id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
-  <button id="lbNextBtn" aria-label="Next image">&#10095;</button>
-  
-  <div class="lightbox-content">
-    <img id="lightboxImg" alt="" />
-    <iframe id="lightboxIframe" src="" frameborder="0"></iframe>
-  </div>
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Expanded view">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
 </div>
-  
 
     <!-- Footer -->
     <footer>
-      <p>© 2025 Nathaniel Karau — Engineering Portfolio v1.0</p>
+      <p>© 2026 Antoine Levrat — Engineering Portfolio</p>
     </footer>
   </main>
 
- <!-- Scripts -->
+  <!-- Scripts -->
   <script>
- const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  const lightboxIframe = document.getElementById("lightboxIframe");
-  const closeBtn = document.getElementById("lbCloseBtn");
-  const prevBtn = document.getElementById("lbPrevBtn");
-  const nextBtn = document.getElementById("lbNextBtn");
+    // Elements
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const content = document.querySelector('.content');
+    const sections = document.querySelectorAll('.section');
 
-  let currentIndex = -1;
-  const galleryImages = Array.from(document.querySelectorAll(".img-wrapper img"));
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lbCloseBtn = document.getElementById('lbCloseBtn');
 
-galleryImages.forEach((img, index) => {
-  img.parentElement.addEventListener("click", () => {
-    openLightbox(img.src, img.alt, { index });
+    // ---------- Sidebar toggle (mobile) ----------
+    function openSidebar() {
+      sidebar.classList.add('active');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      mobileOverlay.classList.add('active');
+      // NOTE: overlay is visual-only (pointer-events: none). We keep page scrollable behind.
+      // Focus the first link for accessibility
+      const firstLink = sidebar.querySelector('a');
+      if (firstLink) firstLink.focus();
+    }
+    function closeSidebar() {
+      sidebar.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mobileOverlay.classList.remove('active');
+      menuToggle.focus();
+    }
+
+    menuToggle.addEventListener('click', () => {
+      if (sidebar.classList.contains('active')) closeSidebar();
+      else openSidebar();
+    });
+
+    // Close sidebar if a nav link is clicked (mobile)
+    sidebar.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (window.innerWidth <= 767) closeSidebar();
+      });
+    });
+
+    // If user taps outside when sidebar is active, we DO NOT auto-close (to honor "allow scroll").
+    // You can close with the hamburger again.
+
+    // ---------- Section fade-in (IntersectionObserver) ----------
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    sections.forEach(s => observer.observe(s));
+
+    // ---------- Lightbox behavior ----------
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || 'Expanded image';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden','false');
+      lbCloseBtn.focus();
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
+      lightboxImg.src = '';
+    }
+
+    // Click images to open
+    document.querySelectorAll('.img-wrapper').forEach(wrapper => {
+      wrapper.addEventListener('click', () => {
+        const img = wrapper.querySelector('img');
+        openLightbox(img.src, img.alt);
+      });
+      // keyboard access
+      wrapper.setAttribute('tabindex','0');
+      wrapper.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const img = wrapper.querySelector('img');
+          openLightbox(img.src, img.alt);
+        }
+      });
+    });
+
+// Collect all lightbox images (drawings + photos)
+const imgWrappers = document.querySelectorAll('.img-wrapper');
+let currentIndex = -1; // track which image is open
+
+function openLightbox(src, alt, index) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || 'Expanded image';
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden','false');
+  currentIndex = index;
+  lbCloseBtn.focus();
+}
+
+function showImage(index) {
+  if (index < 0) index = imgWrappers.length - 1;
+  if (index >= imgWrappers.length) index = 0;
+  const img = imgWrappers[index].querySelector('img');
+  openLightbox(img.src, img.alt, index);
+}
+
+// Click to open
+imgWrappers.forEach((wrapper, i) => {
+  wrapper.addEventListener('click', () => {
+    const img = wrapper.querySelector('img');
+    openLightbox(img.src, img.alt, i);
+  });
+  wrapper.setAttribute('tabindex','0');
+  wrapper.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const img = wrapper.querySelector('img');
+      openLightbox(img.src, img.alt, i);
+    }
   });
 });
 
-  // 🔹 Open Lightbox (Image or PDF)
-  function openLightbox(src, alt = "", options = {}) {
-    lightbox.classList.add("open");
-    lightbox.setAttribute("aria-hidden", "false");
+// Nav buttons
+document.getElementById('lbPrevBtn').addEventListener('click', () => showImage(currentIndex - 1));
+document.getElementById('lbNextBtn').addEventListener('click', () => showImage(currentIndex + 1));
 
-    if (options.isPDF) {
-      lightboxIframe.src = src;
-      lightboxIframe.style.display = "block";
-      lightboxImg.style.display = "none";
-      prevBtn.style.display = "none";
-      nextBtn.style.display = "none";
-      currentIndex = -1;
-    } else {
-      lightboxImg.src = src;
-      lightboxImg.alt = alt || "Expanded image";
-      lightboxImg.style.display = "block";
-      lightboxIframe.style.display = "none";
-      prevBtn.style.display = "block";
-      nextBtn.style.display = "block";
-      currentIndex = options.index ?? -1;
-    }
-    closeBtn.focus();
-  }
-
-  // 🔹 Close Lightbox
-  function closeLightbox() {
-    lightbox.classList.remove("open");
-    lightbox.setAttribute("aria-hidden", "true");
-    lightboxImg.src = "";
-    lightboxIframe.src = "";
-  }
-
-  // 🔹 Slideshow Navigation
-  function changeSlide(step) {
-    if (currentIndex >= 0) {
-      currentIndex = (currentIndex + step + galleryImages.length) % galleryImages.length;
-      const img = galleryImages[currentIndex];
-      openLightbox(img.src, img.alt, { index: currentIndex });
-    }
-  }
-
-  // Events
-  closeBtn.addEventListener("click", closeLightbox);
-  prevBtn.addEventListener("click", () => changeSlide(-1));
-  nextBtn.addEventListener("click", () => changeSlide(1));
-
-  galleryImages.forEach((img, index) => {
-    img.addEventListener("click", () => {
-      openLightbox(img.src, img.alt, { index });
-    });
-  });
-
-  // PDF opener (example: your presentation)
-  document.querySelector(".pdf-wrapper").addEventListener("click", () => {
-    openLightbox("Project_0/Presentation/Tilt_Table_Presentation.pdf#view=FitW", "", { isPDF: true });
-  });
-
-  // Keyboard support
-  document.addEventListener("keydown", (e) => {
-    if (!lightbox.classList.contains("open")) return;
-    if (e.key === "Escape") closeLightbox();
-    if (e.key === "ArrowLeft") changeSlide(-1);
-    if (e.key === "ArrowRight") changeSlide(1);
-  });
-
-const sections = document.querySelectorAll('.section');
-function revealSections() {
-  const triggerBottom = window.innerHeight * 0.85;
-  sections.forEach(sec => {
-    const secTop = sec.getBoundingClientRect().top;
-    if (secTop < triggerBottom) sec.classList.add('visible');
-  });
-}
-window.addEventListener('scroll', revealSections);
-revealSections(); // run on load
+// Keyboard support
+window.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+  if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+});
 	  
+    // Close controls
+    lbCloseBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      // If user clicked the backdrop (not the img or close button), close
+      if (e.target === lightbox) closeLightbox();
+    });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (lightbox.classList.contains('open')) closeLightbox();
+        if (sidebar.classList.contains('active') && window.innerWidth <= 767) closeSidebar();
+      }
+    });
+
+    // Lightbox swipe-to-close (vertical swipe)
+    (function addSwipeClose(el) {
+      let startY = null;
+      let moved = false;
+      el.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length === 1) {
+          startY = e.touches[0].clientY;
+          moved = false;
+        }
+      }, {passive:true});
+      el.addEventListener('touchmove', (e) => {
+        if (!startY) return;
+        const currentY = e.touches[0].clientY;
+        const diff = currentY - startY;
+        if (Math.abs(diff) > 20) moved = true;
+      }, {passive:true});
+      el.addEventListener('touchend', (e) => {
+        if (!moved) { startY = null; return; }
+        const endY = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientY : null;
+        if (startY && endY) {
+          const delta = endY - startY;
+          // swipe up or down to close
+          if (Math.abs(delta) > 80) closeLightbox();
+        }
+        startY = null; moved = false;
+      });
+    })(lightbox);
+
+    // ---------- Ensure model-viewer scales nicely on resize ----------
+    function adjustModelViewerHeight() {
+      const mv = document.querySelector('model-viewer');
+      if (!mv) return;
+      if (window.innerWidth < 480) mv.style.height = '40vh';
+      else if (window.innerWidth < 768) mv.style.height = '45vh';
+      else if (window.innerWidth < 1024) mv.style.height = '55vh';
+      else mv.style.height = '60vh';
+    }
+    window.addEventListener('resize', adjustModelViewerHeight);
+    adjustModelViewerHeight();
+
+    // ---------- Small UX improvements ----------
+    // Trap focus inside sidebar when it's open on mobile? We keep allow-scroll so focus-trap is not necessary.
+    // But we ensure keyboard users can toggle menu with Escape (handled above) and the toggle button is labeled.
+
+    // If user reloads while sidebar active on small screens, ensure state is consistent
+    window.addEventListener('load', () => {
+      if (window.innerWidth <= 767) {
+        sidebar.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded','false');
+      }
+    });
   </script>
 </body>
 </html>

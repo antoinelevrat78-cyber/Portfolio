@@ -1,37 +1,32 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Other Projects</title>
+  <title>Applied Mathematics: Eight-Project Collection | Antoine Levrat</title>
 
- <!-- ✅ Preload model-viewer -->
-  <link rel="preload" href="Project_6/Project_1/Project 1 - (Box Form 54x42x47).glb" as="fetch" crossorigin>
-	
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+	 <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 
   <!-- model-viewer -->
   <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer/dist/model-viewer.min.js"></script>
 
   <style>
+    /* ---------- Vars & Reset ---------- */
     :root{
       --accent:#00aaff;
       --bg:#1a1a1a;
       --panel:#111;
       --muted:#aaa;
       --text:#e0e0e0;
+      --max-width:1200px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+    html,body{height:100%;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;scroll-behavior:smooth; -webkit-font-smoothing:antialiased;}
+    a{color:inherit}
 
-	  /* Arrow navigation under model-viewer */
-	.model-nav { display: flex; justify-content: center; align-items: center; margin-top: 1rem; gap: 1.5rem;}
-	.model-nav button { background: var(--panel); color: var(--accent); border: none; padding: 0.75rem 1rem; border-radius: 50%; font-size: 1.2rem; cursor: pointer; transition: background 0.3s, transform 0.2s;}
-	.model-nav button:hover { background: #222; transform: scale(1.1);}
-
-    /* Sidebar */
+    /* ---------- Layout ---------- */
     .sidebar { position: fixed;  top: 0; left: 0; width: 220px; height: 100%; background: #111; padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center;
       transition: transform 0.3s ease; z-index: 100;}
     .sidebar h2 {   color: var(--accent); margin-bottom: 1.5rem;padding-bottom: 0.8rem; border-bottom: 1px solid #333; /* Adjust color if needed */ width: 100%; text-align: center;}
@@ -43,32 +38,50 @@
       border-radius: 8px;  display: flex;  align-items: center;  gap: 8px;  transition: background 0.3s, transform 0.2s;}
     .back-button:hover { background: #ff4d5a;  transform: translateX(-3px);}
 
-    /* Main */
-    .content{margin-left:220px;padding:2rem;text-align:center;}
-    .project-title{font-size:2.2rem;color:var(--accent);margin-bottom:2rem;}
+    /* ---------- Mobile Toggle & Overlay ---------- */
+    .menu-toggle{
+      position:fixed;top:12px;left:12px;z-index:1600;
+      display:none;background:var(--panel);color:var(--text);border-radius:8px;padding:.45rem .6rem;font-size:1.1rem;cursor:pointer;
+      align-items:center;gap:.5rem;  outline: 2px solid var(--accent); outline-offset: 2px;}
+    .menu-toggle:focus{outline:2px solid var(--accent)}
+    /* Visual overlay on mobile only. IMPORTANT: pointer-events:none so page remains scrollable behind the menu (per your 'allow scroll' decision). */
+	.mobile-overlay { position: fixed; top: 0; right: 0; width: calc(100% - 220px); height: 100%; background: rgba(0,0,0,.45); z-index: 1500; opacity: 0; pointer-events: none; transition: opacity .25s ease;}
+	.sidebar.active + .mobile-overlay.active { pointer-events: auto;}
+
+    /* ---------- Main content ---------- */
+    .content {  margin-left: 220px;  padding: 2rem;  text-align: center; transition: margin-left 0.3s ease, transform 0.3s ease;}
+    .project-title { font-size: 2.2rem; color: var(--accent); margin-bottom: 2rem;}
+
+    /* ---------- Sections ---------- */
+    .section { padding: 2rem 1.5rem; margin-bottom: 3rem; border-bottom: 1px solid #333; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease;}
+    .section.visible { opacity: 1; transform: translateY(0); }
+    .section h1 { margin-bottom: 1.5rem; color: #fff; }
+
+    /* ---------- Masonry/Images ---------- */
+    .masonry{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.8rem;max-width:1100px;margin:0 auto}
+    .img-wrapper{position:relative;cursor:pointer;overflow:hidden;border-radius:8px;background:#111}
+    .img-wrapper img{width:100%;height:auto;display:block;object-fit:cover;border-radius:8px 8px 0 0;transition:transform .28s ease,box-shadow .28s ease}
+    .img-wrapper img:hover{transform:scale(1.03)}
+    .img-wrapper span.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:700;background:rgba(0,0,0,.45);color:#fff;border-radius:8px;opacity:0;transition:opacity .2s}
+    .img-wrapper:hover span.overlay{opacity:1}
+    .img-wrapper .image-title{padding:.75rem .5rem;color:#fff;font-size:.95rem;font-weight:700;line-height:1.35;text-align:center}
 
 
-	/* Smooth fade animation for model changes */
-	#modelViewer.fade {  animation: fadeIn 0.6s ease;}
-	@keyframes fadeIn {
- 	 from {opacity: 0; transform: scale(0.98);}
-  	to {opacity: 1;transform: scale(1);}}  
+    /* ---------- Case Study ---------- */
+    .case-study{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:2rem;text-align:left}
+    .case-block h2{color:#8ab4f8;font-size:1.2rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:.45rem}
+    .case-block p,.case-block ul{font-size:1.05rem;line-height:1.6;padding-left: 1.2rem;}
 
-    /* Sections */
-    .section{padding:2rem 1.5rem;margin-bottom:3rem;border-bottom:1px solid #333;opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
-    .section.visible{opacity:1;transform:translateY(0);}
-    .section h1{margin-bottom:1.5rem;color:#fff;}
-
-	/* Masonry grid */
-	.masonry {  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1600px; margin: 0 auto;}
-	.img-wrapper { position: relative; cursor: pointer; overflow: hidden; border-radius: 12px; background: #222; padding: 0.75rem; display: flex; flex-direction: column; align-items: center; justify-content: flex-start;}
-	.img-wrapper img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; transition: transform .28s ease;}
-	.img-wrapper:hover img { transform: scale(1.03);}
-	.img-wrapper:hover {  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); transform: translateY(-4px);  transition: box-shadow 0.3s ease, transform 0.3s ease;}
-	.img-wrapper span.overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 700;  background: rgba(0, 0, 0, .45); color: #fff; border-radius: 8px; opacity: 0; transition: opacity .2s;}
-	.img-wrapper:hover span.overlay {  opacity: 1;}
-	.caption { margin-top: 0.6rem; color: var(--muted); font-size: 0.95rem; font-weight: 600; text-align: center; width: 100%;}
-
+    /* ---------- Lightbox ---------- */
+    #lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:2000;justify-content:center;align-items:center;padding:1rem}
+    #lightbox.open{display:flex}
+    #lightbox img{max-width:95%;max-height:85%;object-fit:contain;border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.8)}
+    #lightbox .close-btn{position:absolute;top:18px;right:28px;font-size:2rem;color:#fff;cursor:pointer}
+    #lightbox .close-btn:focus{outline:2px solid var(--accent)}
+	#lightbox .nav-btn {  position: absolute;  top: 50%;  transform: translateY(-50%);  font-size: 2.5rem;  color: white; background: rgba(0,0,0,0.5);  border: none;  cursor: pointer;  padding: 0.6rem 1rem;  border-radius: 6px; user-select: none;  transition: background 0.3s;}
+	#lightbox .nav-btn:hover {  background: rgba(0,0,0,0.75);}
+	#lbPrevBtn { left: 20px; }
+	#lbNextBtn { right: 20px; }
 
 	/* ----- Footer styling ----- */
 	footer { background: var(--panel); color: var(--muted); text-align: center; padding: 1.5rem 1rem; font-size: 0.9rem; border-top: 1px solid #333; margin-top: 3rem;}
@@ -79,41 +92,7 @@
 	html, body { height: 100%; display: flex; flex-direction: column;}
 	main.content { flex: 1;}
 
-/* Mobile overlay for sidebar background */
-.mobile-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.6);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 50;
-}
-
-.mobile-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Sidebar slide animation */
-.sidebar {
-  transition: transform 0.3s ease;
-  z-index: 100;
-}
-
-    .menu-toggle{
-      position:fixed;top:12px;left:12px;z-index:1600;
-      display:none;background:var(--panel);color:var(--text);border-radius:8px;padding:.45rem .6rem;font-size:1.1rem;cursor:pointer;
-      align-items:center;gap:.5rem;  outline: 2px solid var(--accent); outline-offset: 2px;}
-    .menu-toggle:focus{outline:2px solid var(--accent)}
-    /* Visual overlay on mobile only. IMPORTANT: pointer-events:none so page remains scrollable behind the menu (per your 'allow scroll' decision). */
-	.mobile-overlay { position: fixed; top: 0; right: 0; width: calc(100% - 220px); height: 100%; background: rgba(0,0,0,.45); z-index: 1500; opacity: 0; pointer-events: none; transition: opacity .25s ease;}
-	.sidebar.active + .mobile-overlay.active { pointer-events: auto;}	  
-	  
-  /* ---------- Responsive rules ---------- */
+    /* ---------- Responsive rules ---------- */
     /* Mobile first adjustments */
     @media (max-width:767px){
       .sidebar{transform:translateX(-105%);width:85vw;max-width:320px;padding:3rem;align-items:center}
@@ -161,209 +140,328 @@
   <!-- Visual overlay (mobile only visual) -->
   <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
 
-
   <!-- Sidebar -->
-  <nav id="sidebar" class="sidebar">
+  <nav id="sidebar" class="sidebar" aria-label="Main navigation">
     <h2>Portfolio</h2>
     <ul>
-      <li><a href="#3d_model">3D Model</a></li>
-      <li><a href="#photos">Photos</a></li>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#illustrations">Illustrations</a></li>
     </ul>
-    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Back</a>
+    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back</a>
   </nav>
 
   <!-- Main Content -->
-  <main class="content">
-    <h1 class="project-title">Other Projects</h1>
+  <main class="content" id="mainContent" tabindex="-1">
+    <h1 class="project-title">Applied Mathematics: Eight-Project Collection</h1>
 
+    <!-- Overview -->
+    <section id="overview" class="section" aria-labelledby="overview-heading">
+      <h1 id="overview-heading">Project Overview</h1>
 
+      <div class="case-study">
+        <div class="case-block"><h2>Project</h2><p><strong>Eight academic and personal applied-mathematics projects</strong><br>2025–2026</p></div>
+        <div class="case-block">
+          <h2>Adaptive 2D Delaunay Meshing & Image Compression</h2>
+          <p><strong>March–April 2026</strong> — Built quasi-linear mesh connectivity, a Bowyer-Watson Delaunay kernel, and PSNR-guided adaptive image compression. Achieved about 28 dB PSNR with 1,000 points.</p>
+          <p><strong>Tools:</strong> C, VIZIR4, Computational Geometry, Hash Tables, Delaunay Triangulation</p>
+        </div>
+        <div class="case-block">
+          <h2>PDE-Constrained Optimization — Lecture Notes</h2>
+          <p><strong>August 2026</strong> — Typeset 77 pages of PDE-constrained optimization lectures with Prof. Grégoire Allaire and published the open-access manuscript on HAL.</p>
+          <p><strong>Tools:</strong> LaTeX, BibTeX, HAL Open Science</p>
+        </div>
+        <div class="case-block">
+          <h2>2D Helmholtz Boundary Element Method</h2>
+          <p><strong>Fall 2025</strong> — Built an H-matrix/ACA accelerated 2D BEM solver; reached 12.43% memory usage and over 10× faster assembly than a dense solver.</p>
+          <p><strong>Tools:</strong> Python, NumPy, SciPy, Matplotlib, VIZIR4</p>
+        </div>
+        <div class="case-block">
+          <h2>Periodic Homogenization via FEM</h2>
+          <p><strong>2025</strong> — Implemented P1 FEM and periodic correctors, validating effective diffusion and asymptotic homogenization convergence.</p>
+          <p><strong>Tools:</strong> Python, NumPy, SciPy, Matplotlib, FEM</p>
+        </div>
+        <div class="case-block">
+          <h2>Demagnetizing Energy & iLLG Simulation</h2>
+          <p><strong>Summer 2025</strong> — Validated spherical-harmonic demagnetizing energy to six decimal places and developed a finite-difference iLLG prototype.</p>
+          <p><strong>Tools:</strong> Python, NumPy, SciPy, Matplotlib</p>
+        </div>
+        <div class="case-block">
+          <h2>Wave Diffraction via Geometrical Optics</h2>
+          <p><strong>2026</strong> — Combined ray tracing with P4 FEM validation, achieving 3.98% relative L² error at k=20 in the illuminated zone.</p>
+          <p><strong>Tools:</strong> Python, FreeFem++, ParaView</p>
+        </div>
+        <div class="case-block">
+          <h2>Sard's Theorem Proof & Visualization</h2>
+          <p><strong>Spring 2025</strong> — Proved Sard’s Theorem and illustrated critical-value sets of measure zero with 2D and 3D examples.</p>
+          <p><strong>Tools:</strong> LaTeX, GeoGebra, Measure Theory</p>
+        </div>
+        <div class="case-block">
+          <h2>Hyperbolic Quadrature Method of Moments</h2>
+          <p><strong>January 2026</strong> — Synthesized arbitrary-order HyQMOM closures and the direct raw-moment algorithm for 1-D kinetic equations.</p>
+          <p><strong>Tools:</strong> LaTeX, Mathematical Analysis, Orthogonal Polynomials</p>
+        </div>
 
-    <!-- 3D Model -->
-    <section id="3d_model" class="section">
-      <h1>3D Model</h1>
-<model-viewer 
-	id="modelViewer"
-	src="Project_6/Project_1/Project 1 - Grade Ring Form (Diameter 36).glb"
-	ar ar-modes="webxr scene-viewer quick-look" 
-	camera-controls tone-mapping="Neutral" 
-	poster="poster.webp" 
-	shadow-intensity="1.77" 
-	alt="3D Model" 
-	loading="eager" 
-	style="width: 100%; margin: 0 auto; max-width: 800px; height: 60vh; border-radius: 12px; background-color:#222;" auto-rotate exposure="0.59" shadow-softness="0.53" environment-image="legacy"> 
-</model-viewer>
-
-
-  <!-- 👇 Add this new title -->
-  <h2 id="modelTitle" style="margin-top: 1rem; color: var(--accent); font-size: 1.3rem;">
-    Grade Ring Form (Diameter 36)
-  </h2>
-		
-		<!-- Model navigation arrows -->
-<div class="model-nav">
-	<button id="prevModel" aria-label="Previous model"><i class="fas fa-chevron-left"></i></button>
-	<button id="nextModel" aria-label="Next model"><i class="fas fa-chevron-right"></i></button>
-</div>
-    </section>
-
-    <!-- Photos -->
-    <section id="photos" class="section">
-      <h1>Photos</h1>
-		<h3>(Click to Load 3D Model)</h3>
-      <div class="masonry">
-        <div class="img-wrapper" data-model="Project_6/Project_1/Project 1 - Grade Ring Form (Diameter 36).glb">
-          <img loading="lazy" src="Project_6/Project_1/Project 1 - Grade Ring Form (Diameter 36).jpg" alt="Project 1">
-          <span class="overlay">Load Model 1</span>
-		  <p class="caption">Grade Ring Form (Diameter 36)</p>
-        </div>
-        <div class="img-wrapper" data-model="Project_6/Project_2/Project 2 - Blast Module Form (17' x 11' x 9'-6).glb">
-          <img loading="lazy" src="Project_6/Project_2/Project 2 - Blast Module Form (17' x 11' x 9'-6).jpg" alt="Project 2">
-          <span class="overlay">Load Model 2</span>
-		  <p class="caption">Blast Module Form (17' x 11' x 9'-6)</p>
-        </div>
-        <div class="img-wrapper" data-model="Project_6/Project_3/Project 3 - Box Form (10' x 10' x 5').glb">
-          <img loading="lazy" src="Project_6/Project_3/Project 3 - Box Form (10' x 10' x 5').jpg" alt="Project 3">
-          <span class="overlay">Load Model 3</span>
-		  <p class="caption">Box Form (10' x 10' x 5')</p>
-        </div>
-        <div class="img-wrapper" data-model="Project_6/Project_4/Project 4 - Barrier Form (25 x 43 x 20').glb">
-          <img loading="lazy" src="Project_6/Project_4/Project 4 - Barrier Form (25 x 43 x 20').jpg" alt="Project 4">
-          <span class="overlay">Load Model 4</span>
-	      <p class="caption">Barrier Form (25 x 43 x 20')</p>
-        </div>
-        <div class="img-wrapper" data-model="Project_6/Project_5/Project 5 - EV Form (65 x 68 x 18).glb">
-          <img loading="lazy" src="Project_6/Project_5/Project 5 - EV Form (65 x 68 x 18).jpg" alt="Project 5">
-          <span class="overlay">Load Model 5</span>
-	      <p class="caption">EV Form (65 x 68 x 18)</p>			
-        </div>
-        <div class="img-wrapper" data-model="Project_6/Project_6/Project 6 - Box Form (6' x 12' x 7').glb">
-          <img loading="lazy" src="Project_6/Project_6/Project 6 - Box Form (6' x 12' x 7').jpg" alt="Project 6">
-          <span class="overlay">Load Model 6</span>
-	      <p class="caption">Box Form (6' x 12' x 7')</p>			
-        </div>
-        <div class="img-wrapper" data-model="Project_6/Project_7/Project 7 - Box Form (4' x 4' x 2').glb">
-          <img loading="lazy" src="Project_6/Project_7/Project 7 - Box Form (4' x 4' x 2').jpg" alt="Project 7">
-          <span class="overlay">Load Model 7</span>
-	      <p class="caption">Box Form (4' x 4' x 2')</p>			
-        </div>
-        <div class="img-wrapper" data-model="Project_6/Project_8/Project 8 - Box Form (3' x 5' x 6').glb">
-          <img loading="lazy" src="Project_6/Project_8/Project 8 - Box Form (3' x 5' x 6').jpg" alt="Project 8">
-          <span class="overlay">Load Model 8</span>
-	      <p class="caption">Box Form (3' x 5' x 6')</p>			
-        </div>
-        <div class="img-wrapper" data-model="Project_6/Project_9/Project 9 - Box Form (6' x 12' x 8').glb">
-          <img loading="lazy" src="Project_6/Project_9/Project 9 - Box Form (6' x 12' x 8').jpg" alt="Project 9">
-          <span class="overlay">Load Model 9</span>
-	      <p class="caption">Box Form (6' x 12' x 8')</p>			
-        </div>
-        <div class="img-wrapper" data-model="Project_6/Project_10/Project 10 - Wing Wall Form (4' x 2'-6 x 62).glb">
-          <img loading="lazy" src="Project_6/Project_10/Project 10 - Wing Wall Form (4' x 2'-6 x 62).jpg" alt="Project 10">
-          <span class="overlay">Load Model 10</span>
-	      <p class="caption">Wing Wall Form (4' x 2'-6 x 62)</p>			
-        </div>		  
       </div>
     </section>
 
+    <!-- Illustrations -->
+    <section id="illustrations" class="section" aria-labelledby="illustrations-heading">
+      <h1 id="illustrations-heading">Illustrations</h1>
+      <div class="masonry" id="illustrationsMasonry">
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_5_adaptive_psnr_delaunay_compression_1000_points.jpg" alt="Adaptive Delaunay image compression">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">1 — Adaptive Delaunay Meshing</div>
+        </div>
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_4/Project_2/Pictures/fig_1_hal_publication_title_page.png" alt="HAL publication title page">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">2 — PDE-Constrained Optimization Notes</div>
+        </div>
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_4/Project_3/Pictures/fig_1_2d_wave_diffraction_square_geometry.png" alt="2D Helmholtz diffraction geometry">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">3 — Helmholtz BEM Solver</div>
+        </div>
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_4/Project_4/Pictures/fig_2_cell_corrector_w1_3d.png" alt="Periodic homogenization cell corrector">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">4 — Periodic Homogenization</div>
+        </div>
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_4/Project_5/Pictures/fig_0_title_and_author.png" alt="Demagnetizing energy and iLLG study">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">5 — iLLG and Demagnetizing Energy</div>
+        </div>
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_4/Project_6/Pictures/fig_3_absolute_error_comparison_fem_vs_go.png" alt="FEM vs geometrical optics error">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">6 — Geometrical Optics</div>
+        </div>
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_4/Project_7/Pictures/fig_1_3d_curve_zero_measure_plane.png" alt="Sard theorem geometric visualization">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">7 — Sard’s Theorem</div>
+        </div>
+        <div class="img-wrapper">
+          <img loading="lazy" src="Project_4/Project_8/Pictures/fig_0_title_and_author.png" alt="HyQMOM closure algorithm">
+          <span class="overlay">Click to expand</span>
+          <div class="image-title">8 — HyQMOM Literature Synthesis</div>
+        </div>
+      </div>
+    </section>
+
+<!-- Lightbox -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Expanded view">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+</div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Antoine Levrat — Engineering Portfolio</p>
+    </footer>
   </main>
 
-	   <footer>
-      <p>© 2025 Nathaniel Karau — Engineering Portfolio v1.0</p>
-    </footer>
+  <!-- Scripts -->
+  <script>
+    // Elements
+    const menuToggle = document.getElementById('menuToggle');
+    const sidebar = document.getElementById('sidebar');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const content = document.querySelector('.content');
+    const sections = document.querySelectorAll('.section');
 
-<script>
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lbCloseBtn = document.getElementById('lbCloseBtn');
 
-// --- Mobile sidebar toggle ---
-const menuToggle = document.getElementById('menuToggle');
-const sidebar = document.getElementById('sidebar');
-const overlay = document.getElementById('mobileOverlay');
+    // ---------- Sidebar toggle (mobile) ----------
+    function openSidebar() {
+      sidebar.classList.add('active');
+      menuToggle.setAttribute('aria-expanded', 'true');
+      mobileOverlay.classList.add('active');
+      // NOTE: overlay is visual-only (pointer-events: none). We keep page scrollable behind.
+      // Focus the first link for accessibility
+      const firstLink = sidebar.querySelector('a');
+      if (firstLink) firstLink.focus();
+    }
+    function closeSidebar() {
+      sidebar.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      mobileOverlay.classList.remove('active');
+      menuToggle.focus();
+    }
 
-menuToggle.addEventListener('click', () => {
-  const isActive = sidebar.classList.toggle('active');
-  overlay.classList.toggle('active', isActive);
+    menuToggle.addEventListener('click', () => {
+      if (sidebar.classList.contains('active')) closeSidebar();
+      else openSidebar();
+    });
 
-  // Update ARIA attributes for accessibility
-  menuToggle.setAttribute('aria-expanded', isActive);
-  overlay.setAttribute('aria-hidden', !isActive);
+    // Close sidebar if a nav link is clicked (mobile)
+    sidebar.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (window.innerWidth <= 767) closeSidebar();
+      });
+    });
+
+    // If user taps outside when sidebar is active, we DO NOT auto-close (to honor "allow scroll").
+    // You can close with the hamburger again.
+
+    // ---------- Section fade-in (IntersectionObserver) ----------
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    sections.forEach(s => observer.observe(s));
+
+    // ---------- Lightbox behavior ----------
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || 'Expanded image';
+      lightbox.classList.add('open');
+      lightbox.setAttribute('aria-hidden','false');
+      lbCloseBtn.focus();
+    }
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      lightbox.setAttribute('aria-hidden','true');
+      lightboxImg.src = '';
+    }
+
+    // Click images to open
+    document.querySelectorAll('.img-wrapper').forEach(wrapper => {
+      wrapper.addEventListener('click', () => {
+        const img = wrapper.querySelector('img');
+        openLightbox(img.src, img.alt);
+      });
+      // keyboard access
+      wrapper.setAttribute('tabindex','0');
+      wrapper.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const img = wrapper.querySelector('img');
+          openLightbox(img.src, img.alt);
+        }
+      });
+    });
+
+// Collect all lightbox images (drawings + photos)
+const imgWrappers = document.querySelectorAll('.img-wrapper');
+let currentIndex = -1; // track which image is open
+
+function openLightbox(src, alt, index) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || 'Expanded image';
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden','false');
+  currentIndex = index;
+  lbCloseBtn.focus();
+}
+
+function showImage(index) {
+  if (index < 0) index = imgWrappers.length - 1;
+  if (index >= imgWrappers.length) index = 0;
+  const img = imgWrappers[index].querySelector('img');
+  openLightbox(img.src, img.alt, index);
+}
+
+// Click to open
+imgWrappers.forEach((wrapper, i) => {
+  wrapper.addEventListener('click', () => {
+    const img = wrapper.querySelector('img');
+    openLightbox(img.src, img.alt, i);
+  });
+  wrapper.setAttribute('tabindex','0');
+  wrapper.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const img = wrapper.querySelector('img');
+      openLightbox(img.src, img.alt, i);
+    }
+  });
 });
 
-// Close sidebar when overlay is clicked
-overlay.addEventListener('click', () => {
-  sidebar.classList.remove('active');
-  overlay.classList.remove('active');
-  menuToggle.setAttribute('aria-expanded', false);
-  overlay.setAttribute('aria-hidden', true);
+// Nav buttons
+document.getElementById('lbPrevBtn').addEventListener('click', () => showImage(currentIndex - 1));
+document.getElementById('lbNextBtn').addEventListener('click', () => showImage(currentIndex + 1));
+
+// Keyboard support
+window.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('open')) return;
+  if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+  if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
 });
-
-  // --- Fade-in effect for sections ---
-  const sections = document.querySelectorAll('.section');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => { 
-      if (entry.isIntersecting) entry.target.classList.add('visible'); 
+	  
+    // Close controls
+    lbCloseBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      // If user clicked the backdrop (not the img or close button), close
+      if (e.target === lightbox) closeLightbox();
     });
-  }, { threshold: 0.12 });
-  sections.forEach(s => observer.observe(s));
-
-  // --- Model viewer setup ---
-  const modelViewer = document.getElementById('modelViewer');
-  const wrappers = Array.from(document.querySelectorAll('.img-wrapper'));
-  const nextBtn = document.getElementById('nextModel');
-  const prevBtn = document.getElementById('prevModel');
-
-  // --- Update currentIndex based on modelViewer.src ---
-currentIndex = wrappers.findIndex(w => w.getAttribute('data-model') === modelViewer.src);
-if (currentIndex === -1) currentIndex = 0;
-
-  // Fade in when model finishes loading
-  modelViewer.addEventListener('load', () => {
-    modelViewer.classList.add('fade');
-  });
-
-
-const modelTitle = document.getElementById('modelTitle');
-
-// --- Helper function to load model by index ---
-function loadModel(index) {
-  const selected = wrappers[index];
-  if (!selected) return;
-
-  const newModel = selected.getAttribute('data-model');
-  const caption = selected.querySelector('.caption')?.innerText || "Unnamed Project";
-
-  if (newModel) {
-    // Smooth fade transition
-    modelViewer.classList.remove('fade');
-    void modelViewer.offsetWidth; // restart animation
-    modelViewer.src = newModel;
-
-    // Update title text
-    modelTitle.textContent = caption;
-
-    // Update index
-    currentIndex = wrappers.findIndex(w => w.getAttribute('data-model') === newModel) || 0;
-  }
-}	
-
-  // --- Arrow button navigation ---
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % wrappers.length; // loop forward
-    loadModel(currentIndex);
-  });
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + wrappers.length) % wrappers.length; // loop backward
-    loadModel(currentIndex);
-  });
-
-  // --- Click on photo to load model ---
-  wrappers.forEach((wrapper, idx) => {
-    wrapper.addEventListener('click', () => {
-      currentIndex = idx;
-      loadModel(currentIndex);
-      document.getElementById('3d_model').scrollIntoView({ behavior: 'smooth' });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (lightbox.classList.contains('open')) closeLightbox();
+        if (sidebar.classList.contains('active') && window.innerWidth <= 767) closeSidebar();
+      }
     });
-  });
-</script>
 
+    // Lightbox swipe-to-close (vertical swipe)
+    (function addSwipeClose(el) {
+      let startY = null;
+      let moved = false;
+      el.addEventListener('touchstart', (e) => {
+        if (e.touches && e.touches.length === 1) {
+          startY = e.touches[0].clientY;
+          moved = false;
+        }
+      }, {passive:true});
+      el.addEventListener('touchmove', (e) => {
+        if (!startY) return;
+        const currentY = e.touches[0].clientY;
+        const diff = currentY - startY;
+        if (Math.abs(diff) > 20) moved = true;
+      }, {passive:true});
+      el.addEventListener('touchend', (e) => {
+        if (!moved) { startY = null; return; }
+        const endY = (e.changedTouches && e.changedTouches[0]) ? e.changedTouches[0].clientY : null;
+        if (startY && endY) {
+          const delta = endY - startY;
+          // swipe up or down to close
+          if (Math.abs(delta) > 80) closeLightbox();
+        }
+        startY = null; moved = false;
+      });
+    })(lightbox);
 
+    // ---------- Ensure model-viewer scales nicely on resize ----------
+    function adjustModelViewerHeight() {
+      const mv = document.querySelector('model-viewer');
+      if (!mv) return;
+      if (window.innerWidth < 480) mv.style.height = '40vh';
+      else if (window.innerWidth < 768) mv.style.height = '45vh';
+      else if (window.innerWidth < 1024) mv.style.height = '55vh';
+      else mv.style.height = '60vh';
+    }
+    window.addEventListener('resize', adjustModelViewerHeight);
+    adjustModelViewerHeight();
+
+    // ---------- Small UX improvements ----------
+    // Trap focus inside sidebar when it's open on mobile? We keep allow-scroll so focus-trap is not necessary.
+    // But we ensure keyboard users can toggle menu with Escape (handled above) and the toggle button is labeled.
+
+    // If user reloads while sidebar active on small screens, ensure state is consistent
+    window.addEventListener('load', () => {
+      if (window.innerWidth <= 767) {
+        sidebar.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded','false');
+      }
+    });
+  </script>
 </body>
 </html>
