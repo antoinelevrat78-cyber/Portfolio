@@ -220,6 +220,7 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#work-experience">Work Experience & Awards/Achievements</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#other_projects">Other Projects</a></li>
       <li><a href="#contact">Contact</a></li>
       <li class="resume-link">
         <a href="assets/Antoine_LEVRAT_CV.pdf" download>
@@ -239,6 +240,7 @@
       <img src="assets/Antoine_LEVRAT_Headshot.jpeg" alt="My Photo">
       <div class="button-group">
         <a href="#projects">Projects</a>
+        <a href="#other_projects">Other Projects</a>
         <a href="assets/Antoine_LEVRAT_CV.pdf" download class="resume-btn">
           <i class="fas fa-download"></i> Resume
         </a>
@@ -249,10 +251,9 @@
     <section id="about" class="section about">
       <h1>About Me</h1>
       <div class="about-box">
-        <p>I am a Master 2 student in Applied Mathematics: Analysis, Modeling, and Simulation (AMS) at Université Paris-Saclay / UVSQ (2026).</p>
-        <p>My work focuses on numerical PDEs, finite element and finite volume methods, PDE-constrained optimization, and high-performance scientific computing.</p>
-        <p>I develop simulation tools in Python and C++, combine mathematical modeling with GPU and MPI acceleration, and validate results through mesh refinement and HPC benchmarks.</p>
-        <p>I also work with MATLAB, SolidWorks, and Fusion 360 to connect numerical models with engineering applications.</p>
+        <p>My degree is a Master 2 in Applied Mathematics: Analysis, Modeling, and Simulation (AMS) at Université Paris-Saclay / UVSQ (2026).</p>
+        <p>My work focuses on numerical PDE solving and analysis.</p>
+        <p>I develop simulation tools in Python and C++, combine mathematical modeling with CPU and MPI acceleration, and validate results through mesh refinement and HPC benchmarks.</p>
       </div>
     </section>
 
@@ -270,8 +271,9 @@
       <div class="skills-category">
         <h3>Proficient</h3>
         <div class="skills-grid">
-          <div class="skill">SolidWorks</div><div class="skill">Fusion 360</div><div class="skill">ParaView</div>
+          <div class="skill">ParaView</div><div class="skill">Salomé</div><div class="skill">Gmsh</div>
           <div class="skill">FEniCS</div><div class="skill">PyTorch</div><div class="skill">CUDA</div><div class="skill">LaTeX</div>
+          <div class="skill">SolidWorks</div><div class="skill">Fusion 360</div>
         </div>
       </div>
       <div class="skills-category">
@@ -286,100 +288,18 @@
     <!-- WORK EXPERIENCE SECTION -->
     <section id="work-experience" class="section work-experience">
       <h1>Work Experience</h1>
-      <h3>Awards/Achievements</h3>
       <p>(Click the Card to Expand)</p>
       <div class="work-experience-list">
-        <!-- Wieser Form Fabrication -->
+        <!-- Framatome -->
         <div class="work-experience-item" onclick="toggleDescription(this)" title="Click to open">
-          <h3>2024 - Present</h3>
-          <p><strong>Wieser Form Fabrication | Engineering Project Manager</strong></p>
+          <h3>April 2026 - September 2026</h3>
+          <p><strong>Framatome | Thermomechanical Engineering Intern</strong></p>
           <div class="description">
-            <p> - Improved workflow efficiency by 25% by coordinating the design and implementation of manufacturing tools and supporting on-time project delivery.</p> 
-            <p> - Created and maintained production schedules to balance workload and prioritize orders on a weekly and monthly basis.</p>
-            <p> - Reduced design errors by 25% through the utilization of Autodesk Inventor for 3D modeling and design verification, and ensured compliance with industry standards.</p> 
-            <p> - Reduced production delays by 15% through collaboration with shop floor operators and suppliers to resolve technical issues.</p> 
-            <div class="description">
-            <p><strong>Awards/Achievements</strong></p>
-            <div class="description">
-            <p> - Innovated new CAD models that reduced error and improved workflow and accuracy.</p>
-            <p> - Designed and implemented custom templates and designs that the shop floor has standardized.</p>
+            <p>- Developed a modeling approach to simulate concentration evolutions in coupled media using Finite Element (FEM) and Finite Volume (FVM) methods.</p>
+            <p>- Optimized and accelerated core simulation codes with high-order integration schemes, mesh refinement, and adaptive time-stepping to drastically reduce computation time.</p>
+            <p>- Designed numerical solutions to overcome convergence issues and improve solver stability.</p>
+            <p>- Verified numerical models.</p>
           </div>
-         </div>
-        </div>    
-        </div>
-
-        <!-- Viracon -->
-        <div class="work-experience-item" onclick="toggleDescription(this)" title="Click to open">
-          <h3>2023 - 2024</h3> 
-          <p><strong>Viracon | Senior Engineering Design Experience (Capstone)</strong></p>
-          <div class="description"> 
-            <p> - Led the design, analysis, and development of a scaled Tilt Table prototype to improve ergonomics for employees, optimizing workflow and enhancing productivity.</p> 
-            <p> - Applied SolidWorks for detailed part and assembly modeling, ensuring manufacturable designs for fabrication teams.</p> 
-            <p> - Conducted tolerance analysis and FEA studies to confirm structural integrity and performance compliance.</p>
-            <div class="description">
-          <p><strong>Awards/Achievements</strong></p>
-         <div class="description">
-          <p> - Prototype was accepted for full-scale implementation at Viracon's facility.</p>
-          <p> - Design modifications improved throughout and reduced ergonomic strain from employees.</p>
-        </div>
-        </div>
-          </div>
-        </div>
-
-            <!-- Walmart -->
-              <div class="work-experience-item" onclick="toggleDescription(this)" title="Click to open">
-        <h3>2022 - 2024</h3>
-        <p><strong> Walmart | Stocking Associate</strong></p> 
-        <div class="description"> 
-          <p> - Recognized as a reliable team player who was consistently sought out by coworkers and supervisors for assistance with daily tasks and problem-solving.</p> 
-          <p> - Demonstrated a strong work ethic by completing assignments efficiently, maintaining store standards, and going above expectations to support the team.</p>
-          <p> - Took initiative to help others and ensured shelves were fully stocked and organized, contributing to smooth store operations and customer satisfaction.</p>
-         </div>
-        <div class="description">
-          <p><strong>Awards/Achievements</strong></p>
-         <div class="description">
-          <p> - Frequently selected as shift lead or trusted to handle high-priority stocking tasks.</p>
-          <p> - Suggested layout/organization changes that improved customer experience or reduced restocking time.</p>
-          <p> - Praised by supervisors for dependability, teamwork, and problem-solving.</p>
-        </div>
-        </div>
-           </div> 
-        
-        <!-- Midwest Manufacturing -->
-      <div class="work-experience-item" onclick="toggleDescription(this)" title="Click to open">
-        <h3>2022 - 2022 (Internship)</h3>
-        <p><strong>Midwest Manufacturing | Engineering Manager Intern</strong></p> 
-        <div class="description"> 
-          <p> - Supervised a team of five to improve workplace efficiency, reducing system runtime.</p>
-          <p> - Developed strong communication, critical thinking, and management skills, enhancing team productivity and project outcomes.</p>
-          <p> - Ensured safety compliance by traveling to new plants and implementing safety measures, increasing safety compliance.</p>
-        </div>
-        <div class="description">
-          <p><strong>Awards/Achievements</strong></p>
-         <div class="description">
-          <p> - Implemented safety protocols to reduce safety incidents.</p>
-          <p> - Assisted in implementing safety training modules for new hires.</p>
-        </div>
-        </div>
-          </div>
-       
-
-        <!-- Stout University -->
-        <div class="work-experience-item" onclick="toggleDescription(this)" title="Click to open">
-          <h3>2019 - 2024</h3> 
-          <p><strong>University of Wisconsin - Stout</strong></p>
-          <div class="description">
-           <p>Developed expertise in manufacturing systems, design for manufacturability, lean practices, and engineering leadership through coursework and projects; 
-             collaborated with cross-functional student teams to plan, prototype, and present engineering solutions to real-world manufacturing challenges; gained hands-on experience with SolidWorks, 
-             introductory FEA and PLC programming, and led multiple team-based engineering projects.</p>
-          </div>
-                  <div class="description">
-          <p><strong>Awards/Achievements</strong></p>
-         <div class="description">
-          <p> - Earned Dean’s List honors multiple semesters for maintaining a GPA of 3.5 or higher.</p>
-          <p> - Student-athlete on the UW–Stout Track & Field Team, successfully balancing Division III athletics with full-time academics.</p>
-        </div>
-        </div>
         </div>
       </div>
     </section>
@@ -414,12 +334,60 @@
       <h3>Parallel PDE &amp; FEM Solver <p>(MPI / HPC)</p></h3>
     </div>
 
-    <div class="project-card" onclick="window.location.href='Project_4.html'">
-      <img src="Project_4/Project_1/Pictures/fig_5_adaptive_psnr_delaunay_compression_1000_points.jpg" alt="Adaptive Delaunay meshing">
+  </div>
+  </section>
+
+  <section id="other_projects" class="section other projects">
+    <h1>Other Projects</h1>
+    <p>(Click on Projects to View)</p>
+    <div class="project-list">
+    <div class="project-card" onclick="window.location.href='Project_4_1.html'">
+      <img src="Project_4/Project_1/Pictures/fig_5_adaptive_psnr_delaunay_compression_1000_points.jpg" alt="Adaptive Delaunay meshing and image compression">
       <span class="overlay">Click to View</span>
-      <h3>Applied Mathematics Collection <p>(Eight Projects)</p></h3>
+      <h3>Adaptive Delaunay Meshing <p>(Image Compression)</p></h3>
     </div>
 
+    <div class="project-card" onclick="window.location.href='Project_4_2.html'">
+      <img src="Project_4/Project_2/Pictures/fig_1_hal_publication_title_page.png" alt="PDE-constrained optimization lecture notes">
+      <span class="overlay">Click to View</span>
+      <h3>Co-Published PDE-Constrained Optimization <p>(Lecture Notes)</p></h3>
+    </div>
+
+    <div class="project-card" onclick="window.location.href='Project_4_3.html'">
+      <img src="Project_4/Project_3/Pictures/fig_1_2d_wave_diffraction_square_geometry.png" alt="2D Helmholtz wave diffraction">
+      <span class="overlay">Click to View</span>
+      <h3>2D Helmholtz BEM Solver <p>(Wave Diffraction)</p></h3>
+    </div>
+
+    <div class="project-card" onclick="window.location.href='Project_4_4.html'">
+      <img src="Project_4/Project_4/Pictures/fig_2_cell_corrector_w1_3d.png" alt="Periodic homogenization cell corrector">
+      <span class="overlay">Click to View</span>
+      <h3>Periodic Homogenization <p>(Finite Element Method)</p></h3>
+    </div>
+
+    <div class="project-card" onclick="window.location.href='Project_4_5.html'">
+      <img src="Project_4/Project_5/Pictures/fig_0_title_and_author.png" alt="Demagnetizing energy and iLLG research project">
+      <span class="overlay">Click to View</span>
+      <h3>Demagnetizing Energy <p>(iLLG Simulation)</p></h3>
+    </div>
+
+    <div class="project-card" onclick="window.location.href='Project_4_6.html'">
+      <img src="Project_4/Project_6/Pictures/fig_2_geometrical_optics_wave_solution_k10.png" alt="Geometrical optics and finite element diffraction error">
+      <span class="overlay">Click to View</span>
+      <h3>Wave Diffraction <p>(Geometrical Optics)</p></h3>
+    </div>
+
+    <div class="project-card" onclick="window.location.href='Project_4_7.html'">
+      <img src="Project_4/Project_7/Pictures/fig_1_3d_curve_zero_measure_plane.png" alt="Sard's theorem visualization">
+      <span class="overlay">Click to View</span>
+      <h3>Sard’s Theorem <p>(Proof &amp; Visualization)</p></h3>
+    </div>
+
+    <div class="project-card" onclick="window.location.href='Project_4_8.html'">
+      <img src="Project_4/Project_8/Pictures/fig_0_title_and_author.png" alt="HyQMOM literature synthesis">
+      <span class="overlay">Click to View</span>
+      <h3>HyQMOM <p>(Literature Synthesis)</p></h3>
+    </div>
   </div>
 </section>
 

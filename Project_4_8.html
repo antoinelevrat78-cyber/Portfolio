@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Applied Mathematics: Eight-Project Collection | Antoine Levrat</title>
+  <title>Hyperbolic Quadrature Method of Moments (HyQMOM) — Literature Synthesis | Antoine Levrat</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -152,55 +152,49 @@
 
   <!-- Main Content -->
   <main class="content" id="mainContent" tabindex="-1">
-    <h1 class="project-title">Applied Mathematics: Eight-Project Collection</h1>
+    <h1 class="project-title">Hyperbolic Quadrature Method of Moments (HyQMOM) — Literature Synthesis</h1>
 
     <!-- Overview -->
     <section id="overview" class="section" aria-labelledby="overview-heading">
       <h1 id="overview-heading">Project Overview</h1>
 
       <div class="case-study">
-        <div class="case-block"><h2>Project</h2><p><strong>Eight academic and personal applied-mathematics projects</strong><br>2025–2026</p></div>
         <div class="case-block">
-          <h2>Adaptive 2D Delaunay Meshing & Image Compression</h2>
-          <p><strong>March–April 2026</strong> — Built quasi-linear mesh connectivity, a Bowyer-Watson Delaunay kernel, and PSNR-guided adaptive image compression. Achieved about 28 dB PSNR with 1,000 points.</p>
-          <p><strong>Tools:</strong> C, VIZIR4, Computational Geometry, Hash Tables, Delaunay Triangulation</p>
-        </div>
-        <div class="case-block">
-          <h2>PDE-Constrained Optimization — Lecture Notes</h2>
-          <p><strong>August 2026</strong> — Typeset 77 pages of PDE-constrained optimization lectures with Prof. Grégoire Allaire and published the open-access manuscript on HAL.</p>
-          <p><strong>Tools:</strong> LaTeX, BibTeX, HAL Open Science</p>
-        </div>
-        <div class="case-block">
-          <h2>2D Helmholtz Boundary Element Method</h2>
-          <p><strong>Fall 2025</strong> — Built an H-matrix/ACA accelerated 2D BEM solver; reached 12.43% memory usage and over 10× faster assembly than a dense solver.</p>
-          <p><strong>Tools:</strong> Python, NumPy, SciPy, Matplotlib, VIZIR4</p>
-        </div>
-        <div class="case-block">
-          <h2>Periodic Homogenization via FEM</h2>
-          <p><strong>2025</strong> — Implemented P1 FEM and periodic correctors, validating effective diffusion and asymptotic homogenization convergence.</p>
-          <p><strong>Tools:</strong> Python, NumPy, SciPy, Matplotlib, FEM</p>
-        </div>
-        <div class="case-block">
-          <h2>Demagnetizing Energy & iLLG Simulation</h2>
-          <p><strong>Summer 2025</strong> — Validated spherical-harmonic demagnetizing energy to six decimal places and developed a finite-difference iLLG prototype.</p>
-          <p><strong>Tools:</strong> Python, NumPy, SciPy, Matplotlib</p>
-        </div>
-        <div class="case-block">
-          <h2>Wave Diffraction via Geometrical Optics</h2>
-          <p><strong>2026</strong> — Combined ray tracing with P4 FEM validation, achieving 3.98% relative L² error at k=20 in the illuminated zone.</p>
-          <p><strong>Tools:</strong> Python, FreeFem++, ParaView</p>
-        </div>
-        <div class="case-block">
-          <h2>Sard's Theorem Proof & Visualization</h2>
-          <p><strong>Spring 2025</strong> — Proved Sard’s Theorem and illustrated critical-value sets of measure zero with 2D and 3D examples.</p>
-          <p><strong>Tools:</strong> LaTeX, GeoGebra, Measure Theory</p>
-        </div>
-        <div class="case-block">
-          <h2>Hyperbolic Quadrature Method of Moments</h2>
-          <p><strong>January 2026</strong> — Synthesized arbitrary-order HyQMOM closures and the direct raw-moment algorithm for 1-D kinetic equations.</p>
-          <p><strong>Tools:</strong> LaTeX, Mathematical Analysis, Orthogonal Polynomials</p>
+          <h2>Project</h2>
+          <p><strong>Academic Literature Synthesis | Applied Mathematics</strong><br>January 2026</p>
         </div>
 
+        <div class="case-block">
+          <h2>Objective</h2>
+          <p>Make the 2022 Fox and Laurent research on arbitrary-order (2n+1) moment closures for 1D kinetic equations accessible through a structured mathematical guide.</p>
+        </div>
+
+        <div class="case-block">
+          <h2>Method</h2>
+          <ul>
+            <li>Synthesized the Hyperbolic Quadrature Method of Moments framework and contrasted arbitrary-order closures with earlier fourth-order limitations.</li>
+            <li>Explained change-of-variable proofs using centered and standardized moments to demonstrate translation and scaling invariance.</li>
+            <li>Clarified the characteristic-polynomial factorization P_(2n+1)(X) = Q_n(X)R_(n+1)(X) and summarized the global hyperbolicity proof using orthogonal-polynomial root separation and the Christoffel-Darboux formula.</li>
+            <li>Documented the direct closure algorithm using the Reverse Chebyshev method to compute from raw moments M_(2n) without intermediate standardization.</li>
+          </ul>
+        </div>
+
+        <div class="case-block">
+          <h2>Tools &amp; Software</h2>
+          <p>LaTeX, Mathematical Analysis, Orthogonal Polynomials</p>
+        </div>
+
+        <div class="case-block">
+          <h2>Results</h2>
+          <ul>
+            <li>Produced a structured synthesis of the HyQMOM closure theory and its direct raw-moment algorithm for arbitrary-order moment models.</li>
+          </ul>
+        </div>
+
+        <div class="case-block">
+          <h2>Project Report</h2>
+          <p><a href="Project_4/Project_8/Report_Moment_Method.pdf" target="_blank" rel="noopener">Read the literature synthesis (PDF)</a></p>
+        </div>
       </div>
     </section>
 
@@ -209,44 +203,9 @@
       <h1 id="illustrations-heading">Illustrations</h1>
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_5_adaptive_psnr_delaunay_compression_1000_points.jpg" alt="Adaptive Delaunay image compression">
+          <img loading="lazy" src="Project_4/Project_8/Pictures/fig_1_hyqmom_closure_algorithm.png" alt="Direct raw-moment closure algorithm computing M_(2n+1) from M_(2n) via Reverse Chebyshev without intermediate standardization.">
           <span class="overlay">Click to expand</span>
-          <div class="image-title">1 — Adaptive Delaunay Meshing</div>
-        </div>
-        <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_2/Pictures/fig_1_hal_publication_title_page.png" alt="HAL publication title page">
-          <span class="overlay">Click to expand</span>
-          <div class="image-title">2 — PDE-Constrained Optimization Notes</div>
-        </div>
-        <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_3/Pictures/fig_1_2d_wave_diffraction_square_geometry.png" alt="2D Helmholtz diffraction geometry">
-          <span class="overlay">Click to expand</span>
-          <div class="image-title">3 — Helmholtz BEM Solver</div>
-        </div>
-        <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_4/Pictures/fig_2_cell_corrector_w1_3d.png" alt="Periodic homogenization cell corrector">
-          <span class="overlay">Click to expand</span>
-          <div class="image-title">4 — Periodic Homogenization</div>
-        </div>
-        <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_5/Pictures/fig_0_title_and_author.png" alt="Demagnetizing energy and iLLG study">
-          <span class="overlay">Click to expand</span>
-          <div class="image-title">5 — iLLG and Demagnetizing Energy</div>
-        </div>
-        <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_6/Pictures/fig_3_absolute_error_comparison_fem_vs_go.png" alt="FEM vs geometrical optics error">
-          <span class="overlay">Click to expand</span>
-          <div class="image-title">6 — Geometrical Optics</div>
-        </div>
-        <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_7/Pictures/fig_1_3d_curve_zero_measure_plane.png" alt="Sard theorem geometric visualization">
-          <span class="overlay">Click to expand</span>
-          <div class="image-title">7 — Sard’s Theorem</div>
-        </div>
-        <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_8/Pictures/fig_0_title_and_author.png" alt="HyQMOM closure algorithm">
-          <span class="overlay">Click to expand</span>
-          <div class="image-title">8 — HyQMOM Literature Synthesis</div>
+          <div class="image-title">HyQMOM Closure Algorithm</div>
         </div>
       </div>
     </section>

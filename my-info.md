@@ -19,6 +19,22 @@
 
 ---
 
+
+# Work Experience (For index.html)
+- **Internship:** Framatome 6 months april to september 2026 | thermo mecanical ingeneer
+  - **Main achivements:**
+    - Developed a modeling approach to simulate concentration evolutions in
+    coupled media using Finite Element (FEM) and Finite Volume (FVM)
+    methods.
+    - Optimized and accelerated core simulation codes, implementing
+    high-order integration schemes, mesh refinement, adaptive time-stepping,
+    to drastically reduce computation time.
+    - Designed innovative numerical solutions to overcome convergence issues
+    and improve solver stability.
+    - Verified numerical models
+
+---
+
 # ACADEMICS & SKILLS (For index.html)
 - **Degree:** Master 2 in Applied Mathematics: Analysis, Modeling, and Simulation (AMS) — Université Paris-Saclay / UVSQ (2026)
 - **Relevant Coursework:** [Finite Element Method, Finite Volume Method, Boundary Element Method, Moment Method, POD Galerkin, Hybrid Method...]
