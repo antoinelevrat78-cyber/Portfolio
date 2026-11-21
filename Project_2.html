@@ -161,18 +161,18 @@
       <div class="case-study">
         <div class="case-block">
           <h2>Projet</h2>
-          <p><strong>Personal Projet | Neural Networks and Data Assimilation</strong><br>May 2026</p>
+          <p><strong>Projet personnel | Réseaux de neurones et assimilation de données</strong><br>Mai 2026</p>
         </div>
 
         <div class="case-block">
           <h2>Objectif</h2>
-          <p>Develop a multi-domain Extended PINN capable of reconstructing velocity and pressure across a Brinkman interface with a nine-order-of-magnitude permeability jump.</p>
+          <p>Développement d’un PINN étendu multi-domaines capable de reconstruire la vitesse et la pression à travers une interface de Brinkman présentant un saut de perméabilité de neuf ordres de grandeur.</p>
         </div>
 
         <div class="case-block">
           <h2>Méthode</h2>
           <ul>
-            <li>Built a 128 × 128 FEniCS FEM reference solver for steady-state Brinkman flow.</li><li>Benchmarked 1D and 2D PINN variants, then moved training to GPU.</li><li>Combined Adam and L-BFGS, pressure normalization, and dynamic loss weighting.</li><li>Implemented coupled XPINN sub-networks with continuity constraints at the interface.</li>
+            <li>Construction d’un solveur de référence FEM FEniCS 128 × 128 pour un écoulement de Brinkman stationnaire.</li><li>Comparaison de variantes PINN 1D et 2D, puis déplacement de l’entraînement sur GPU.</li><li>Combinaison d’Adam et L-BFGS, normalisation de la pression et pondération dynamique des pertes.</li><li>Mise en œuvre de sous-réseaux XPINN couplés avec contraintes de continuité à l’interface.</li>
           </ul>
         </div>
 
@@ -184,7 +184,7 @@
         <div class="case-block">
           <h2>Résultats</h2>
           <ul>
-            <li>Stably reconstructed velocity and pressure fields across the permeability interface despite failures of a standard PINN.</li>
+            <li>Reconstruction stable des champs de vitesse et de pression à travers l’interface de perméabilité malgré les échecs du PINN standard.</li>
           </ul>
         </div>
         <div class="case-block">
@@ -200,39 +200,39 @@
       <h1 id="illustrations-heading">Illustrations</h1>
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_2/Pictures/fig_1_LEFT_fem_ground_truth_velocity_pressure.png" alt="FEM ground-truth velocity and pressure fields, left panel">
+          <img loading="lazy" src="Project_2/Pictures/fig_1_LEFT_fem_ground_truth_velocity_pressure.png" alt="Champs FEM de référence de vitesse et de pression, panneau gauche">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">FEM Ground Truth — Velocity</div>
+          <div class="image-title">Solution FEM de référence — vitesse</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_2/Pictures/fig_1_RIGHT_fem_ground_truth_velocity_pressure.png" alt="FEM ground-truth velocity and pressure fields, right panel">
+          <img loading="lazy" src="Project_2/Pictures/fig_1_RIGHT_fem_ground_truth_velocity_pressure.png" alt="Champs FEM de référence de vitesse et de pression, panneau droit">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">FEM Ground Truth — Pressure</div>
+          <div class="image-title">Solution FEM de référence — pression</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_2/Pictures/fig_2_standard_pinn_convergence_failure.png" alt="Standard PINN convergence failure">
+          <img loading="lazy" src="Project_2/Pictures/fig_2_standard_pinn_convergence_failure.png" alt="Échec de convergence du PINN standard">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Standard PINN Failure</div>
+          <div class="image-title">Échec du PINN standard</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_2/Pictures/fig_3_xpinn_final_velocity_pressure_fields.png" alt="XPINN velocity and pressure reconstruction">
+          <img loading="lazy" src="Project_2/Pictures/fig_3_xpinn_final_velocity_pressure_fields.png" alt="Reconstruction XPINN des champs de vitesse et de pression">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">XPINN Field Reconstruction</div>
+          <div class="image-title">Reconstruction des champs XPINN</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_2/Pictures/fig_4_xpinn_multidomain_loss_convergence.png" alt="XPINN multi-domain loss convergence">
+          <img loading="lazy" src="Project_2/Pictures/fig_4_xpinn_multidomain_loss_convergence.png" alt="Convergence de la perte XPINN multi-domaines">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">XPINN Loss Convergence</div>
+          <div class="image-title">Convergence de la perte XPINN</div>
         </div>
       </div>
     </section>
 
 <!-- Lightbox -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
-  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
-  <img id="lightbox-img" src="" alt="Expanded view">
-  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+  <button class="close-btn" aria-label="Fermer l’image" title="Fermer" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Image précédente">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Vue agrandie">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Image suivante">&#10095;</button>
 </div>
 
     <!-- Footer -->
@@ -298,7 +298,7 @@
     // ---------- Lightbox behavior ----------
     function openLightbox(src, alt) {
       lightboxImg.src = src;
-      lightboxImg.alt = alt || 'Expanded image';
+      lightboxImg.alt = alt || 'Image agrandie';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden','false');
       lbCloseBtn.focus();
@@ -332,7 +332,7 @@ let currentIndex = -1; // track which image is open
 
 function openLightbox(src, alt, index) {
   lightboxImg.src = src;
-  lightboxImg.alt = alt || 'Expanded image';
+  lightboxImg.alt = alt || 'Image agrandie';
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden','false');
   currentIndex = index;

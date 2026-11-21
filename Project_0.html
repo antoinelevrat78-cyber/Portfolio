@@ -160,31 +160,32 @@
 
       <div class="case-study">
         <div class="case-block">
+          <p style="font-style: italic; font-size: 0.875rem;color: #6b7280;">En raison du caractère confidentiel de ce projet, les illustrations ont été générées par IA.</p>
           <h2>Projet</h2>
-          <p>Due to the confidential nature of this project, all figures and visualizations are AI-generated.</p><p><strong>R&D Numerical Simulation Intern at Framatome | Multiphysics & Scientific Computing</strong><br>April 2026 – September 2026</p>
+          <p><strong>Stagiaire en simulation numérique R&D chez Framatome | Multiphysique &amp; calcul scientifique</strong><br>Avril 2026 – septembre 2026</p>
         </div>
 
         <div class="case-block">
           <h2>Objectif</h2>
-          <p>Accurately simulate transient species concentration across coupled multiphysics media while overcoming solver convergence bottlenecks and high computational costs.</p>
+          <p>Simuler avec précision la concentration transitoire d’espèces à travers des milieux multiphysiques couplés tout en surmontant les problèmes de convergence des solveurs et les coûts de calcul élevés.</p>
         </div>
 
         <div class="case-block">
           <h2>Méthode</h2>
           <ul>
-            <li>Developed a hybrid FEM/FVM framework for species transport and continuity across heterogeneous media interfaces.</li><li>Accelerated simulations with high-order integration, localized mesh refinement, adaptive time-stepping, stabilization, and preconditioning.</li><li>Benchmarked outputs against experimental datasets for physical fidelity, mass conservation, and predictive accuracy.</li>
+            <li>Développement d’un cadre hybride FEM/FVM pour le transport d’espèces et la continuité aux interfaces entre milieux hétérogènes.</li><li>Accélération des simulations grâce à une intégration d’ordre élevé, un raffinement localisé du maillage, des pas de temps adaptatifs, une stabilisation et un préconditionnement.</li><li>Comparaison des résultats à des jeux de données expérimentaux pour évaluer la fidélité physique, la conservation de la masse et la précision prédictive.</li>
           </ul>
         </div>
 
         <div class="case-block">
           <h2>Outils &amp; logiciels</h2>
-          <p>Python, Finite Element Méthode (FEM), Finite Volume Méthode (FVM), ParaView, Salomé</p>
+          <p>Python, méthode des éléments finis (FEM), méthode des volumes finis (FVM), ParaView, Salomé</p>
         </div>
 
         <div class="case-block">
           <h2>Résultats</h2>
           <ul>
-            <li>Reduced wall-clock execution time while preserving spatial and temporal accuracy in complex coupled geometries.</li><li>Eliminated solver divergence on stiff coupled test cases.</li><li>Reached close agreement with experimental measurements.</li>
+            <li>Réduction du temps d’exécution tout en préservant la précision spatiale et temporelle dans des géométries complexes couplées.</li><li>Élimination des divergences du solveur sur des cas tests couplés raides.</li><li>Obtention d’une forte concordance avec les mesures expérimentales.</li>
           </ul>
         </div>
 
@@ -196,24 +197,24 @@
       <h1 id="illustrations-heading">Illustrations</h1>
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_0/Pictures/fig_1_ai_generated_solid_solid_radionuclide_diffusion_simulation.jpg" alt="AI-generated radionuclide diffusion simulation">
+          <img loading="lazy" src="Project_0/Pictures/fig_1_ai_generated_solid_solid_radionuclide_diffusion_simulation.jpg" alt="Simulation de diffusion de radionucléides générée par IA">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Radionuclide Diffusion Simulation</div>
+          <div class="image-title">Simulation de diffusion de radionucléides</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_0/Pictures/fig_2_ai_generated_adaptative_mesh_visualisation.jpg" alt="AI-generated adaptive mesh visualization">
+          <img loading="lazy" src="Project_0/Pictures/fig_2_ai_generated_adaptative_mesh_visualisation.jpg" alt="Visualisation de maillage adaptatif générée par IA">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Adaptive Mesh Visualization</div>
+          <div class="image-title">Visualisation du maillage adaptatif</div>
         </div>
       </div>
     </section>
 
 <!-- Lightbox -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
-  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
-  <img id="lightbox-img" src="" alt="Expanded view">
-  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+  <button class="close-btn" aria-label="Fermer l’image" title="Fermer" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Image précédente">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Vue agrandie">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Image suivante">&#10095;</button>
 </div>
 
     <!-- Footer -->
@@ -279,7 +280,7 @@
     // ---------- Lightbox behavior ----------
     function openLightbox(src, alt) {
       lightboxImg.src = src;
-      lightboxImg.alt = alt || 'Expanded image';
+      lightboxImg.alt = alt || 'Image agrandie';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden','false');
       lbCloseBtn.focus();
@@ -313,7 +314,7 @@ let currentIndex = -1; // track which image is open
 
 function openLightbox(src, alt, index) {
   lightboxImg.src = src;
-  lightboxImg.alt = alt || 'Expanded image';
+  lightboxImg.alt = alt || 'Image agrandie';
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden','false');
   currentIndex = index;

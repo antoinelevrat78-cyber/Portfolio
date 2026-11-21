@@ -161,21 +161,21 @@
       <div class="case-study">
         <div class="case-block">
           <h2>Projet</h2>
-          <p><strong>Academic Literature Synthesis | Applied Mathematics</strong><br>January 2026</p>
+          <p><strong>Synthèse bibliographique académique | Mathématiques appliquées</strong><br>Janvier 2026</p>
         </div>
 
         <div class="case-block">
           <h2>Objectif</h2>
-          <p>Make the 2022 Fox and Laurent research on arbitrary-order (2n+1) moment closures for 1D kinetic equations accessible through a structured mathematical guide.</p>
+          <p>Rendre accessible, à travers un guide mathématique structuré, les travaux de Fox et Laurent de 2022 sur les fermetures de moments d’ordre arbitraire (2n+1) pour les équations cinétiques 1D.</p>
         </div>
 
         <div class="case-block">
           <h2>Méthode</h2>
           <ul>
-            <li>Synthesized the Hyperbolic Quadrature Méthode of Moments framework and contrasted arbitrary-order closures with earlier fourth-order limitations.</li>
-            <li>Explained change-of-variable proofs using centered and standardized moments to demonstrate translation and scaling invariance.</li>
-            <li>Clarified the characteristic-polynomial factorization P_(2n+1)(X) = Q_n(X)R_(n+1)(X) and summarized the global hyperbolicity proof using orthogonal-polynomial root separation and the Christoffel-Darboux formula.</li>
-            <li>Documented the direct closure algorithm using the Reverse Chebyshev method to compute from raw moments M_(2n) without intermediate standardization.</li>
+            <li>Synthèse du cadre HyQMOM (méthode hyperbolique des moments par quadrature) et comparaison des fermetures d’ordre arbitraire avec les limitations antérieures au quatrième ordre.</li>
+            <li>Explication des démonstrations par changement de variable à partir des moments centrés et normalisés pour établir l’invariance par translation et changement d’échelle.</li>
+            <li>Clarification de la factorisation du polynôme caractéristique P_(2n+1)(X) = Q_n(X)R_(n+1)(X) et synthèse de la démonstration d’hyperbolicité globale par séparation des racines des polynômes orthogonaux et formule de Christoffel-Darboux.</li>
+            <li>Documentation de l’algorithme direct de fermeture utilisant la méthode de Chebyshev inverse pour calculer à partir des moments bruts M_(2n) sans normalisation intermédiaire.</li>
           </ul>
         </div>
 
@@ -187,7 +187,7 @@
         <div class="case-block">
           <h2>Résultats</h2>
           <ul>
-            <li>Produced a structured synthesis of the HyQMOM closure theory and its direct raw-moment algorithm for arbitrary-order moment models.</li>
+            <li>Production d’une synthèse structurée de la théorie de fermeture HyQMOM et de son algorithme direct sur les moments bruts pour les modèles de moments d’ordre arbitraire.</li>
           </ul>
         </div>
 
@@ -203,19 +203,19 @@
       <h1 id="illustrations-heading">Illustrations</h1>
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_8/Pictures/fig_1_hyqmom_closure_algorithm.png" alt="Direct raw-moment closure algorithm computing M_(2n+1) from M_(2n) via Reverse Chebyshev without intermediate standardization.">
+          <img loading="lazy" src="Project_4/Project_8/Pictures/fig_1_hyqmom_closure_algorithm.png" alt="Algorithme direct de fermeture des moments bruts calculant M_(2n+1) à partir de M_(2n) via Chebyshev inverse sans normalisation intermédiaire.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">HyQMOM Closure Algorithm</div>
+          <div class="image-title">Algorithme de fermeture HyQMOM</div>
         </div>
       </div>
     </section>
 
 <!-- Lightbox -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
-  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
-  <img id="lightbox-img" src="" alt="Expanded view">
-  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+  <button class="close-btn" aria-label="Fermer l’image" title="Fermer" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Image précédente">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Vue agrandie">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Image suivante">&#10095;</button>
 </div>
 
     <!-- Footer -->
@@ -281,7 +281,7 @@
     // ---------- Lightbox behavior ----------
     function openLightbox(src, alt) {
       lightboxImg.src = src;
-      lightboxImg.alt = alt || 'Expanded image';
+      lightboxImg.alt = alt || 'Image agrandie';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden','false');
       lbCloseBtn.focus();
@@ -315,7 +315,7 @@ let currentIndex = -1; // track which image is open
 
 function openLightbox(src, alt, index) {
   lightboxImg.src = src;
-  lightboxImg.alt = alt || 'Expanded image';
+  lightboxImg.alt = alt || 'Image agrandie';
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden','false');
   currentIndex = index;

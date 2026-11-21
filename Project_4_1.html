@@ -161,21 +161,21 @@
       <div class="case-study">
         <div class="case-block">
           <h2>Projet</h2>
-          <p><strong>Projet académique (Scientific Computing - MS14)</strong><br>March - April 2026</p>
+          <p><strong>Projet académique (calcul scientifique - MS14)</strong><br>Mars - avril 2026</p>
         </div>
 
         <div class="case-block">
           <h2>Objectif</h2>
-          <p>Develop high-performance mesh connectivity data structures and a 2D Delaunay triangulation kernel from scratch, then apply adaptive meshing to compress grayscale images while preserving high visual fidelity in high-contrast regions.</p>
+          <p>Développer des structures de données de connectivité de maillage haute performance et un noyau de triangulation de Delaunay 2D, puis appliquer un maillage adaptatif pour compresser des images en niveaux de gris tout en préservant une haute fidélité visuelle dans les régions à fort contraste.</p>
         </div>
 
         <div class="case-block">
           <h2>Méthode</h2>
           <ul>
-            <li>Implemented geometric mesh quality metrics (Q1 and Q2) and replaced a naive O(N²) neighbor-search algorithm with a custom hash table, reducing connectivity and boundary-edge detection complexity to quasi-linear O(N).</li>
-            <li>Benchmarked hashing key strategies (i+j, min(i,j), and i+j × 1000) across complex aerospace geometries (naca, ls89, hlcrm, up to 355,000 triangles), minimizing average hash collisions to approximately 1.94.</li>
-            <li>Built a 2D Delaunay insertion kernel using cavity computation (Bowyer-Watson) and signed-area point localization, improving triangle regularity (Q1 &lt; 3) and runtime (approximately 2 s vs. 11 s for 3,000 points) over edge flipping.</li>
-            <li>Applied the kernel to grayscale image compression using barycentric interpolation and an iterative PSNR error-driven refinement loop to densify the mesh around sharp features.</li>
+            <li>Mise en œuvre de métriques géométriques de qualité de maillage (Q1 et Q2) et remplacement d’un algorithme naïf de recherche de voisins en O(N²) par une table de hachage personnalisée, réduisant la complexité de la connectivité et des arêtes frontière à un quasi-linéaire O(N).</li>
+            <li>Comparaison de stratégies de clés de hachage (i+j, min(i,j) et i+j × 1000) sur des géométries aéronautiques complexes (naca, ls89, hlcrm, jusqu’à 355 000 triangles), réduisant les collisions moyennes à environ 1,94.</li>
+            <li>Construction d’un noyau d’insertion de Delaunay 2D utilisant le calcul de cavités (Bowyer-Watson) et la localisation de points par aire signée, améliorant la régularité des triangles (Q1 &lt; 3) et le temps d’exécution (environ 2 s contre 11 s pour 3 000 points) par rapport au retournement d’arêtes.</li>
+            <li>Application du noyau à la compression d’images en niveaux de gris par interpolation barycentrique et boucle itérative de raffinement pilotée par l’erreur PSNR pour densifier le maillage près des détails nets.</li>
           </ul>
         </div>
 
@@ -187,7 +187,7 @@
         <div class="case-block">
           <h2>Résultats</h2>
           <ul>
-            <li>Achieved approximately 28 dB PSNR with adaptive meshing using 1,000 points, outperforming random Delaunay insertion with 5,000 points while preserving details such as eyes, mouth, and hands.</li>
+            <li>Obtention d’un PSNR d’environ 28 dB avec un maillage adaptatif utilisant 1 000 points, surpassant une insertion aléatoire de Delaunay avec 5 000 points tout en préservant les yeux, la bouche et les mains.</li>
           </ul>
         </div>
 
@@ -203,44 +203,44 @@
       <h1 id="illustrations-heading">Illustrations</h1>
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_1_hash_table_vs_naive_cpu_complexity_benchmark.png" alt="Log-log CPU execution time comparison: quasi-linear hash-table search versus quadratic naive neighbor search, up to 355,000 triangles.">
+          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_1_hash_table_vs_naive_cpu_complexity_benchmark.png" alt="Comparaison log-log du temps d’exécution CPU : recherche quasi-linéaire par table de hachage contre recherche naïve quadratique des voisins, jusqu’à 355 000 triangles.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Hash Table vs. Naive Search Complexity</div>
+          <div class="image-title">Complexité : table de hachage contre recherche naïve</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_2_LEFT_mesh_quality_comparison_before_after_edge_flip.jpg" alt="Triangle quality Q1 on a [0,1]² domain with 50 random points before edge-flipping optimization.">
+          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_2_LEFT_mesh_quality_comparison_before_after_edge_flip.jpg" alt="Qualité de triangle Q1 sur un domaine [0,1]² avec 50 points aléatoires avant optimisation par retournement d’arêtes.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Mesh Quality Before Edge Flipping</div>
+          <div class="image-title">Qualité du maillage avant retournement d’arêtes</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_2_RIGHT_mesh_quality_comparison_before_after_edge_flip.jpg" alt="Triangle quality Q1 on a [0,1]² domain with 50 random points after convex edge-flipping optimization.">
+          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_2_RIGHT_mesh_quality_comparison_before_after_edge_flip.jpg" alt="Qualité de triangle Q1 sur un domaine [0,1]² avec 50 points aléatoires après optimisation convexe par retournement d’arêtes.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Mesh Quality After Edge Flipping</div>
+          <div class="image-title">Qualité du maillage après retournement d’arêtes</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_3_delaunay_kernel_mesh_quality_q1.jpg" alt="Bowyer-Watson Delaunay triangulation quality Q1 on the 50-point test domain, with high element regularity (Q1 &lt; 3) across the interior.">
+          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_3_delaunay_kernel_mesh_quality_q1.jpg" alt="Qualité Q1 de la triangulation de Delaunay Bowyer-Watson sur le domaine test à 50 points, avec une forte régularité des éléments (Q1 &lt; 3) à l’intérieur.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Delaunay Kernel Mesh Quality</div>
+          <div class="image-title">Qualité du maillage du noyau de Delaunay</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_4_image_compression_random_delaunay_5000_points.jpg" alt="Baseline grayscale image reconstruction using random Delaunay insertion with 5,000 vertices (approximately 28 dB PSNR).">
+          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_4_image_compression_random_delaunay_5000_points.jpg" alt="Reconstruction de référence d’une image en niveaux de gris par insertion aléatoire de Delaunay avec 5 000 sommets (environ 28 dB PSNR).">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Random Delaunay Image Compression</div>
+          <div class="image-title">Compression d’image par Delaunay aléatoire</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_5_adaptive_psnr_delaunay_compression_1000_points.jpg" alt="Adaptive PSNR-driven compression with 1,000 vertices, concentrating points around high-contrast image features.">
+          <img loading="lazy" src="Project_4/Project_1/Pictures/fig_5_adaptive_psnr_delaunay_compression_1000_points.jpg" alt="Compression adaptative pilotée par PSNR avec 1 000 sommets, concentrant les points près des détails de fort contraste.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Adaptive PSNR Image Compression</div>
+          <div class="image-title">Compression d’image adaptative pilotée par PSNR</div>
         </div>
       </div>
     </section>
 
 <!-- Lightbox -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
-  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
-  <img id="lightbox-img" src="" alt="Expanded view">
-  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+  <button class="close-btn" aria-label="Fermer l’image" title="Fermer" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Image précédente">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Vue agrandie">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Image suivante">&#10095;</button>
 </div>
 
     <!-- Footer -->
@@ -306,7 +306,7 @@
     // ---------- Lightbox behavior ----------
     function openLightbox(src, alt) {
       lightboxImg.src = src;
-      lightboxImg.alt = alt || 'Expanded image';
+      lightboxImg.alt = alt || 'Image agrandie';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden','false');
       lbCloseBtn.focus();
@@ -340,7 +340,7 @@ let currentIndex = -1; // track which image is open
 
 function openLightbox(src, alt, index) {
   lightboxImg.src = src;
-  lightboxImg.alt = alt || 'Expanded image';
+  lightboxImg.alt = alt || 'Image agrandie';
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden','false');
   currentIndex = index;

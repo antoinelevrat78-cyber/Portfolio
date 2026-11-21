@@ -161,18 +161,18 @@
       <div class="case-study">
         <div class="case-block">
           <h2>Projet</h2>
-          <p><strong>Academic Team Projet</strong><br>2025</p>
+          <p><strong>Projet académique en équipe</strong><br>2025</p>
         </div>
 
         <div class="case-block">
           <h2>Objectif</h2>
-          <p>Accelerate 2D and 3D PDE simulations by distributing computation and memory across processors and HPC clusters.</p>
+          <p>Accélérer les simulations 2D et 3D d’équations aux dérivées partielles en distribuant les calculs et la mémoire sur plusieurs processeurs et grappes HPC.</p>
         </div>
 
         <div class="case-block">
           <h2>Méthode</h2>
           <ul>
-            <li>Implemented parallel finite-difference solvers with Jacobi and Red-Black Gauss-Seidel methods.</li><li>Used non-blocking MPI communication and contiguous grid representations to overlap exchange and computation.</li><li>Built parallel 2D/3D FEM meshing and domain decomposition tools.</li><li>Benchmarking strong and weak scaling on local hardware and the Cholesky HPC cluster.</li>
+            <li>Mise en œuvre de solveurs parallèles aux différences finies avec les méthodes de Jacobi et Gauss-Seidel rouge-noir.</li><li>Utilisation de communications MPI non bloquantes et de représentations de grille contiguës afin de chevaucher échanges et calculs.</li><li>Création d’outils parallèles de maillage FEM 2D/3D et de décomposition de domaine.</li><li>Mesure du passage à l’échelle forte et faible sur matériel local et sur la grappe HPC Cholesky.</li>
           </ul>
         </div>
 
@@ -184,7 +184,7 @@
         <div class="case-block">
           <h2>Résultats</h2>
           <ul>
-            <li>Reached over 70% weak-scaling efficiency at 8 cores on Cholesky.</li><li>Exceeded local weak-scaling efficiency by more than 20%.</li><li>Red-Black Gauss-Seidel reached 10⁻⁵ tolerance in 37% fewer iterations than Jacobi.</li>
+            <li>Atteinte d’une efficacité supérieure à 70 % en passage à l’échelle faible sur 8 cœurs Cholesky.</li><li>Dépassement de l’efficacité locale en passage à l’échelle faible de plus de 20 %.</li><li>Gauss-Seidel rouge-noir atteint une tolérance de 10⁻⁵ en 37 % d’itérations de moins que Jacobi.</li>
           </ul>
         </div>
         <div class="case-block">
@@ -200,39 +200,39 @@
       <h1 id="illustrations-heading">Illustrations</h1>
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_3/Pictures/fig_1_laplace_2d_3d_surface_solution.png" alt="Laplace equation 2D/3D numerical solution">
+          <img loading="lazy" src="Project_3/Pictures/fig_1_laplace_2d_3d_surface_solution.png" alt="Solution numérique 2D/3D de l’équation de Laplace">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Laplace 2D/3D Solution</div>
+          <div class="image-title">Solution de Laplace 2D/3D</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_3/Pictures/fig_2_jacobi_vs_gauss_seidel_convergence.png" alt="Jacobi and Gauss-Seidel convergence">
+          <img loading="lazy" src="Project_3/Pictures/fig_2_jacobi_vs_gauss_seidel_convergence.png" alt="Convergence des méthodes de Jacobi et Gauss-Seidel">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Jacobi vs Gauss-Seidel</div>
+          <div class="image-title">Jacobi contre Gauss-Seidel</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_3/Pictures/fig_3_hpc_cholesky_strong_weak_scaling.png" alt="Cholesky strong and weak scaling">
+          <img loading="lazy" src="Project_3/Pictures/fig_3_hpc_cholesky_strong_weak_scaling.png" alt="Passage à l’échelle forte et faible sur Cholesky">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">HPC Scaling Benchmarks</div>
+          <div class="image-title">Mesures du passage à l’échelle HPC</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_3/Pictures/fig_4_3d_jacobi_execution_time_vs_mesh_size.png" alt="3D Jacobi execution time by mesh size">
+          <img loading="lazy" src="Project_3/Pictures/fig_4_3d_jacobi_execution_time_vs_mesh_size.png" alt="Temps d’exécution 3D de Jacobi selon la taille du maillage">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">3D Solver Scaling</div>
+          <div class="image-title">Passage à l’échelle du solveur 3D</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_3/Pictures/fig_5_fem_2d_mesh_domain_decomposition.png" alt="FEM mesh decomposed into subdomains">
+          <img loading="lazy" src="Project_3/Pictures/fig_5_fem_2d_mesh_domain_decomposition.png" alt="Maillage FEM décomposé en sous-domaines">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Domain Decomposition</div>
+          <div class="image-title">Décomposition de domaine</div>
         </div>
       </div>
     </section>
 
 <!-- Lightbox -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
-  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
-  <img id="lightbox-img" src="" alt="Expanded view">
-  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+  <button class="close-btn" aria-label="Fermer l’image" title="Fermer" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Image précédente">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Vue agrandie">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Image suivante">&#10095;</button>
 </div>
 
     <!-- Footer -->
@@ -298,7 +298,7 @@
     // ---------- Lightbox behavior ----------
     function openLightbox(src, alt) {
       lightboxImg.src = src;
-      lightboxImg.alt = alt || 'Expanded image';
+      lightboxImg.alt = alt || 'Image agrandie';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden','false');
       lbCloseBtn.focus();
@@ -332,7 +332,7 @@ let currentIndex = -1; // track which image is open
 
 function openLightbox(src, alt, index) {
   lightboxImg.src = src;
-  lightboxImg.alt = alt || 'Expanded image';
+  lightboxImg.alt = alt || 'Image agrandie';
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden','false');
   currentIndex = index;

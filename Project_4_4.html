@@ -166,28 +166,28 @@
 
         <div class="case-block">
           <h2>Objectif</h2>
-          <p>Implement a 2D finite element solver from scratch for PDEs with rapidly oscillating periodic coefficients, and compare the exact microscale solution with the homogenized macroscale model.</p>
+          <p>Implémenter de zéro un solveur 2D par éléments finis pour des EDP à coefficients périodiques rapidement oscillants, puis comparer la solution exacte à l’échelle microscopique au modèle homogénéisé à l’échelle macroscopique.</p>
         </div>
 
         <div class="case-block">
           <h2>Méthode</h2>
           <ul>
-            <li>Developed a 2D P1 finite element solver in Python supporting Dirichlet, Neumann, and periodic boundary conditions through projection matrices (P_per).</li>
-            <li>Verified solver convergence against analytical solutions, achieving the theoretical order-2 convergence rate in the L2 norm.</li>
-            <li>Computed unit-cell correctors (w_i) to derive the homogenized effective diffusion tensor (A_eff).</li>
-            <li>Compared oscillating solutions (u_epsilon) with the homogenized macroscale solution (u_0) across epsilon scales using L2 and H1 norms.</li>
+            <li>Développement d’un solveur 2D P1 par éléments finis en Python prenant en compte les conditions aux limites de Dirichlet, Neumann et périodiques grâce aux matrices de projection (P_per).</li>
+            <li>Vérification de la convergence du solveur sur des solutions analytiques, avec atteinte du taux de convergence théorique d’ordre 2 en norme L2.</li>
+            <li>Calcul des correcteurs de cellule unité (w_i) pour dériver le tenseur homogénéisé de diffusion effective (A_eff).</li>
+            <li>Comparaison des solutions oscillantes (u_epsilon) avec la solution macroscopique homogénéisée (u_0) à différentes échelles epsilon selon les normes L2 et H1.</li>
           </ul>
         </div>
 
         <div class="case-block">
           <h2>Outils &amp; logiciels</h2>
-          <p>Matlab, Finite Element Méthode (FEM)</p>
+          <p>Matlab, méthode des éléments finis (FEM)</p>
         </div>
 
         <div class="case-block">
           <h2>Résultats</h2>
           <ul>
-            <li>Validated the numerical effective tensor (A_eff_11 ≈ 1.7765) against the theoretical value (sqrt(3) ≈ 1.7321) and confirmed asymptotic convergence of the homogenized model as epsilon approaches zero.</li>
+            <li>Validation du tenseur numérique effectif (A_eff_11 ≈ 1,7765) par rapport à la valeur théorique (sqrt(3) ≈ 1,7321) et confirmation de la convergence asymptotique du modèle homogénéisé lorsque epsilon tend vers zéro.</li>
           </ul>
         </div>
 
@@ -203,29 +203,29 @@
       <h1 id="illustrations-heading">Illustrations</h1>
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_4/Pictures/fig_1_3d_periodic_fem_solution.png" alt="3D finite element approximation of sin(pi x) sin(2 pi y), validating periodic boundary projection P_per.">
+          <img loading="lazy" src="Project_4/Project_4/Pictures/fig_1_3d_periodic_fem_solution.png" alt="Approximation 3D par éléments finis de sin(pi x) sin(2 pi y), validant la projection périodique aux limites P_per.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">3D Periodic FEM Solution</div>
+          <div class="image-title">Solution FEM périodique 3D</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_4/Pictures/fig_2_cell_corrector_w1_3d.png" alt="3D visualization of the microscale periodic cell corrector w_1 used to derive the effective diffusion tensor.">
+          <img loading="lazy" src="Project_4/Project_4/Pictures/fig_2_cell_corrector_w1_3d.png" alt="Visualisation 3D du correcteur périodique de cellule microscopique w_1 utilisé pour dériver le tenseur de diffusion effective.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Microscale Cell Corrector</div>
+          <div class="image-title">Correcteur de cellule à l’échelle microscopique</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_4/Pictures/fig_3_homogenization_error_vs_epsilon.png" alt="Relative L2 error between the oscillating microscale solution and the homogenized macroscale solution as epsilon decreases.">
+          <img loading="lazy" src="Project_4/Project_4/Pictures/fig_3_homogenization_error_vs_epsilon.png" alt="Erreur relative L2 entre la solution oscillante microscopique et la solution homogénéisée macroscopique lorsque epsilon diminue.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Homogenization Error vs. Epsilon</div>
+          <div class="image-title">Erreur d’homogénéisation selon epsilon</div>
         </div>
       </div>
     </section>
 
 <!-- Lightbox -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
-  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
-  <img id="lightbox-img" src="" alt="Expanded view">
-  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+  <button class="close-btn" aria-label="Fermer l’image" title="Fermer" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Image précédente">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Vue agrandie">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Image suivante">&#10095;</button>
 </div>
 
     <!-- Footer -->
@@ -291,7 +291,7 @@
     // ---------- Lightbox behavior ----------
     function openLightbox(src, alt) {
       lightboxImg.src = src;
-      lightboxImg.alt = alt || 'Expanded image';
+      lightboxImg.alt = alt || 'Image agrandie';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden','false');
       lbCloseBtn.focus();
@@ -325,7 +325,7 @@ let currentIndex = -1; // track which image is open
 
 function openLightbox(src, alt, index) {
   lightboxImg.src = src;
-  lightboxImg.alt = alt || 'Expanded image';
+  lightboxImg.alt = alt || 'Image agrandie';
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden','false');
   currentIndex = index;

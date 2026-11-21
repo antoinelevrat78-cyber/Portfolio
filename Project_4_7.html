@@ -161,33 +161,33 @@
       <div class="case-study">
         <div class="case-block">
           <h2>Projet</h2>
-          <p><strong>Academic Team Projet (L3 Mathematics - Semester 6)</strong><br>Spring 2025</p>
+          <p><strong>Projet académique en équipe (Licence 3 mathématiques - semestre 6)</strong><br>Printemps 2025</p>
         </div>
 
         <div class="case-block">
           <h2>Objectif</h2>
-          <p>Study, prove, and illustrate Sard’s Theorem, which establishes that the set of critical values of a smooth function between Euclidean spaces has Lebesgue measure zero.</p>
+          <p>Étudier, démontrer et illustrer le théorème de Sard, qui établit que l’ensemble des valeurs critiques d’une fonction régulière entre espaces euclidiens est de mesure de Lebesgue nulle.</p>
         </div>
 
         <div class="case-block">
           <h2>Méthode</h2>
           <ul>
-            <li>Constructed a rigorous proof by induction on dimension m, covering the critical point subsets m &lt; n, C \ C_1, C_i \ C_(i+1), and C_k for k &gt; m/n - 1.</li>
-            <li>Applied Taylor’s theorem with integral remainder, Fubini’s theorem, the Implicit Function Theorem, and the Local Inversion Theorem.</li>
-            <li>Analyzed base cases (m = n = 1 and m = 2, n = 1) and modeled examples f(x) = (x², x + 1) and g(x) = sin(x)/x with 2D and 3D plots.</li>
-            <li>Authored an 8-page LaTeX report under the supervision of Prof. Luc Robbiano, referencing Milnor’s Topology from the Differentiable Viewpoint.</li>
+            <li>Construction d’une démonstration rigoureuse par récurrence sur la dimension m, couvrant les sous-ensembles de points critiques m &lt; n, C \ C_1, C_i \ C_(i+1) et C_k pour k &gt; m/n - 1.</li>
+            <li>Application du théorème de Taylor avec reste intégral, du théorème de Fubini, du théorème des fonctions implicites et du théorème d’inversion locale.</li>
+            <li>Analyse des cas de base (m = n = 1 et m = 2, n = 1) et modélisation des exemples f(x) = (x², x + 1) et g(x) = sin(x)/x avec des graphiques 2D et 3D.</li>
+            <li>Rédaction d’un rapport LaTeX de 8 pages sous la supervision du professeur Luc Robbiano, en s’appuyant sur Topology from the Differentiable Viewpoint de Milnor.</li>
           </ul>
         </div>
 
         <div class="case-block">
           <h2>Outils &amp; logiciels</h2>
-          <p>LaTeX, GeoGebra, Differential Calculus, Measure Theory</p>
+          <p>LaTeX, GeoGebra, calcul différentiel, théorie de la mesure</p>
         </div>
 
         <div class="case-block">
           <h2>Résultats</h2>
           <ul>
-            <li>Completed a rigorous proof and visualized examples showing how critical-value sets can have Lebesgue measure zero, including mappings with infinitely many critical points.</li>
+            <li>Achèvement d’une démonstration rigoureuse et visualisation d’exemples montrant que des ensembles de valeurs critiques peuvent être de mesure de Lebesgue nulle, y compris des applications avec une infinité de points critiques.</li>
           </ul>
         </div>
 
@@ -203,24 +203,24 @@
       <h1 id="illustrations-heading">Illustrations</h1>
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_7/Pictures/fig_1_3d_curve_zero_measure_plane.png" alt="Graph of f(x) = (x², x + 1) in R³, illustrating that its lower-dimensional image lies in a plane and has measure zero.">
+          <img loading="lazy" src="Project_4/Project_7/Pictures/fig_1_3d_curve_zero_measure_plane.png" alt="Graphique de f(x) = (x², x + 1) dans R³, illustrant que son image de dimension inférieure se situe dans un plan et est de mesure nulle.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Curve in a Measure-Zero Plane</div>
+          <div class="image-title">Courbe dans un plan de mesure nulle</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_7/Pictures/fig_2_2d_sinc_infinite_critical_values.png" alt="Plot of g(x) = sin(x)/x with infinitely many local extrema, illustrating Sard’s Theorem.">
+          <img loading="lazy" src="Project_4/Project_7/Pictures/fig_2_2d_sinc_infinite_critical_values.png" alt="Graphique de g(x) = sin(x)/x avec une infinité d’extrémums locaux, illustrant le théorème de Sard.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Sinc Function Critical Values</div>
+          <div class="image-title">Valeurs critiques de la fonction sinus cardinal</div>
         </div>
       </div>
     </section>
 
 <!-- Lightbox -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
-  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
-  <img id="lightbox-img" src="" alt="Expanded view">
-  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+  <button class="close-btn" aria-label="Fermer l’image" title="Fermer" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Image précédente">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Vue agrandie">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Image suivante">&#10095;</button>
 </div>
 
     <!-- Footer -->
@@ -286,7 +286,7 @@
     // ---------- Lightbox behavior ----------
     function openLightbox(src, alt) {
       lightboxImg.src = src;
-      lightboxImg.alt = alt || 'Expanded image';
+      lightboxImg.alt = alt || 'Image agrandie';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden','false');
       lbCloseBtn.focus();
@@ -320,7 +320,7 @@ let currentIndex = -1; // track which image is open
 
 function openLightbox(src, alt, index) {
   lightboxImg.src = src;
-  lightboxImg.alt = alt || 'Expanded image';
+  lightboxImg.alt = alt || 'Image agrandie';
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden','false');
   currentIndex = index;

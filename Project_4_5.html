@@ -161,21 +161,21 @@
       <div class="case-study">
         <div class="case-block">
           <h2>Projet</h2>
-          <p><strong>Personal Independent Research Projet</strong><br>Summer 2025</p>
+          <p><strong>Projet personnel de recherche indépendante</strong><br>Été 2025</p>
         </div>
 
         <div class="case-block">
           <h2>Objectif</h2>
-          <p>Compute demagnetizing (stray-field) energy in ferromagnetic materials using 4D spherical harmonics and develop a finite-difference solver for ultrafast inertial magnetization dynamics governed by the inertial Landau-Lifshitz-Gilbert (iLLG) equation.</p>
+          <p>Calculer l’énergie démagnétisante (champ parasite) dans les matériaux ferromagnétiques à l’aide d’harmoniques sphériques 4D et développer un solveur aux différences finies pour la dynamique inertielle ultrarapide de l’aimantation gouvernée par l’équation inertielle de Landau-Lifshitz-Gilbert (iLLG).</p>
         </div>
 
         <div class="case-block">
           <h2>Méthode</h2>
           <ul>
-            <li>Implemented the Arrar and Boulmezaoud analytical-numerical method with 4D spherical harmonics, iterative Chebyshev polynomials, and Gauss-Legendre quadrature to compute stray-field energy.</li>
-            <li>Validated the demagnetizing-energy solver on a unit sphere (R = 1), matching literature benchmark values to six decimal places (0.0769663 vs. 0.07696625).</li>
-            <li>Formulated and coded a 1D semi-implicit finite-difference scheme with Neumann boundary conditions and matrix inversion for the iLLG equation.</li>
-            <li>Analyzed numerical stability, discretization sensitivity, and magnetization-norm preservation by comparing simulated mean magnetization trajectories with theoretical damped oscillations.</li>
+            <li>Mise en œuvre de la méthode analytique-numérique d’Arrar et Boulmezaoud avec harmoniques sphériques 4D, polynômes de Chebyshev itératifs et quadrature de Gauss-Legendre pour calculer l’énergie du champ parasite.</li>
+            <li>Validation du solveur d’énergie démagnétisante sur une sphère unité (R = 1), en concordance à six décimales avec les valeurs de référence publiées (0,0769663 contre 0,07696625).</li>
+            <li>Formulation et programmation d’un schéma semi-implicite aux différences finies 1D avec conditions aux limites de Neumann et inversion matricielle pour l’équation iLLG.</li>
+            <li>Analyse de la stabilité numérique, de la sensibilité à la discrétisation et de la conservation de la norme d’aimantation en comparant les trajectoires simulées de l’aimantation moyenne aux oscillations amorties théoriques.</li>
           </ul>
         </div>
 
@@ -187,7 +187,7 @@
         <div class="case-block">
           <h2>Résultats</h2>
           <ul>
-            <li>Validated the demagnetizing-energy method against published benchmarks and built a functional iLLG solver prototype, identifying discretization and stability constraints for future implicit schemes.</li>
+            <li>Validation de la méthode d’énergie démagnétisante par rapport à des références publiées et construction d’un prototype fonctionnel de solveur iLLG, avec identification des contraintes de discrétisation et de stabilité pour les schémas implicites futurs.</li>
           </ul>
         </div>
 
@@ -203,24 +203,24 @@
       <h1 id="illustrations-heading">Illustrations</h1>
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_5/Pictures/fig_1_literature_benchmark_damped_oscillations.png" alt="Literature benchmark showing expected damped oscillations of mean magnetization components over time.">
+          <img loading="lazy" src="Project_4/Project_5/Pictures/fig_1_literature_benchmark_damped_oscillations.png" alt="Référence bibliographique montrant les oscillations amorties attendues des composantes de l’aimantation moyenne dans le temps.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Literature Damped-Oscillation Benchmark</div>
+          <div class="image-title">Référence bibliographique des oscillations amorties</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_5/Pictures/fig_2_python_solver_mean_magnetization_output.png" alt="Custom semi-implicit finite-difference solver output showing mean magnetization over time and discretization sensitivity.">
+          <img loading="lazy" src="Project_4/Project_5/Pictures/fig_2_python_solver_mean_magnetization_output.png" alt="Résultat du solveur personnalisé semi-implicite aux différences finies montrant l’aimantation moyenne dans le temps et la sensibilité à la discrétisation.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Python Solver Magnetization Output</div>
+          <div class="image-title">Résultat du solveur Python sur l’aimantation</div>
         </div>
       </div>
     </section>
 
 <!-- Lightbox -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
-  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
-  <img id="lightbox-img" src="" alt="Expanded view">
-  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+  <button class="close-btn" aria-label="Fermer l’image" title="Fermer" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Image précédente">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Vue agrandie">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Image suivante">&#10095;</button>
 </div>
 
     <!-- Footer -->
@@ -286,7 +286,7 @@
     // ---------- Lightbox behavior ----------
     function openLightbox(src, alt) {
       lightboxImg.src = src;
-      lightboxImg.alt = alt || 'Expanded image';
+      lightboxImg.alt = alt || 'Image agrandie';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden','false');
       lbCloseBtn.focus();
@@ -320,7 +320,7 @@ let currentIndex = -1; // track which image is open
 
 function openLightbox(src, alt, index) {
   lightboxImg.src = src;
-  lightboxImg.alt = alt || 'Expanded image';
+  lightboxImg.alt = alt || 'Image agrandie';
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden','false');
   currentIndex = index;

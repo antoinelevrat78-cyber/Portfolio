@@ -161,21 +161,21 @@
       <div class="case-study">
         <div class="case-block">
           <h2>Projet</h2>
-          <p><strong>Academic Publication &amp; Co-Author (with Prof. Grégoire Allaire, École Polytechnique)</strong><br>August 2026</p>
+          <p><strong>Publication académique &amp; co-auteur (avec le professeur Grégoire Allaire, École Polytechnique)</strong><br>Août 2026</p>
         </div>
 
         <div class="case-block">
           <h2>Objectif</h2>
-          <p>Transcribe, formalize, and typeset Prof. Grégoire Allaire’s M2 course on PDE-constrained optimization, turning handwritten blackboard notes into a rigorous, publication-ready digital reference.</p>
+          <p>Transcrire, formaliser et mettre en forme le cours de Master 2 du professeur Grégoire Allaire sur l’optimisation sous contraintes PDE, afin de transformer des notes manuscrites au tableau en une référence numérique rigoureuse et prête à publier.</p>
         </div>
 
         <div class="case-block">
           <h2>Méthode</h2>
           <ul>
-            <li>Transcribed and formalized 77 pages of lectures on convex analysis, calculus of variations, adjoint-state methods, and numerical optimization algorithms, including projected gradient, Newton, Uzawa, and optimality criteria.</li>
-            <li>Typeset mathematical proofs, variational formulations, and multiphysics applications spanning linear and nonlinear elliptic, parabolic, and hyperbolic PDEs, optimal control, and data assimilation.</li>
-            <li>Collaborated with Prof. Grégoire Allaire through iterative proofreading and technical revisions to ensure mathematical rigor and clarity.</li>
-            <li>Published the finalized manuscript on the HAL Open Science archive (hal-05719433).</li>
+            <li>Transcription et formalisation de 77 pages de cours sur l’analyse convexe, le calcul des variations, les méthodes d’état adjoint et les algorithmes d’optimisation numérique, notamment le gradient projeté, Newton, Uzawa et les critères d’optimalité.</li>
+            <li>Mise en forme de démonstrations mathématiques, formulations variationnelles et applications multiphysiques couvrant les EDP elliptiques, paraboliques et hyperboliques linéaires et non linéaires, le contrôle optimal et l’assimilation de données.</li>
+            <li>Collaboration avec le professeur Grégoire Allaire par relectures itératives et révisions techniques pour garantir rigueur mathématique et clarté.</li>
+            <li>Publication du manuscrit finalisé sur l’archive ouverte HAL (hal-05719433).</li>
           </ul>
         </div>
 
@@ -187,7 +187,7 @@
         <div class="case-block">
           <h2>Résultats</h2>
           <ul>
-            <li>Published a 77-page open-access academic reference for the M2 master’s program at Institut Polytechnique de Paris and Sorbonne Université.</li>
+            <li>Publication d’une référence académique ouverte de 77 pages pour le Master 2 de l’Institut Polytechnique de Paris et de Sorbonne Université.</li>
           </ul>
         </div>
 
@@ -203,29 +203,29 @@
       <h1 id="illustrations-heading">Illustrations</h1>
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_2/Pictures/fig_1_hal_publication_title_page.png" alt="Official HAL Open Science publication cover and title page (hal-05719433).">
+          <img loading="lazy" src="Project_4/Project_2/Pictures/fig_1_hal_publication_title_page.png" alt="Couverture officielle de la publication HAL Open Science et page de titre (hal-05719433).">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">HAL Publication Title Page</div>
+          <div class="image-title">Page de titre de la publication HAL</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_2/Pictures/fig_2_authors_title_page.png" alt="Co-authored with Prof. Grégoire Allaire at Institut Polytechnique de Paris.">
+          <img loading="lazy" src="Project_4/Project_2/Pictures/fig_2_authors_title_page.png" alt="Co-écrit avec le professeur Grégoire Allaire à l’Institut Polytechnique de Paris.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Authors and Affiliation</div>
+          <div class="image-title">Auteurs et affiliations</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_2/Pictures/fig_3_latex_mathematical_typesetting_sample.png" alt="Typeset manuscript excerpt featuring variational formulations, adjoint-state derivations, and optimization algorithms.">
+          <img loading="lazy" src="Project_4/Project_2/Pictures/fig_3_latex_mathematical_typesetting_sample.png" alt="Extrait du manuscrit mis en forme avec formulations variationnelles, dérivations d’état adjoint et algorithmes d’optimisation.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">LaTeX Mathematical Typesetting</div>
+          <div class="image-title">Composition mathématique LaTeX</div>
         </div>
       </div>
     </section>
 
 <!-- Lightbox -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
-  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
-  <img id="lightbox-img" src="" alt="Expanded view">
-  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+  <button class="close-btn" aria-label="Fermer l’image" title="Fermer" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Image précédente">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Vue agrandie">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Image suivante">&#10095;</button>
 </div>
 
     <!-- Footer -->
@@ -291,7 +291,7 @@
     // ---------- Lightbox behavior ----------
     function openLightbox(src, alt) {
       lightboxImg.src = src;
-      lightboxImg.alt = alt || 'Expanded image';
+      lightboxImg.alt = alt || 'Image agrandie';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden','false');
       lbCloseBtn.focus();
@@ -325,7 +325,7 @@ let currentIndex = -1; // track which image is open
 
 function openLightbox(src, alt, index) {
   lightboxImg.src = src;
-  lightboxImg.alt = alt || 'Expanded image';
+  lightboxImg.alt = alt || 'Image agrandie';
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden','false');
   currentIndex = index;

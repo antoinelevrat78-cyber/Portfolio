@@ -161,33 +161,33 @@
       <div class="case-study">
         <div class="case-block">
           <h2>Projet</h2>
-          <p><strong>Academic Team Projet (Pair Programming)</strong><br>2026</p>
+          <p><strong>Projet académique en équipe (programmation en binôme)</strong><br>2026</p>
         </div>
 
         <div class="case-block">
           <h2>Objectif</h2>
-          <p>Approximate high-frequency 2D plane-wave diffraction around a convex obstacle using Geometrical Optics, and validate accuracy against a high-order finite element reference solution.</p>
+          <p>Approcher la diffraction 2D haute fréquence d’une onde plane autour d’un obstacle convexe par optique géométrique, puis valider la précision par rapport à une solution de référence par éléments finis d’ordre élevé.</p>
         </div>
 
         <div class="case-block">
           <h2>Méthode</h2>
           <ul>
-            <li>Implemented a Python ray-tracing solver to compute reflected rays, solving the eikonal equation for phase S and the transport equation along characteristic tubes for amplitude a_0.</li>
-            <li>Built a FreeFem++ reference solver with a Perfectly Matched Layer to truncate the unbounded domain and P4 finite elements to limit high-wavenumber numerical pollution.</li>
-            <li>Connected Python geometric data to FreeFem++ with pyff and visualized wave fields, characteristic rays, and absolute-error distributions in ParaView.</li>
+            <li>Mise en œuvre d’un solveur Python de lancer de rayons pour calculer les rayons réfléchis, résoudre l’équation eikonale de la phase S et l’équation de transport le long des tubes caractéristiques pour l’amplitude a_0.</li>
+            <li>Construction d’un solveur de référence FreeFem++ avec couche parfaitement adaptée pour tronquer le domaine non borné et éléments finis P4 afin de limiter la pollution numérique aux grands nombres d’onde.</li>
+            <li>Connexion des données géométriques Python à FreeFem++ avec pyff et visualisation des champs d’ondes, des rayons caractéristiques et des erreurs absolues dans ParaView.</li>
           </ul>
         </div>
 
         <div class="case-block">
           <h2>Outils &amp; logiciels</h2>
-          <p>Python (curves, pyff), FreeFem++, ParaView</p>
+          <p>Python (courbes, pyff), FreeFem++, ParaView</p>
         </div>
 
         <div class="case-block">
           <h2>Résultats</h2>
           <ul>
-            <li>Achieved strong visual and numerical agreement in the illuminated zone, reducing relative L2 error from 5.17% at k = 10 to 3.98% at k = 20, consistent with theoretical O(k^-1) convergence.</li>
-            <li>Identified Geometrical Optics limitations in the shadow zone and FEM numerical-pollution limits at k = 30 (4.82% error) under memory constraints.</li>
+            <li>Obtention d’une forte concordance visuelle et numérique dans la zone éclairée, avec réduction de l’erreur relative L2 de 5,17 % à k = 10 à 3,98 % à k = 20, conformément à la convergence théorique O(k^-1).</li>
+            <li>Identification des limites de l’optique géométrique dans la zone d’ombre et des limites de pollution numérique FEM à k = 30 (erreur de 4,82 %) sous contraintes de mémoire.</li>
           </ul>
         </div>
 
@@ -203,29 +203,29 @@
       <h1 id="illustrations-heading">Illustrations</h1>
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_6/Pictures/fig_1_reflected_rays_characteristics.png" alt="Eikonal-equation characteristics (reflected rays) around the circular obstacle, visualized in ParaView.">
+          <img loading="lazy" src="Project_4/Project_6/Pictures/fig_1_reflected_rays_characteristics.png" alt="Caractéristiques de l’équation eikonale (rayons réfléchis) autour de l’obstacle circulaire, visualisées dans ParaView.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Reflected-Ray Characteristics</div>
+          <div class="image-title">Caractéristiques des rayons réfléchis</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_6/Pictures/fig_2_geometrical_optics_wave_solution_k10.png" alt="Real part of the Geometrical Optics approximation to the diffracted wave field at k = 10.">
+          <img loading="lazy" src="Project_4/Project_6/Pictures/fig_2_geometrical_optics_wave_solution_k10.png" alt="Partie réelle de l’approximation par optique géométrique du champ d’onde diffracté à k = 10.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Geometrical Optics Wave Solution</div>
+          <div class="image-title">Solution d’onde par optique géométrique</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_6/Pictures/fig_3_absolute_error_comparison_fem_vs_go.png" alt="Absolute error between the Geometrical Optics approximation and P4 FEM reference, showing agreement in the illuminated zone and divergence in the shadow zone.">
+          <img loading="lazy" src="Project_4/Project_6/Pictures/fig_3_absolute_error_comparison_fem_vs_go.png" alt="Erreur absolue entre l’approximation par optique géométrique et la référence FEM P4, montrant une concordance dans la zone éclairée et une divergence dans la zone d’ombre.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">FEM vs. Geometrical Optics Error</div>
+          <div class="image-title">Erreur FEM contre optique géométrique</div>
         </div>
       </div>
     </section>
 
 <!-- Lightbox -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
-  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
-  <img id="lightbox-img" src="" alt="Expanded view">
-  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+  <button class="close-btn" aria-label="Fermer l’image" title="Fermer" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Image précédente">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Vue agrandie">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Image suivante">&#10095;</button>
 </div>
 
     <!-- Footer -->
@@ -291,7 +291,7 @@
     // ---------- Lightbox behavior ----------
     function openLightbox(src, alt) {
       lightboxImg.src = src;
-      lightboxImg.alt = alt || 'Expanded image';
+      lightboxImg.alt = alt || 'Image agrandie';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden','false');
       lbCloseBtn.focus();
@@ -325,7 +325,7 @@ let currentIndex = -1; // track which image is open
 
 function openLightbox(src, alt, index) {
   lightboxImg.src = src;
-  lightboxImg.alt = alt || 'Expanded image';
+  lightboxImg.alt = alt || 'Image agrandie';
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden','false');
   currentIndex = index;

@@ -161,21 +161,21 @@
       <div class="case-study">
         <div class="case-block">
           <h2>Projet</h2>
-          <p><strong>Academic Team Projet</strong><br>Fall 2025</p>
+          <p><strong>Projet académique en équipe</strong><br>Automne 2025</p>
         </div>
 
         <div class="case-block">
           <h2>Objectif</h2>
-          <p>Develop a fast Boundary Element Méthode solver for 2D wave diffraction, where dense linear systems require high memory and O(N³) computation, using hierarchical matrices and Adaptive Cross Approximation to target quasi-linear O(N log N) complexity.</p>
+          <p>Développer un solveur rapide par méthode des éléments de frontière pour la diffraction d’ondes 2D, où les systèmes linéaires denses exigent beaucoup de mémoire et un calcul en O(N³), en utilisant des matrices hiérarchiques et l’approximation croisée adaptative pour viser une complexité quasi-linéaire O(N log N).</p>
         </div>
 
         <div class="case-block">
           <h2>Méthode</h2>
           <ul>
-            <li>Derived the analytical trace solution and built a 2D Galerkin BEM solver with Gauss-Legendre quadrature and semi-analytical integration for Green-function diagonal singularities.</li>
-            <li>Benchmarked truncated SVD, complete ACA, and partial ACA; selected partial ACA for its faster O(k(m+n)) factorization (0.005 s vs. 0.252 s for SVD).</li>
-            <li>Implemented spatial binary trees with geometric and balanced partitioning, an admissibility criterion, and GMRES to reduce assembly and solve complexity from O(N²)/O(N³) to O(N log N).</li>
-            <li>Extended the solver from circular disks to square, ellipse, boomerang, star, and non-convex geometries, visualizing diffracted fields across meshes of up to 20,000 triangles in VIZIR4.</li>
+            <li>Établissement de la solution analytique de trace et construction d’un solveur BEM de Galerkin 2D avec quadrature de Gauss-Legendre et intégration semi-analytique des singularités diagonales de la fonction de Green.</li>
+            <li>Comparaison de la SVD tronquée, de l’ACA complète et de l’ACA partielle ; sélection de l’ACA partielle pour sa factorisation plus rapide en O(k(m+n)) (0,005 s contre 0,252 s pour la SVD).</li>
+            <li>Mise en œuvre d’arbres binaires spatiaux avec partitionnement géométrique et équilibré, d’un critère d’admissibilité et de GMRES pour réduire les complexités d’assemblage et de résolution de O(N²)/O(N³) à O(N log N).</li>
+            <li>Extension du solveur des disques circulaires aux géométries carrée, elliptique, en boomerang, étoilée et non convexe, avec visualisation des champs diffractés sur des maillages allant jusqu’à 20 000 triangles dans VIZIR4.</li>
           </ul>
         </div>
 
@@ -187,7 +187,7 @@
         <div class="case-block">
           <h2>Résultats</h2>
           <ul>
-            <li>Reduced memory to 12.43% of the dense representation at N = 1,600 and achieved more than 10× faster matrix assembly while maintaining accuracy against analytical solutions.</li>
+            <li>Réduction de la mémoire à 12,43 % de la représentation dense à N = 1 600 et accélération de l’assemblage matriciel de plus de 10× tout en conservant la précision des solutions analytiques.</li>
           </ul>
         </div>
 
@@ -203,29 +203,29 @@
       <h1 id="illustrations-heading">Illustrations</h1>
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_3/Pictures/fig_1_2d_wave_diffraction_square_geometry.png" alt="Total diffracted wave fields (Re(u_total)) across 2D obstacle geometries (N = 800, k = 10).">
+          <img loading="lazy" src="Project_4/Project_3/Pictures/fig_1_2d_wave_diffraction_square_geometry.png" alt="Champs d’ondes diffractées totales (Re(u_total)) sur différentes géométries d’obstacles 2D (N = 800, k = 10).">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">2D Wave Diffraction</div>
+          <div class="image-title">Diffraction d’ondes 2D</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_3/Pictures/fig_2_hierarchical_matrix_block_compression_structure.png" alt="Hierarchical matrix structure (400 × 400): dense near-field blocks and low-rank ACA-compressed far-field blocks.">
+          <img loading="lazy" src="Project_4/Project_3/Pictures/fig_2_hierarchical_matrix_block_compression_structure.png" alt="Structure matricielle hiérarchique (400 × 400) : blocs denses du champ proche et blocs compressés ACA de faible rang du champ lointain.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Hierarchical Matrix Compression</div>
+          <div class="image-title">Compression matricielle hiérarchique</div>
         </div>
         <div class="img-wrapper">
-          <img loading="lazy" src="Project_4/Project_3/Pictures/fig_3_computational_complexity_benchmark_dense_vs_hmatrix.png" alt="Log-log runtime benchmark comparing dense complexity with quasi-linear assembly and GMRES solve times.">
+          <img loading="lazy" src="Project_4/Project_3/Pictures/fig_3_computational_complexity_benchmark_dense_vs_hmatrix.png" alt="Mesure log-log des temps d’exécution comparant la complexité dense aux temps quasi-linéaires d’assemblage et de résolution GMRES.">
           <span class="overlay">Cliquer pour agrandir</span>
-          <div class="image-title">Dense vs. H-Matrix Complexity</div>
+          <div class="image-title">Complexité dense contre matrice hiérarchique</div>
         </div>
       </div>
     </section>
 
 <!-- Lightbox -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
-  <button class="close-btn" aria-label="Close image" title="Close" id="lbCloseBtn">&times;</button>
-  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Previous image">&#10094;</button>
-  <img id="lightbox-img" src="" alt="Expanded view">
-  <button class="nav-btn next" id="lbNextBtn" aria-label="Next image">&#10095;</button>
+  <button class="close-btn" aria-label="Fermer l’image" title="Fermer" id="lbCloseBtn">&times;</button>
+  <button class="nav-btn prev" id="lbPrevBtn" aria-label="Image précédente">&#10094;</button>
+  <img id="lightbox-img" src="" alt="Vue agrandie">
+  <button class="nav-btn next" id="lbNextBtn" aria-label="Image suivante">&#10095;</button>
 </div>
 
     <!-- Footer -->
@@ -291,7 +291,7 @@
     // ---------- Lightbox behavior ----------
     function openLightbox(src, alt) {
       lightboxImg.src = src;
-      lightboxImg.alt = alt || 'Expanded image';
+      lightboxImg.alt = alt || 'Image agrandie';
       lightbox.classList.add('open');
       lightbox.setAttribute('aria-hidden','false');
       lbCloseBtn.focus();
@@ -325,7 +325,7 @@ let currentIndex = -1; // track which image is open
 
 function openLightbox(src, alt, index) {
   lightboxImg.src = src;
-  lightboxImg.alt = alt || 'Expanded image';
+  lightboxImg.alt = alt || 'Image agrandie';
   lightbox.classList.add('open');
   lightbox.setAttribute('aria-hidden','false');
   currentIndex = index;
