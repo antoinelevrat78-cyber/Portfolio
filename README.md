@@ -1,94 +1,100 @@
-# Antoine Levrat - Engineering Portfolio
+# Antoine Levrat - Portfolio d'ingénieur
 
-A personal engineering portfolio showcasing applied mathematics, numerical modeling, PDE-based simulation, and high-performance computing work.
+Portfolio personnel présentant des travaux en mathématiques appliquées, modélisation numérique, simulation par équations aux dérivées partielles (EDP) et calcul haute performance.
 
-**Live website:** [https://antoinelevrat78-cyber.github.io/Portfolio/](https://antoinelevrat78-cyber.github.io/Portfolio/)
+**Site web :** [https://antoinelevrat78-cyber.github.io/Portfolio/](https://antoinelevrat78-cyber.github.io/Portfolio/)
 
-## About
+## À propos
 
-Hi, I'm Antoine Levrat, a simulation engineer and modeling specialist pursuing a Master 2 in Applied Mathematics: Analysis, Modeling, and Simulation (AMS) at Université Paris-Saclay / UVSQ.
+Je suis Antoine Levrat, ingénieur en simulation et spécialiste de la modélisation. Je suis actuellement en Master 2 Mathématiques appliquées : analyse, modélisation et simulation (AMS) à l'Université Paris-Saclay.
 
-My work focuses on:
+Mes principaux domaines de travail sont :
 
-- Numerical analysis and partial differential equation (PDE) solving
-- Finite element and finite volume methods
-- PDE-constrained optimization
-- Parallel computing and MPI
-- Python and C++ simulation development
-- Mesh refinement, model verification, and HPC performance benchmarking
+- Analyse numérique et résolution d'équations aux dérivées partielles
+- Méthodes des éléments finis et des volumes finis
+- Optimisation sous contraintes par EDP
+- Calcul parallèle et MPI
+- Développement de simulations en Python et C++
+- Raffinement de maillage, vérification des modèles et mesures de performance HPC
 
-## Featured Projects
+## Projets principaux
 
-- **Coupled Media Concentration Transport** - Thermomechanical R&D internship project using finite element and finite volume methods
-- **Heat Distribution Optimization** - PDE-constrained optimization with mesh convergence and computation-time studies
-- **Extended PINNs for Fluid Dynamics** - XPINN-based velocity and pressure modeling
-- **Parallel PDE & FEM Solver** - Domain decomposition and MPI-based HPC solver
+- **Transport de concentration dans des milieux couplés** - Projet de recherche et développement thermomécanique utilisant les méthodes des éléments finis et des volumes finis
+- **Optimisation de la distribution thermique** - Optimisation sous contraintes par EDP avec études de convergence de maillage et de temps de calcul
+- **PINNs étendues pour la dynamique des fluides** - Modélisation de la vitesse et de la pression avec des XPINNs
+- **Solveur parallèle pour EDP et méthode des éléments finis** - Décomposition de domaine et solveur HPC basé sur MPI
 
-## Other Projects
+## Autres projets
 
-- Adaptive Delaunay meshing and image compression
-- Co-published PDE-constrained optimization lecture notes
-- 2D Helmholtz boundary element solver
-- Periodic homogenization with the finite element method
-- Demagnetizing energy and iLLG simulation
-- Wave diffraction with geometrical optics
-- Sard's theorem proof and visualization
-- HyQMOM literature synthesis
+- Maillage adaptatif de Delaunay et compression d'images
+- Co-rédaction de cours sur l'optimisation sous contraintes par EDP
+- Solveur 2D pour l'équation de Helmholtz par éléments frontières
+- Homogénéisation périodique par la méthode des éléments finis
+- Énergie démagnétisante et simulation iLLG
+- Diffraction d'ondes par optique géométrique
+- Démonstration du théorème de Sard et visualisation
+- Synthèse bibliographique sur la méthode HyQMOM
 
-## Skills
+## Compétences
 
-### Advanced
+### Langages
 
-Python, C++, MATLAB, Finite Element Method, Finite Volume Method, PDE-Constrained Optimization, MPI / HPC
+C++, Python, MATLAB, C
 
-### Proficient
+### Outils de simulation
 
-ParaView, Salomé, Gmsh, FEniCS, PyTorch, CUDA, LaTeX, SolidWorks, Fusion 360
+Gmsh, Salomé, ParaView, FEniCS, FreeFem++, VIZIR4
 
-### Developing
+### Calcul haute performance & développement
 
-Boundary Element Method, Reduced Basis Methods, Hybrid High-Frequency Methods, Mesh Adaptation
+MPI, CUDA, Git, PyTorch, LaTeX, SolidWorks, Fusion 360
 
-## Work Experience
+### Simulation numérique
 
-**Thermomechanical Engineering Intern**  
-Framatome | April 2026 - September 2026
+Éléments finis, Volumes finis, Éléments frontières, Méthode des Moments, Méthodes Spectrales, Optimisation sous contraintes,  Homogénéisation, Méthodes de décomposition de domaine
 
-- Developed a coupled-media concentration transport model
-- Used finite element and finite volume methods
-- Optimized and accelerated core simulation code with high-order integration schemes, mesh refinement, and adaptive time-stepping
-- Designed numerical solutions to improve convergence and solver stability
-- Verified the resulting numerical models
+## Expérience professionnelle
 
-## Repository Structure
+**Stagiaire ingénieur thermomécanique**
+Framatome | Avril 2026 - Septembre 2026
 
-index.html              Main portfolio webpage
-Project_0.html          Coupled media transport project
-Project_1.html          Heat distribution optimization
-Project_2.html          Extended PINNs project
-Project_3.html          Parallel PDE and FEM solver
-Project_4_1.html        Adaptive Delaunay meshing
-Project_4_2.html        PDE-constrained optimization notes
-Project_4_3.html        2D Helmholtz BEM solver
-Project_4_4.html        Periodic homogenization
-Project_4_5.html        Demagnetizing energy simulation
-Project_4_6.html        Wave diffraction
-Project_4_7.html        Sard's theorem
-Project_4_8.html        HyQMOM synthesis
-assets/                 Resume, headshot, favicon, and logos
-Project_*/              Reports, figures, and project-specific assets
+- Développement d'un modèle de transport de concentration dans des milieux couplés
+- Utilisation des méthodes des éléments finis et des volumes finis
+- Optimisation et accélération du code principal de simulation à l'aide de schémas d'intégration d'ordre élevé, du raffinement de maillage et d'un pas de temps adaptatif
+- Conception de solutions numériques visant à améliorer la convergence et la stabilité des solveurs
+- Vérification des modèles numériques obtenus
+
+## Structure du dépôt
+
+```text
+index.html              Page principale du portfolio
+Project_0.html          Projet de transport dans des milieux couplés
+Project_1.html          Optimisation de la distribution thermique
+Project_2.html          Projet sur les PINNs étendues
+Project_3.html          Solveur parallèle pour EDP et méthode des éléments finis
+Project_4_1.html        Maillage adaptatif de Delaunay
+Project_4_2.html        Notes sur l'optimisation sous contraintes par EDP
+Project_4_3.html        Solveur 2D par éléments frontières pour Helmholtz
+Project_4_4.html        Homogénéisation périodique
+Project_4_5.html        Simulation de l'énergie démagnétisante
+Project_4_6.html        Diffraction d'ondes
+Project_4_7.html        Théorème de Sard
+Project_4_8.html        Synthèse sur HyQMOM
+assets/                 CV, portrait, favicon et logos
+Project_*/              Rapports, figures et ressources propres à chaque projet
+```
 
 
-## Built With
+## Technologies utilisées
 
-- HTML5 and CSS3
+- HTML5 et CSS3
 - JavaScript
 - Font Awesome
 - GitHub Pages
-- Formspree for the contact form
+- Formspree pour le formulaire de contact
 
 ## Contact
 
-- **Email:** [antoinelevrat78@gmail.com](mailto:antoinelevrat78@gmail.com)
+- **mail :** [antoinelevrat78@gmail.com](mailto:antoinelevrat78@gmail.com)
 - **GitHub:** [antoinelevrat78-cyber](https://github.com/antoinelevrat78-cyber)
 - **LinkedIn:** [Antoine Levrat](https://www.linkedin.com/in/antoine-levrat-151843265)
