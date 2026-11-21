@@ -1,9 +1,9 @@
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>High-Performance Parallel PDE & FEM Solver | Antoine Levrat</title>
+  <title>Solveur parallèle haute performance pour EDP &amp; FEM | Antoine Levrat</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -133,7 +133,7 @@
 <body>
 
   <!-- Mobile Menu Toggle (hamburger) -->
-  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Ouvrir le menu">
     <i class="fas fa-bars" aria-hidden="true"></i>
   </button>
 
@@ -141,55 +141,55 @@
   <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
 
   <!-- Sidebar -->
-  <nav id="sidebar" class="sidebar" aria-label="Main navigation">
+  <nav id="sidebar" class="sidebar" aria-label="Navigation principale">
     <h2>Portfolio</h2>
     <ul>
-      <li><a href="#overview">Overview</a></li>
+      <li><a href="#overview">Aperçu</a></li>
       <li><a href="#illustrations">Illustrations</a></li>
     </ul>
-    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back</a>
+    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour</a>
   </nav>
 
   <!-- Main Content -->
   <main class="content" id="mainContent" tabindex="-1">
-    <h1 class="project-title">High-Performance Parallel PDE & FEM Solver</h1>
+    <h1 class="project-title">Solveur parallèle haute performance pour EDP &amp; FEM</h1>
 
-    <!-- Overview -->
+    <!-- Aperçu -->
     <section id="overview" class="section" aria-labelledby="overview-heading">
-      <h1 id="overview-heading">Project Overview</h1>
+      <h1 id="overview-heading">Vue d’ensemble du projet</h1>
 
       <div class="case-study">
         <div class="case-block">
-          <h2>Project</h2>
-          <p><strong>Academic Team Project</strong><br>2025</p>
+          <h2>Projet</h2>
+          <p><strong>Academic Team Projet</strong><br>2025</p>
         </div>
 
         <div class="case-block">
-          <h2>Objective</h2>
+          <h2>Objectif</h2>
           <p>Accelerate 2D and 3D PDE simulations by distributing computation and memory across processors and HPC clusters.</p>
         </div>
 
         <div class="case-block">
-          <h2>Method</h2>
+          <h2>Méthode</h2>
           <ul>
             <li>Implemented parallel finite-difference solvers with Jacobi and Red-Black Gauss-Seidel methods.</li><li>Used non-blocking MPI communication and contiguous grid representations to overlap exchange and computation.</li><li>Built parallel 2D/3D FEM meshing and domain decomposition tools.</li><li>Benchmarking strong and weak scaling on local hardware and the Cholesky HPC cluster.</li>
           </ul>
         </div>
 
         <div class="case-block">
-          <h2>Tools &amp; Software</h2>
+          <h2>Outils &amp; logiciels</h2>
           <p>C++, MPI (OpenMPI/MPICH), HPC Cluster (Cholesky), FDM/FEM</p>
         </div>
 
         <div class="case-block">
-          <h2>Results</h2>
+          <h2>Résultats</h2>
           <ul>
             <li>Reached over 70% weak-scaling efficiency at 8 cores on Cholesky.</li><li>Exceeded local weak-scaling efficiency by more than 20%.</li><li>Red-Black Gauss-Seidel reached 10⁻⁵ tolerance in 37% fewer iterations than Jacobi.</li>
           </ul>
         </div>
         <div class="case-block">
-          <h2>Project Report</h2>
-          <p><a href="Project_3/Report_Parallel_Calculus.pdf" target="_blank" rel="noopener">Read the project report (PDF)</a></p>
+          <h2>Rapport du projet</h2>
+          <p><a href="Project_3/Report_Parallel_Calculus.pdf" target="_blank" rel="noopener">Lire le rapport du projet (PDF)</a></p>
         </div>
 
       </div>
@@ -201,27 +201,27 @@
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
           <img loading="lazy" src="Project_3/Pictures/fig_1_laplace_2d_3d_surface_solution.png" alt="Laplace equation 2D/3D numerical solution">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Laplace 2D/3D Solution</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_3/Pictures/fig_2_jacobi_vs_gauss_seidel_convergence.png" alt="Jacobi and Gauss-Seidel convergence">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Jacobi vs Gauss-Seidel</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_3/Pictures/fig_3_hpc_cholesky_strong_weak_scaling.png" alt="Cholesky strong and weak scaling">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">HPC Scaling Benchmarks</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_3/Pictures/fig_4_3d_jacobi_execution_time_vs_mesh_size.png" alt="3D Jacobi execution time by mesh size">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">3D Solver Scaling</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_3/Pictures/fig_5_fem_2d_mesh_domain_decomposition.png" alt="FEM mesh decomposed into subdomains">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Domain Decomposition</div>
         </div>
       </div>
@@ -237,7 +237,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2026 Antoine Levrat — Engineering Portfolio</p>
+      <p>© 2026 Antoine Levrat — Portfolio ingénieur</p>
     </footer>
   </main>
 

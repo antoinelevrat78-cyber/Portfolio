@@ -1,9 +1,9 @@
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>2D Helmholtz Boundary Element Method (BEM) Solver | Antoine Levrat</title>
+  <title>Solveur de Helmholtz 2D par méthode des éléments de frontière | Antoine Levrat</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -133,7 +133,7 @@
 <body>
 
   <!-- Mobile Menu Toggle (hamburger) -->
-  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Ouvrir le menu">
     <i class="fas fa-bars" aria-hidden="true"></i>
   </button>
 
@@ -141,36 +141,36 @@
   <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
 
   <!-- Sidebar -->
-  <nav id="sidebar" class="sidebar" aria-label="Main navigation">
+  <nav id="sidebar" class="sidebar" aria-label="Navigation principale">
     <h2>Portfolio</h2>
     <ul>
-      <li><a href="#overview">Overview</a></li>
+      <li><a href="#overview">Aperçu</a></li>
       <li><a href="#illustrations">Illustrations</a></li>
     </ul>
-    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back</a>
+    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour</a>
   </nav>
 
   <!-- Main Content -->
   <main class="content" id="mainContent" tabindex="-1">
-    <h1 class="project-title">2D Helmholtz Boundary Element Method (BEM) Solver</h1>
+    <h1 class="project-title">Solveur de Helmholtz 2D par méthode des éléments de frontière</h1>
 
-    <!-- Overview -->
+    <!-- Aperçu -->
     <section id="overview" class="section" aria-labelledby="overview-heading">
-      <h1 id="overview-heading">Project Overview</h1>
+      <h1 id="overview-heading">Vue d’ensemble du projet</h1>
 
       <div class="case-study">
         <div class="case-block">
-          <h2>Project</h2>
-          <p><strong>Academic Team Project</strong><br>Fall 2025</p>
+          <h2>Projet</h2>
+          <p><strong>Academic Team Projet</strong><br>Fall 2025</p>
         </div>
 
         <div class="case-block">
-          <h2>Objective</h2>
-          <p>Develop a fast Boundary Element Method solver for 2D wave diffraction, where dense linear systems require high memory and O(N³) computation, using hierarchical matrices and Adaptive Cross Approximation to target quasi-linear O(N log N) complexity.</p>
+          <h2>Objectif</h2>
+          <p>Develop a fast Boundary Element Méthode solver for 2D wave diffraction, where dense linear systems require high memory and O(N³) computation, using hierarchical matrices and Adaptive Cross Approximation to target quasi-linear O(N log N) complexity.</p>
         </div>
 
         <div class="case-block">
-          <h2>Method</h2>
+          <h2>Méthode</h2>
           <ul>
             <li>Derived the analytical trace solution and built a 2D Galerkin BEM solver with Gauss-Legendre quadrature and semi-analytical integration for Green-function diagonal singularities.</li>
             <li>Benchmarked truncated SVD, complete ACA, and partial ACA; selected partial ACA for its faster O(k(m+n)) factorization (0.005 s vs. 0.252 s for SVD).</li>
@@ -180,20 +180,20 @@
         </div>
 
         <div class="case-block">
-          <h2>Tools &amp; Software</h2>
+          <h2>Outils &amp; logiciels</h2>
           <p>Python, NumPy, SciPy, Matplotlib, VIZIR4 (INRIA)</p>
         </div>
 
         <div class="case-block">
-          <h2>Results</h2>
+          <h2>Résultats</h2>
           <ul>
             <li>Reduced memory to 12.43% of the dense representation at N = 1,600 and achieved more than 10× faster matrix assembly while maintaining accuracy against analytical solutions.</li>
           </ul>
         </div>
 
         <div class="case-block">
-          <h2>Project Report</h2>
-          <p><a href="Project_4/Project_3/Report_Frontier_Element_Method_Pt1.pdf" target="_blank" rel="noopener">Read project report (Part 1, PDF)</a><br><a href="Project_4/Project_3/Report_Frontier_Element_Method_Pt2.pdf" target="_blank" rel="noopener">Read project report (Part 2, PDF)</a><br><a href="Project_4/Project_3/Report_Frontier_Element_Method_Pt3.pdf" target="_blank" rel="noopener">Read project report (Part 3, PDF)</a><br><a href="Project_4/Project_3/Report_Frontier_Element_Method_Pt4.pdf" target="_blank" rel="noopener">Read project report (Part 4, PDF)</a></p>
+          <h2>Rapport du projet</h2>
+          <p><a href="Project_4/Project_3/Report_Frontier_Element_Method_Pt1.pdf" target="_blank" rel="noopener">Lire le rapport du projet (partie 1, PDF)</a><br><a href="Project_4/Project_3/Report_Frontier_Element_Method_Pt2.pdf" target="_blank" rel="noopener">Lire le rapport du projet (partie 2, PDF)</a><br><a href="Project_4/Project_3/Report_Frontier_Element_Method_Pt3.pdf" target="_blank" rel="noopener">Lire le rapport du projet (partie 3, PDF)</a><br><a href="Project_4/Project_3/Report_Frontier_Element_Method_Pt4.pdf" target="_blank" rel="noopener">Lire le rapport du projet (partie 4, PDF)</a></p>
         </div>
       </div>
     </section>
@@ -204,17 +204,17 @@
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_3/Pictures/fig_1_2d_wave_diffraction_square_geometry.png" alt="Total diffracted wave fields (Re(u_total)) across 2D obstacle geometries (N = 800, k = 10).">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">2D Wave Diffraction</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_3/Pictures/fig_2_hierarchical_matrix_block_compression_structure.png" alt="Hierarchical matrix structure (400 × 400): dense near-field blocks and low-rank ACA-compressed far-field blocks.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Hierarchical Matrix Compression</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_3/Pictures/fig_3_computational_complexity_benchmark_dense_vs_hmatrix.png" alt="Log-log runtime benchmark comparing dense complexity with quasi-linear assembly and GMRES solve times.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Dense vs. H-Matrix Complexity</div>
         </div>
       </div>
@@ -230,7 +230,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2026 Antoine Levrat — Engineering Portfolio</p>
+      <p>© 2026 Antoine Levrat — Portfolio ingénieur</p>
     </footer>
   </main>
 

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Antoine Levrat Portfolio</title>
+  <title>Portfolio — Antoine Levrat</title>
 
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -69,6 +69,9 @@
     .home { background: #1e1e1e; }
     .home img { width: 180px; height: 180px; border-radius: 50%; border: 3px solid #444; object-fit: cover; display: block; margin: 1rem auto 0 auto; }
     .home .button-group { margin-top: 1.5rem; display: flex; gap: 1rem; }
+    .home .university-logo { width: 190px; height: auto; border-radius: 15px; margin-top: 1.25rem; border: 0; object-fit: contain; }
+    .home h1 { margin-bottom: 0.5rem; }
+    .home .availability { color: #70d6ff; font-weight: bold; margin-top: 0.35rem; }
     .home .button-group a { padding: 0.8rem 1.5rem; border-radius: 8px; background: #444; color: white; text-decoration: none; font-weight: bold; display: flex; align-items: center; gap: 0.5rem; transition: background 0.3s; }
     .home .button-group a:hover { background: var(--accent); color: black; }
 
@@ -215,16 +218,15 @@
   <nav class="sidebar">
     <h2>Portfolio</h2>
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#work-experience">Work Experience & Awards/Achievements</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#other_projects">Other Projects</a></li>
+      <li><a href="#home">Accueil</a></li>
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#skills">Compétences</a></li>
+      <li><a href="#work-experience">Expérience professionnelle</a></li>
+      <li><a href="#projects">Projets</a></li>
       <li><a href="#contact">Contact</a></li>
       <li class="resume-link">
         <a href="assets/Antoine_LEVRAT_CV.pdf" download>
-          <i class="fas fa-download"></i> Resume
+          <i class="fas fa-download"></i> CV
         </a>
       </li>
     </ul>
@@ -234,71 +236,79 @@
   <div class="content">
     <!-- HOME SECTION -->
     <section id="home" class="section home">
-      <h1>Hi, I'm Antoine LEVRAT</h1>
-      <p>Simulation Engineer | Modeling Specialist</p>
-      <p><em>Mission: To design and deliver innovative engineering solutions through creativity, precision, and continuous improvement.</em></p>
-      <img src="assets/Antoine_LEVRAT_Headshot.jpeg" alt="My Photo">
+      <h1>Antoine LEVRAT</h1>
+      <p>Ingénieur R&amp;D en Modélisation &amp; Simulation Numérique</p>
+      <p class="availability">Disponible immédiatement</p>
+      <img src="assets/Antoine_LEVRAT_Headshot.jpeg" alt="Portrait d'Antoine Levrat">
+      <img class="university-logo" src="assets/Logo_Université_Paris-Saclay.png" alt="Université Paris-Saclay">
       <div class="button-group">
-        <a href="#projects">Projects</a>
-        <a href="#other_projects">Other Projects</a>
+        <a href="#projects"><i class="fas fa-folder-open"></i> Voir mes projets R&amp;D</a>
         <a href="assets/Antoine_LEVRAT_CV.pdf" download class="resume-btn">
-          <i class="fas fa-download"></i> Resume
+          <i class="fas fa-download"></i> Télécharger mon CV
         </a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Me contacter</a>
       </div>
     </section>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="section about">
-      <h1>About Me</h1>
+      <h1>À propos</h1>
       <div class="about-box">
-        <p>My degree is a Master 2 in Applied Mathematics: Analysis, Modeling, and Simulation (AMS) at Université Paris-Saclay / UVSQ (2026).</p>
-        <p>My work focuses on numerical PDE solving and analysis.</p>
-        <p>I develop simulation tools in Python and C++, combine mathematical modeling with CPU and MPI acceleration, and validate results through mesh refinement and HPC benchmarks.</p>
+        <p>Diplômé d'un Master 2 en Mathématiques Appliquées (Analyse, Modélisation, Simulation) de l'Université Paris-Saclay, je conçois, optimise et valide des solveurs numériques (éléments finis, volumes finis) en C++ et Python pour résoudre des problèmes physiques complexes.</p>
+        <p>Fort d'une expérience en R&amp;D thermomécanique chez Framatome. Je recherche un poste d'ingénieur R&amp;D où allier rigueur mathématique et performance logicielle.</p>
       </div>
     </section>
 
     <!-- SKILLS SECTION -->
     <section id="skills" class="section skills">
-      <h1>Skills</h1>
+      <h1>Compétences</h1>
       <div class="skills-category">
-        <h3>Advanced</h3>
+        <h3>Langages</h3>
         <div class="skills-grid">
-          <div class="skill">Python</div><div class="skill">C++</div><div class="skill">MATLAB</div>
-          <div class="skill">Finite Element Method</div><div class="skill">Finite Volume Method</div>
-          <div class="skill">PDE-Constrained Optimization</div><div class="skill">MPI / HPC</div>
+          <div class="skill">C++</div><div class="skill">Python</div><div class="skill">MATLAB</div><div class="skill">C</div>
         </div>
       </div>
       <div class="skills-category">
-        <h3>Proficient</h3>
+        <h3>Outils de simulation</h3>
         <div class="skills-grid">
-          <div class="skill">ParaView</div><div class="skill">Salomé</div><div class="skill">Gmsh</div>
-          <div class="skill">FEniCS</div><div class="skill">PyTorch</div><div class="skill">CUDA</div><div class="skill">LaTeX</div>
+          <div class="skill">Gmsh</div><div class="skill">Salomé</div><div class="skill">ParaView</div>
+          <div class="skill">FEniCS</div><div class="skill">FreeFem++</div><div class="skill">VIZIR4</div>
+        </div>
+      </div>
+      <div class="skills-category">
+        <h3>Calcul haute performance &amp; développement</h3>
+        <div class="skills-grid">
+          <div class="skill">MPI </div><div class="skill">CUDA</div><div class="skill">Git</div>
+          <div class="skill">PyTorch</div><div class="skill">LaTeX</div>
           <div class="skill">SolidWorks</div><div class="skill">Fusion 360</div>
         </div>
       </div>
       <div class="skills-category">
-        <h3>Developing</h3>
+        <h3>Simulation numérique</h3>
         <div class="skills-grid">
-          <div class="skill">Boundary Element Method</div><div class="skill">Reduced Basis Methods</div>
-          <div class="skill">Hybrid High-Frequency Methods</div><div class="skill">Mesh Adaptation</div>
+          <div class="skill">Éléments finis</div><div class="skill">Volumes finis</div>
+          <div class="skill">Éléments frontières</div> <div class="skill">Méthode des Moments</div> 
+          <div class="skill">Méthodes Spectrales</div>
+          <div class="skill">Optimisation sous contraintes PDE</div><div class="skill">Homogénéisation</div>
+          <div class="skill">Méthodes de décomposition de domaine</div>
         </div>
       </div>
     </section>
 
     <!-- WORK EXPERIENCE SECTION -->
     <section id="work-experience" class="section work-experience">
-      <h1>Work Experience</h1>
-      <p>(Click the Card to Expand)</p>
+      <h1>Expérience professionnelle</h1>
+      <p>Cliquez sur la carte pour afficher les détails</p>
       <div class="work-experience-list">
         <!-- Framatome -->
-        <div class="work-experience-item" onclick="toggleDescription(this)" title="Click to open">
-          <h3>April 2026 - September 2026</h3>
-          <p><strong>Framatome | Thermomechanical Engineering Intern</strong></p>
+        <div class="work-experience-item" onclick="toggleDescription(this)" title="Cliquer pour afficher">
+          <h3>Avril 2026 - Septembre 2026</h3>
+          <p><strong>Framatome | Ingénieur stagiaire en thermomécanique</strong></p>
           <div class="description">
-            <p>- Developed a modeling approach to simulate concentration evolutions in coupled media using Finite Element (FEM) and Finite Volume (FVM) methods.</p>
-            <p>- Optimized and accelerated core simulation codes with high-order integration schemes, mesh refinement, and adaptive time-stepping to drastically reduce computation time.</p>
-            <p>- Designed numerical solutions to overcome convergence issues and improve solver stability.</p>
-            <p>- Verified numerical models.</p>
+            <p>- Développement d'une approche de modélisation pour simuler les évolutions de concentration dans des milieux couplés par éléments finis (FEM) et volumes finis (FVM).</p>
+            <p>- Optimisation et accélération des codes de calcul avec schémas d'intégration d'ordre élevé, raffinement de maillage et pas de temps adaptatif afin de réduire fortement les temps de calcul.</p>
+            <p>- Conception de solutions numériques pour résoudre les problèmes de convergence et améliorer la stabilité des solveurs.</p>
+            <p>- Vérification des modèles numériques.</p>
           </div>
         </div>
       </div>
@@ -306,106 +316,63 @@
 
         <!-- PROJECTS SECTION -->
    <section id="projects" class="section projects">
-  <h1>Projects</h1>
-  <p>(Click on Projects to View)</p>
+  <h1>Projets</h1>
+  <p>Cliquez sur un projet pour accéder à sa fiche</p>
   <div class="project-list">
 
     <div class="project-card" onclick="window.location.href='Project_0.html'">
       <img src="Project_0/Pictures/Logo_framatome.png" alt="Coupled media concentration transport project">
-      <span class="overlay">Click to View</span>
-      <h3>Coupled Media Concentration Transport <p>(R&amp;D Internship)</p></h3>
+      <span class="overlay">Voir le projet</span>
+      <h3>Transport couplé de concentration <p>(Stage R&amp;D)</p></h3>
     </div>
 
     <div class="project-card" onclick="window.location.href='Project_1.html'">
       <img src="Project_1/Pictures/fig_1_constrained_3d_heat_distribution_plot.png" alt="Heat distribution optimization">
-      <span class="overlay">Click to View</span>
-      <h3>Heat Distribution Optimization <p>(PDE-Constrained Optimization)</p></h3>
+      <span class="overlay">Voir le projet</span>
+      <h3>Optimisation de la distribution thermique <p>(Optimisation sous contraintes PDE)</p></h3>
     </div>
 
     <div class="project-card" onclick="window.location.href='Project_2.html'">
       <img src="Project_2/Pictures/fig_3_xpinn_final_velocity_pressure_fields.png" alt="XPINN fluid dynamics fields">
-      <span class="overlay">Click to View</span>
-      <h3>Extended PINNs for Fluid Dynamics <p>(XPINN)</p></h3>
+      <span class="overlay">Voir le projet</span>
+      <h3>XPINN pour la dynamique des fluides <p>(PINN étendus)</p></h3>
     </div>
 
     <div class="project-card" onclick="window.location.href='Project_3.html'">
       <img src="Project_3/Pictures/fig_5_fem_2d_mesh_domain_decomposition.png" alt="Parallel FEM domain decomposition">
-      <span class="overlay">Click to View</span>
-      <h3>Parallel PDE &amp; FEM Solver <p>(MPI / HPC)</p></h3>
+      <span class="overlay">Voir le projet</span>
+      <h3>Résolution parallèle <p> FEM x MPI</p></h3>
+    </div>
+
+    <div class="project-card" onclick="window.location.href='Project_4_1.html'">
+      <img src="Project_4/Project_1/Pictures/fig_5_adaptive_psnr_delaunay_compression_1000_points.jpg" alt="Adaptive Delaunay meshing and image compression">
+      <span class="overlay">Voir le projet</span>
+      <h3>Maillage de Delaunay adaptatif <p>(Compression d'images)</p></h3>
+    </div>
+
+    <div class="project-card" onclick="window.location.href='other-projects.html'">
+      <img src="Project_4/Project_3/Pictures/fig_1_2d_wave_diffraction_square_geometry.png" alt="Collection de projets académiques">
+      <span class="overlay">Voir les projets</span>
+      <h3>Autres projets </p></h3>
     </div>
 
   </div>
   </section>
 
-  <section id="other_projects" class="section other projects">
-    <h1>Other Projects</h1>
-    <p>(Click on Projects to View)</p>
-    <div class="project-list">
-    <div class="project-card" onclick="window.location.href='Project_4_1.html'">
-      <img src="Project_4/Project_1/Pictures/fig_5_adaptive_psnr_delaunay_compression_1000_points.jpg" alt="Adaptive Delaunay meshing and image compression">
-      <span class="overlay">Click to View</span>
-      <h3>Adaptive Delaunay Meshing <p>(Image Compression)</p></h3>
-    </div>
-
-    <div class="project-card" onclick="window.location.href='Project_4_2.html'">
-      <img src="Project_4/Project_2/Pictures/fig_1_hal_publication_title_page.png" alt="PDE-constrained optimization lecture notes">
-      <span class="overlay">Click to View</span>
-      <h3>Co-Published PDE-Constrained Optimization <p>(Lecture Notes)</p></h3>
-    </div>
-
-    <div class="project-card" onclick="window.location.href='Project_4_3.html'">
-      <img src="Project_4/Project_3/Pictures/fig_1_2d_wave_diffraction_square_geometry.png" alt="2D Helmholtz wave diffraction">
-      <span class="overlay">Click to View</span>
-      <h3>2D Helmholtz BEM Solver <p>(Wave Diffraction)</p></h3>
-    </div>
-
-    <div class="project-card" onclick="window.location.href='Project_4_4.html'">
-      <img src="Project_4/Project_4/Pictures/fig_2_cell_corrector_w1_3d.png" alt="Periodic homogenization cell corrector">
-      <span class="overlay">Click to View</span>
-      <h3>Periodic Homogenization <p>(Finite Element Method)</p></h3>
-    </div>
-
-    <div class="project-card" onclick="window.location.href='Project_4_5.html'">
-      <img src="Project_4/Project_5/Pictures/fig_0_title_and_author.png" alt="Demagnetizing energy and iLLG research project">
-      <span class="overlay">Click to View</span>
-      <h3>Demagnetizing Energy <p>(iLLG Simulation)</p></h3>
-    </div>
-
-    <div class="project-card" onclick="window.location.href='Project_4_6.html'">
-      <img src="Project_4/Project_6/Pictures/fig_2_geometrical_optics_wave_solution_k10.png" alt="Geometrical optics and finite element diffraction error">
-      <span class="overlay">Click to View</span>
-      <h3>Wave Diffraction <p>(Geometrical Optics)</p></h3>
-    </div>
-
-    <div class="project-card" onclick="window.location.href='Project_4_7.html'">
-      <img src="Project_4/Project_7/Pictures/fig_1_3d_curve_zero_measure_plane.png" alt="Sard's theorem visualization">
-      <span class="overlay">Click to View</span>
-      <h3>Sard’s Theorem <p>(Proof &amp; Visualization)</p></h3>
-    </div>
-
-    <div class="project-card" onclick="window.location.href='Project_4_8.html'">
-      <img src="Project_4/Project_8/Pictures/fig_0_title_and_author.png" alt="HyQMOM literature synthesis">
-      <span class="overlay">Click to View</span>
-      <h3>HyQMOM <p>(Literature Synthesis)</p></h3>
-    </div>
-  </div>
-</section>
-
-
     <!-- LIGHTBOX -->
     <div id="lightbox" onclick="closeLightbox()">
-      <img id="lightbox-img" src="" alt="Project Image">
+      <img id="lightbox-img" src="" alt="Image du projet">
     </div>
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="section contact">
-      <h1>Contact Me</h1>
+      <h1>Me contacter</h1>
       <form id="contact-form" action="https://formspree.io/f/xqadnpao" method="POST">
-  <input type="text" name="name" placeholder="Your Name" required>
-  <input type="email" name="email" placeholder="Your Email" required>
-  <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-  <button type="submit">Send</button>
-  <p id="form-status" style="margin-top:10px; display:none; color:lightgreen;">✅ Message Sent! Thank you.</p>
+  <input type="text" name="name" placeholder="Votre nom" required>
+  <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+  <textarea name="message" rows="5" placeholder="Votre message" required></textarea>
+  <button type="submit">Envoyer</button>
+  <p id="form-status" style="margin-top:10px; display:none; color:lightgreen;">✅ Message envoyé. Merci !</p>
 </form>
       <div class="social">
         <a href="https://www.linkedin.com/in/antoine-levrat-151843265" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
@@ -416,7 +383,7 @@
 
     <!-- FOOTER -->
     <footer>
-      <p>© 2026 Antoine Levrat — Engineering Portfolio</p>
+      <p>© 2026 Antoine Levrat — Portfolio ingénieur</p>
     </footer>
   </div>
 
@@ -439,7 +406,7 @@
       status.style.display = 'block';
       form.reset();
     } else {
-      status.textContent = '❌ Something went wrong. Please try again.';
+      status.textContent = '❌ Une erreur est survenue. Veuillez réessayer.';
       status.style.color = 'tomato';
       status.style.display = 'block';
     }

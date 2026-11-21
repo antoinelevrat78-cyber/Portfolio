@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autres projets — Antoine Levrat</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <style>
+    :root { --accent: #00aaff; --bg: #1a1a1a; --panel: #111; --text: #e0e0e0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { min-height: 100vh; background: var(--bg); color: var(--text); font-family: Arial, sans-serif; }
+    .sidebar { position: fixed; inset: 0 auto 0 0; width: 260px; background: var(--panel); padding: 2rem 1rem; text-align: center; }
+    .sidebar h1 { color: var(--accent); padding-bottom: 0.8rem; border-bottom: 1px solid #333; }
+    .back-button { display: inline-flex; align-items: center; gap: 8px; margin-top: 2rem; padding: 0.7rem 1rem; border-radius: 8px; background: #e63946; color: white; text-decoration: none; font-weight: bold; }
+    .back-button:hover { background: #ff4d5a; }
+    main { min-height: 100vh; margin-left: 260px; padding: 3rem 2rem; text-align: center; }
+    main h1 { color: var(--accent); margin-bottom: 0.5rem; }
+    main > p { color: #aaa; margin-bottom: 2rem; }
+    .project-list { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+    .project-card { position: relative; width: 250px; height: 280px; background: #333; color: var(--text); border-radius: 10px; box-shadow: 0 8px 15px rgba(0,0,0,.3); cursor: pointer; display: flex; flex-direction: column; align-items: center; padding: 1rem; transition: transform .3s, background .3s; }
+    .project-card:hover { transform: translateY(-8px); background: #3a3a3a; }
+    .project-card img { width: 100%; height: 180px; border-radius: 8px; object-fit: cover; margin-bottom: .8rem; }
+    .project-card h3 { font-size: 1rem; line-height: 1.35; }
+    .project-card h3 span { display: block; margin-top: .25rem; color: #bbb; font-size: .82rem; font-weight: normal; }
+    .overlay { position: absolute; inset: 0; border-radius: 10px; background: rgba(0,0,0,.62); display: flex; align-items: center; justify-content: center; font-weight: bold; opacity: 0; transition: opacity .3s; }
+    .project-card:hover .overlay { opacity: 1; }
+    footer { margin-top: 3rem; padding: 1.5rem; border-top: 1px solid #333; color: #aaa; text-align: center; }
+    @media (max-width: 768px) {
+      .sidebar { position: static; width: 100%; height: auto; padding: 1rem; }
+      main { margin-left: 0; padding: 2rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sidebar" aria-label="Navigation">
+    <h1>Portfolio</h1>
+    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Retour aux projets</a>
+  </nav>
+  <main>
+    <h1>Autres projets</h1>
+    <p>Sélection de travaux académiques et de recherche</p>
+    <div class="project-list">
+      <div class="project-card" onclick="window.location.href='Project_4_2.html'">
+        <img src="Project_4/Project_2/Pictures/fig_1_hal_publication_title_page.png" alt="Notes de cours sur l'optimisation sous contraintes PDE">
+        <span class="overlay">Voir le projet</span>
+        <h3>Optimisation sous contraintes PDE<span>Notes de cours publiées</span></h3>
+      </div>
+      <div class="project-card" onclick="window.location.href='Project_4_3.html'">
+        <img src="Project_4/Project_3/Pictures/fig_1_2d_wave_diffraction_square_geometry.png" alt="Diffraction d'onde de Helmholtz">
+        <span class="overlay">Voir le projet</span>
+        <h3>Solveur BEM de Helmholtz 2D<span>Diffraction d'ondes</span></h3>
+      </div>
+      <div class="project-card" onclick="window.location.href='Project_4_4.html'">
+        <img src="Project_4/Project_4/Pictures/fig_2_cell_corrector_w1_3d.png" alt="Homogénéisation périodique">
+        <span class="overlay">Voir le projet</span>
+        <h3>Homogénéisation périodique<span>Méthode des éléments finis</span></h3>
+      </div>
+      <div class="project-card" onclick="window.location.href='Project_4_5.html'">
+        <img src="Project_4/Project_5/Pictures/fig_0_title_and_author.png" alt="Énergie démagnétisante">
+        <span class="overlay">Voir le projet</span>
+        <h3>Énergie démagnétisante<span>Simulation iLLG</span></h3>
+      </div>
+      <div class="project-card" onclick="window.location.href='Project_4_6.html'">
+        <img src="Project_4/Project_6/Pictures/fig_2_geometrical_optics_wave_solution_k10.png" alt="Diffraction et optique géométrique">
+        <span class="overlay">Voir le projet</span>
+        <h3>Diffraction d'ondes<span>Optique géométrique</span></h3>
+      </div>
+      <div class="project-card" onclick="window.location.href='Project_4_7.html'">
+        <img src="Project_4/Project_7/Pictures/fig_1_3d_curve_zero_measure_plane.png" alt="Visualisation du théorème de Sard">
+        <span class="overlay">Voir le projet</span>
+        <h3>Théorème de Sard<span>Preuve et visualisation</span></h3>
+      </div>
+      <div class="project-card" onclick="window.location.href='Project_4_8.html'">
+        <img src="Project_4/Project_8/Pictures/fig_0_title_and_author.png" alt="Synthèse bibliographique HyQMOM">
+        <span class="overlay">Voir le projet</span>
+        <h3>HyQMOM<span>Synthèse bibliographique</span></h3>
+      </div>
+    </div>
+  </main>
+  <footer>© 2026 Antoine Levrat — Portfolio ingénieur</footer>
+</body>
+</html>

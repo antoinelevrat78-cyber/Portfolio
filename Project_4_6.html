@@ -1,9 +1,9 @@
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Numerical Approximation of Wave Diffraction via Geometrical Optics | Antoine Levrat</title>
+  <title>Approximation numérique de la diffraction par optique géométrique | Antoine Levrat</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -133,7 +133,7 @@
 <body>
 
   <!-- Mobile Menu Toggle (hamburger) -->
-  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Ouvrir le menu">
     <i class="fas fa-bars" aria-hidden="true"></i>
   </button>
 
@@ -141,36 +141,36 @@
   <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
 
   <!-- Sidebar -->
-  <nav id="sidebar" class="sidebar" aria-label="Main navigation">
+  <nav id="sidebar" class="sidebar" aria-label="Navigation principale">
     <h2>Portfolio</h2>
     <ul>
-      <li><a href="#overview">Overview</a></li>
+      <li><a href="#overview">Aperçu</a></li>
       <li><a href="#illustrations">Illustrations</a></li>
     </ul>
-    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back</a>
+    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour</a>
   </nav>
 
   <!-- Main Content -->
   <main class="content" id="mainContent" tabindex="-1">
-    <h1 class="project-title">Numerical Approximation of Wave Diffraction via Geometrical Optics</h1>
+    <h1 class="project-title">Approximation numérique de la diffraction par optique géométrique</h1>
 
-    <!-- Overview -->
+    <!-- Aperçu -->
     <section id="overview" class="section" aria-labelledby="overview-heading">
-      <h1 id="overview-heading">Project Overview</h1>
+      <h1 id="overview-heading">Vue d’ensemble du projet</h1>
 
       <div class="case-study">
         <div class="case-block">
-          <h2>Project</h2>
-          <p><strong>Academic Team Project (Pair Programming)</strong><br>2026</p>
+          <h2>Projet</h2>
+          <p><strong>Academic Team Projet (Pair Programming)</strong><br>2026</p>
         </div>
 
         <div class="case-block">
-          <h2>Objective</h2>
+          <h2>Objectif</h2>
           <p>Approximate high-frequency 2D plane-wave diffraction around a convex obstacle using Geometrical Optics, and validate accuracy against a high-order finite element reference solution.</p>
         </div>
 
         <div class="case-block">
-          <h2>Method</h2>
+          <h2>Méthode</h2>
           <ul>
             <li>Implemented a Python ray-tracing solver to compute reflected rays, solving the eikonal equation for phase S and the transport equation along characteristic tubes for amplitude a_0.</li>
             <li>Built a FreeFem++ reference solver with a Perfectly Matched Layer to truncate the unbounded domain and P4 finite elements to limit high-wavenumber numerical pollution.</li>
@@ -179,12 +179,12 @@
         </div>
 
         <div class="case-block">
-          <h2>Tools &amp; Software</h2>
+          <h2>Outils &amp; logiciels</h2>
           <p>Python (curves, pyff), FreeFem++, ParaView</p>
         </div>
 
         <div class="case-block">
-          <h2>Results</h2>
+          <h2>Résultats</h2>
           <ul>
             <li>Achieved strong visual and numerical agreement in the illuminated zone, reducing relative L2 error from 5.17% at k = 10 to 3.98% at k = 20, consistent with theoretical O(k^-1) convergence.</li>
             <li>Identified Geometrical Optics limitations in the shadow zone and FEM numerical-pollution limits at k = 30 (4.82% error) under memory constraints.</li>
@@ -192,8 +192,8 @@
         </div>
 
         <div class="case-block">
-          <h2>Project Report</h2>
-          <p><a href="Project_4/Project_6/Report_Approximation_with_Geometric_Optic.pdf" target="_blank" rel="noopener">Read the project report (PDF)</a></p>
+          <h2>Rapport du projet</h2>
+          <p><a href="Project_4/Project_6/Report_Approximation_with_Geometric_Optic.pdf" target="_blank" rel="noopener">Lire le rapport du projet (PDF)</a></p>
         </div>
       </div>
     </section>
@@ -204,17 +204,17 @@
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_6/Pictures/fig_1_reflected_rays_characteristics.png" alt="Eikonal-equation characteristics (reflected rays) around the circular obstacle, visualized in ParaView.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Reflected-Ray Characteristics</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_6/Pictures/fig_2_geometrical_optics_wave_solution_k10.png" alt="Real part of the Geometrical Optics approximation to the diffracted wave field at k = 10.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Geometrical Optics Wave Solution</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_6/Pictures/fig_3_absolute_error_comparison_fem_vs_go.png" alt="Absolute error between the Geometrical Optics approximation and P4 FEM reference, showing agreement in the illuminated zone and divergence in the shadow zone.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">FEM vs. Geometrical Optics Error</div>
         </div>
       </div>
@@ -230,7 +230,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2026 Antoine Levrat — Engineering Portfolio</p>
+      <p>© 2026 Antoine Levrat — Portfolio ingénieur</p>
     </footer>
   </main>
 

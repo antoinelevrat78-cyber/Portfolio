@@ -1,9 +1,9 @@
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Periodic Homogenization via Finite Element Method (FEM) | Antoine Levrat</title>
+  <title>Homogénéisation périodique par éléments finis | Antoine Levrat</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -133,7 +133,7 @@
 <body>
 
   <!-- Mobile Menu Toggle (hamburger) -->
-  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Ouvrir le menu">
     <i class="fas fa-bars" aria-hidden="true"></i>
   </button>
 
@@ -141,36 +141,36 @@
   <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
 
   <!-- Sidebar -->
-  <nav id="sidebar" class="sidebar" aria-label="Main navigation">
+  <nav id="sidebar" class="sidebar" aria-label="Navigation principale">
     <h2>Portfolio</h2>
     <ul>
-      <li><a href="#overview">Overview</a></li>
+      <li><a href="#overview">Aperçu</a></li>
       <li><a href="#illustrations">Illustrations</a></li>
     </ul>
-    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back</a>
+    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour</a>
   </nav>
 
   <!-- Main Content -->
   <main class="content" id="mainContent" tabindex="-1">
-    <h1 class="project-title">Periodic Homogenization via Finite Element Method (FEM)</h1>
+    <h1 class="project-title">Homogénéisation périodique par éléments finis</h1>
 
-    <!-- Overview -->
+    <!-- Aperçu -->
     <section id="overview" class="section" aria-labelledby="overview-heading">
-      <h1 id="overview-heading">Project Overview</h1>
+      <h1 id="overview-heading">Vue d’ensemble du projet</h1>
 
       <div class="case-study">
         <div class="case-block">
-          <h2>Project</h2>
-          <p><strong>Academic Project</strong><br>2025</p>
+          <h2>Projet</h2>
+          <p><strong>Projet académique</strong><br>2025</p>
         </div>
 
         <div class="case-block">
-          <h2>Objective</h2>
+          <h2>Objectif</h2>
           <p>Implement a 2D finite element solver from scratch for PDEs with rapidly oscillating periodic coefficients, and compare the exact microscale solution with the homogenized macroscale model.</p>
         </div>
 
         <div class="case-block">
-          <h2>Method</h2>
+          <h2>Méthode</h2>
           <ul>
             <li>Developed a 2D P1 finite element solver in Python supporting Dirichlet, Neumann, and periodic boundary conditions through projection matrices (P_per).</li>
             <li>Verified solver convergence against analytical solutions, achieving the theoretical order-2 convergence rate in the L2 norm.</li>
@@ -180,20 +180,20 @@
         </div>
 
         <div class="case-block">
-          <h2>Tools &amp; Software</h2>
-          <p>Matlab, Finite Element Method (FEM)</p>
+          <h2>Outils &amp; logiciels</h2>
+          <p>Matlab, Finite Element Méthode (FEM)</p>
         </div>
 
         <div class="case-block">
-          <h2>Results</h2>
+          <h2>Résultats</h2>
           <ul>
             <li>Validated the numerical effective tensor (A_eff_11 ≈ 1.7765) against the theoretical value (sqrt(3) ≈ 1.7321) and confirmed asymptotic convergence of the homogenized model as epsilon approaches zero.</li>
           </ul>
         </div>
 
         <div class="case-block">
-          <h2>Project Report</h2>
-          <p><a href="Project_4/Project_4/Report_Periodic_Homogenization.pdf" target="_blank" rel="noopener">Read the project report (PDF)</a></p>
+          <h2>Rapport du projet</h2>
+          <p><a href="Project_4/Project_4/Report_Periodic_Homogenization.pdf" target="_blank" rel="noopener">Lire le rapport du projet (PDF)</a></p>
         </div>
       </div>
     </section>
@@ -204,17 +204,17 @@
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_4/Pictures/fig_1_3d_periodic_fem_solution.png" alt="3D finite element approximation of sin(pi x) sin(2 pi y), validating periodic boundary projection P_per.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">3D Periodic FEM Solution</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_4/Pictures/fig_2_cell_corrector_w1_3d.png" alt="3D visualization of the microscale periodic cell corrector w_1 used to derive the effective diffusion tensor.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Microscale Cell Corrector</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_4/Pictures/fig_3_homogenization_error_vs_epsilon.png" alt="Relative L2 error between the oscillating microscale solution and the homogenized macroscale solution as epsilon decreases.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Homogenization Error vs. Epsilon</div>
         </div>
       </div>
@@ -230,7 +230,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2026 Antoine Levrat — Engineering Portfolio</p>
+      <p>© 2026 Antoine Levrat — Portfolio ingénieur</p>
     </footer>
   </main>
 

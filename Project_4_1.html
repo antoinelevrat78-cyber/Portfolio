@@ -1,9 +1,9 @@
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Adaptive 2D Delaunay Meshing &amp; Image Compression | Antoine Levrat</title>
+  <title>Maillage de Delaunay adaptatif &amp; compression d’images | Antoine Levrat</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -133,7 +133,7 @@
 <body>
 
   <!-- Mobile Menu Toggle (hamburger) -->
-  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Ouvrir le menu">
     <i class="fas fa-bars" aria-hidden="true"></i>
   </button>
 
@@ -141,36 +141,36 @@
   <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
 
   <!-- Sidebar -->
-  <nav id="sidebar" class="sidebar" aria-label="Main navigation">
+  <nav id="sidebar" class="sidebar" aria-label="Navigation principale">
     <h2>Portfolio</h2>
     <ul>
-      <li><a href="#overview">Overview</a></li>
+      <li><a href="#overview">Aperçu</a></li>
       <li><a href="#illustrations">Illustrations</a></li>
     </ul>
-    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back</a>
+    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour</a>
   </nav>
 
   <!-- Main Content -->
   <main class="content" id="mainContent" tabindex="-1">
-    <h1 class="project-title">Adaptive 2D Delaunay Meshing &amp; Image Compression</h1>
+    <h1 class="project-title">Maillage de Delaunay adaptatif &amp; compression d’images</h1>
 
-    <!-- Overview -->
+    <!-- Aperçu -->
     <section id="overview" class="section" aria-labelledby="overview-heading">
-      <h1 id="overview-heading">Project Overview</h1>
+      <h1 id="overview-heading">Vue d’ensemble du projet</h1>
 
       <div class="case-study">
         <div class="case-block">
-          <h2>Project</h2>
-          <p><strong>Academic Project (Scientific Computing - MS14)</strong><br>March - April 2026</p>
+          <h2>Projet</h2>
+          <p><strong>Projet académique (Scientific Computing - MS14)</strong><br>March - April 2026</p>
         </div>
 
         <div class="case-block">
-          <h2>Objective</h2>
+          <h2>Objectif</h2>
           <p>Develop high-performance mesh connectivity data structures and a 2D Delaunay triangulation kernel from scratch, then apply adaptive meshing to compress grayscale images while preserving high visual fidelity in high-contrast regions.</p>
         </div>
 
         <div class="case-block">
-          <h2>Method</h2>
+          <h2>Méthode</h2>
           <ul>
             <li>Implemented geometric mesh quality metrics (Q1 and Q2) and replaced a naive O(N²) neighbor-search algorithm with a custom hash table, reducing connectivity and boundary-edge detection complexity to quasi-linear O(N).</li>
             <li>Benchmarked hashing key strategies (i+j, min(i,j), and i+j × 1000) across complex aerospace geometries (naca, ls89, hlcrm, up to 355,000 triangles), minimizing average hash collisions to approximately 1.94.</li>
@@ -180,20 +180,20 @@
         </div>
 
         <div class="case-block">
-          <h2>Tools &amp; Software</h2>
+          <h2>Outils &amp; logiciels</h2>
           <p>C, VIZIR4, Computational Geometry, Hash Tables, Delaunay Triangulation</p>
         </div>
 
         <div class="case-block">
-          <h2>Results</h2>
+          <h2>Résultats</h2>
           <ul>
             <li>Achieved approximately 28 dB PSNR with adaptive meshing using 1,000 points, outperforming random Delaunay insertion with 5,000 points while preserving details such as eyes, mouth, and hands.</li>
           </ul>
         </div>
 
         <div class="case-block">
-          <h2>Project Report</h2>
-          <p><a href="Project_4/Project_1/Report_Adaptative_Meshing_Method.pdf" target="_blank" rel="noopener">Read the project report (PDF)</a></p>
+          <h2>Rapport du projet</h2>
+          <p><a href="Project_4/Project_1/Report_Adaptative_Meshing_Method.pdf" target="_blank" rel="noopener">Lire le rapport du projet (PDF)</a></p>
         </div>
       </div>
     </section>
@@ -204,32 +204,32 @@
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_1/Pictures/fig_1_hash_table_vs_naive_cpu_complexity_benchmark.png" alt="Log-log CPU execution time comparison: quasi-linear hash-table search versus quadratic naive neighbor search, up to 355,000 triangles.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Hash Table vs. Naive Search Complexity</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_1/Pictures/fig_2_LEFT_mesh_quality_comparison_before_after_edge_flip.jpg" alt="Triangle quality Q1 on a [0,1]² domain with 50 random points before edge-flipping optimization.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Mesh Quality Before Edge Flipping</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_1/Pictures/fig_2_RIGHT_mesh_quality_comparison_before_after_edge_flip.jpg" alt="Triangle quality Q1 on a [0,1]² domain with 50 random points after convex edge-flipping optimization.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Mesh Quality After Edge Flipping</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_1/Pictures/fig_3_delaunay_kernel_mesh_quality_q1.jpg" alt="Bowyer-Watson Delaunay triangulation quality Q1 on the 50-point test domain, with high element regularity (Q1 &lt; 3) across the interior.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Delaunay Kernel Mesh Quality</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_1/Pictures/fig_4_image_compression_random_delaunay_5000_points.jpg" alt="Baseline grayscale image reconstruction using random Delaunay insertion with 5,000 vertices (approximately 28 dB PSNR).">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Random Delaunay Image Compression</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_4/Project_1/Pictures/fig_5_adaptive_psnr_delaunay_compression_1000_points.jpg" alt="Adaptive PSNR-driven compression with 1,000 vertices, concentrating points around high-contrast image features.">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Adaptive PSNR Image Compression</div>
         </div>
       </div>
@@ -245,7 +245,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2026 Antoine Levrat — Engineering Portfolio</p>
+      <p>© 2026 Antoine Levrat — Portfolio ingénieur</p>
     </footer>
   </main>
 

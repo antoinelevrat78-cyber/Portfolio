@@ -1,9 +1,9 @@
 <!DOCTYPE html> 
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Extended Physics-Informed Neural Networks (XPINN) for Fluid Dynamics | Antoine Levrat</title>
+  <title>PINN étendues pour la dynamique des fluides | Antoine Levrat</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -133,7 +133,7 @@
 <body>
 
   <!-- Mobile Menu Toggle (hamburger) -->
-  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Open menu">
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="sidebar" aria-label="Ouvrir le menu">
     <i class="fas fa-bars" aria-hidden="true"></i>
   </button>
 
@@ -141,55 +141,55 @@
   <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
 
   <!-- Sidebar -->
-  <nav id="sidebar" class="sidebar" aria-label="Main navigation">
+  <nav id="sidebar" class="sidebar" aria-label="Navigation principale">
     <h2>Portfolio</h2>
     <ul>
-      <li><a href="#overview">Overview</a></li>
+      <li><a href="#overview">Aperçu</a></li>
       <li><a href="#illustrations">Illustrations</a></li>
     </ul>
-    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Back</a>
+    <a href="index.html#projects" class="back-button"><i class="fas fa-arrow-left" aria-hidden="true"></i> Retour</a>
   </nav>
 
   <!-- Main Content -->
   <main class="content" id="mainContent" tabindex="-1">
-    <h1 class="project-title">Extended Physics-Informed Neural Networks (XPINN) for Fluid Dynamics</h1>
+    <h1 class="project-title">PINN étendues pour la dynamique des fluides</h1>
 
-    <!-- Overview -->
+    <!-- Aperçu -->
     <section id="overview" class="section" aria-labelledby="overview-heading">
-      <h1 id="overview-heading">Project Overview</h1>
+      <h1 id="overview-heading">Vue d’ensemble du projet</h1>
 
       <div class="case-study">
         <div class="case-block">
-          <h2>Project</h2>
-          <p><strong>Personal Project | Neural Networks and Data Assimilation</strong><br>May 2026</p>
+          <h2>Projet</h2>
+          <p><strong>Personal Projet | Neural Networks and Data Assimilation</strong><br>May 2026</p>
         </div>
 
         <div class="case-block">
-          <h2>Objective</h2>
+          <h2>Objectif</h2>
           <p>Develop a multi-domain Extended PINN capable of reconstructing velocity and pressure across a Brinkman interface with a nine-order-of-magnitude permeability jump.</p>
         </div>
 
         <div class="case-block">
-          <h2>Method</h2>
+          <h2>Méthode</h2>
           <ul>
             <li>Built a 128 × 128 FEniCS FEM reference solver for steady-state Brinkman flow.</li><li>Benchmarked 1D and 2D PINN variants, then moved training to GPU.</li><li>Combined Adam and L-BFGS, pressure normalization, and dynamic loss weighting.</li><li>Implemented coupled XPINN sub-networks with continuity constraints at the interface.</li>
           </ul>
         </div>
 
         <div class="case-block">
-          <h2>Tools &amp; Software</h2>
+          <h2>Outils &amp; logiciels</h2>
           <p>Python, FEniCS, PyTorch, CUDA</p>
         </div>
 
         <div class="case-block">
-          <h2>Results</h2>
+          <h2>Résultats</h2>
           <ul>
             <li>Stably reconstructed velocity and pressure fields across the permeability interface despite failures of a standard PINN.</li>
           </ul>
         </div>
         <div class="case-block">
-          <h2>Project Report</h2>
-          <p><a href="Project_2/Project_PINN_Doc.pdf" target="_blank" rel="noopener">Read the project report (PDF)</a></p>
+          <h2>Rapport du projet</h2>
+          <p><a href="Project_2/Project_PINN_Doc.pdf" target="_blank" rel="noopener">Lire le rapport du projet (PDF)</a></p>
         </div>
 
       </div>
@@ -201,27 +201,27 @@
       <div class="masonry" id="illustrationsMasonry">
         <div class="img-wrapper">
           <img loading="lazy" src="Project_2/Pictures/fig_1_LEFT_fem_ground_truth_velocity_pressure.png" alt="FEM ground-truth velocity and pressure fields, left panel">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">FEM Ground Truth — Velocity</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_2/Pictures/fig_1_RIGHT_fem_ground_truth_velocity_pressure.png" alt="FEM ground-truth velocity and pressure fields, right panel">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">FEM Ground Truth — Pressure</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_2/Pictures/fig_2_standard_pinn_convergence_failure.png" alt="Standard PINN convergence failure">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">Standard PINN Failure</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_2/Pictures/fig_3_xpinn_final_velocity_pressure_fields.png" alt="XPINN velocity and pressure reconstruction">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">XPINN Field Reconstruction</div>
         </div>
         <div class="img-wrapper">
           <img loading="lazy" src="Project_2/Pictures/fig_4_xpinn_multidomain_loss_convergence.png" alt="XPINN multi-domain loss convergence">
-          <span class="overlay">Click to expand</span>
+          <span class="overlay">Cliquer pour agrandir</span>
           <div class="image-title">XPINN Loss Convergence</div>
         </div>
       </div>
@@ -237,7 +237,7 @@
 
     <!-- Footer -->
     <footer>
-      <p>© 2026 Antoine Levrat — Engineering Portfolio</p>
+      <p>© 2026 Antoine Levrat — Portfolio ingénieur</p>
     </footer>
   </main>
 

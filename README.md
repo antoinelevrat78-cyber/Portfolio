@@ -62,7 +62,6 @@ Framatome | April 2026 - September 2026
 
 ## Repository Structure
 
-```text
 index.html              Main portfolio webpage
 Project_0.html          Coupled media transport project
 Project_1.html          Heat distribution optimization
@@ -78,7 +77,7 @@ Project_4_7.html        Sard's theorem
 Project_4_8.html        HyQMOM synthesis
 assets/                 Resume, headshot, favicon, and logos
 Project_*/              Reports, figures, and project-specific assets
-```
+
 
 ## Built With
 
